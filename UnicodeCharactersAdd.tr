@@ -1,0 +1,8 @@
+(* Geometric algebra additions *)
+0x26AC      \[GeometricProduct] ($gp$)      Infix       440 None    5   5
+0x22CE      \[OuterProduct]     ($op$)      Infix       450 None    5   5
+(* if instead of wedge you see vee symbol replace 0x22CE by 0x22CF *)
+0x26ab      \[DorstProduct]     ($id$)      Infix       459 None    5   5
+0x2219      \[InnerProduct]     ($ip$)      Infix       460 None    5   5
+0x23A6      \[LeftContract]     ($il$)      Infix       461 None    5   5
+0x23A3      \[RightContract]    ($ir$)      Infix       462 None    5   5
