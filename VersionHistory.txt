@@ -1,0 +1,10 @@
+0.1.0.0 (2016.09.20) 
+initial commit
+
+0.1.0.1 (2016.09.23)
+fix small MakeExpression bug
+optimize gaProductExpand and GeometricProduct 
+much clear setup and configuration instructions
+some small corrections in examples notebooks
+
+ 
