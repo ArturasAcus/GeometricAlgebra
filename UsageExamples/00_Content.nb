@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18504,        510]
-NotebookOptionsPosition[     17386,        465]
-NotebookOutlinePosition[     17727,        480]
-CellTagsIndexPosition[     17684,        477]
+NotebookDataLength[     19387,        543]
+NotebookOptionsPosition[     18193,        495]
+NotebookOutlinePosition[     18533,        510]
+CellTagsIndexPosition[     18490,        507]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -413,6 +413,36 @@ Cell[TextData[{
  FontColor->GrayLevel[0],
  Background->GrayLevel[1]],
 
+Cell[TextData[{
+ StyleBox[" 2c",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["Idempotents",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"02c_Idempotents.nb", None},
+  ButtonNote->"02_Idempotents.nb"],
+  FontWeight->"Bold"],
+ "\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ CellChangeTimes->{{3.507129506934873*^9, 3.507129513059498*^9}, 
+   3.507204960678143*^9, {3.682410058511142*^9, 3.682410059284894*^9}, {
+   3.682410180769161*^9, 3.682410203828909*^9}, {3.68362863591016*^9, 
+   3.683628662805262*^9}},
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[1]],
+
 Cell["\<\
 2.  Vectors, bivectors
    1. Properties of vectors 
@@ -431,7 +461,7 @@ Cell[TextData[{
   FontColor->RGBColor[1, 0, 0]],
  StyleBox["\t",
   FontSize->18],
- StyleBox[ButtonBox["Elementary vector and bivector functions",
+ StyleBox[ButtonBox["Matrix representations",
   BaseStyle->"Hyperlink",
   ButtonData:>{"04_MatrixRepresentations.nb", None},
   ButtonNote->"04_MatrixRepresentations.nb"],
@@ -463,8 +493,8 @@ Cell["MULTIVECTOR GEOMETRY", "Text",
  FontColor->RGBColor[1, 0.1, 0.3]]
 }, Open  ]]
 },
-WindowSize->{1271, 1248},
-WindowMargins->{{236, Automatic}, {Automatic, 21}},
+WindowSize->{1130, 759},
+WindowMargins->{{-15, Automatic}, {Automatic, -4}},
 FrontEndVersion->"10.3 for Linux x86 (32-bit) (December 10, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -506,11 +536,14 @@ Cell[14307, 357, 767, 27, 34, "Text",
 Cell[15077, 386, 819, 27, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[15899, 415, 275, 9, 148, "Text"],
-Cell[16177, 426, 916, 28, 34, "Text",
+Cell[15899, 415, 822, 28, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[17096, 456, 274, 6, 34, "Text"]
+Cell[16724, 445, 275, 9, 148, "Text"],
+Cell[17002, 456, 898, 28, 34, "Text",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[17903, 486, 274, 6, 34, "Text"]
 }, Open  ]]
 }
 ]
