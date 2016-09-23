@@ -1,10 +1,10 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version 0.1.0.0 (2016-09-20)~
+~Version 0.1.0.1 (2016-09-23)~
 
 **Short startup**
 1. Unzip the content preserving directory structure
-2. Open GAC_Base.nb and follow installation section instructions in the beginning of the notebook. 
+2. Open GAC_Base.nb and follow setup & configuration instructions in the beginning of the notebook. 
 3. Open UsageExamples/01_Start.nb notebook and try to repeat calculations.
 
 
