@@ -7,4 +7,10 @@ optimize gaProductExpand and GeometricProduct
 much clear setup and configuration instructions
 some small corrections in examples notebooks
 
+0.1.0.2 (2016.10.18)
+Fix base element alias input bug when gaRunning algebra set to tensor product
+enhance gaProductExpand 
+new example notebook 03a_Blades.nb
+corrections in other examples notebooks to meet the changes
+
  
