@@ -13,4 +13,8 @@ enhance gaProductExpand
 new example notebook 03a_Blades.nb
 corrections in other examples notebooks to meet the changes
 
+0.1.0.3 (2016.11.08)
+Critical geometric product expansion function is completely rewritten. It is now 
+much faster (especially for longer symbolic multivectors).
+
  
