@@ -1,6 +1,6 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version 0.1.0.2 (2016-10-18)~
+~Version 0.1.0.3 (2016-11-08)~
 
 **Quick startup**
 1. Unzip the content preserving directory structure
@@ -10,7 +10,7 @@
 **Main features**
 - Textbook notation and precedences of products (without Mathematica palettes)
 - Algebraic operations in orthonormal frame (additive representation, symbolic coefficients)
-- Switch between multiple algebras in same Mathematica session
+- Switching between multiple algebras in same Mathematica session
 -  Matrix representations of Cl(p,q) algebras
 - Idempotents with different base element sorting
 - Main involutions and general multivector inverse
