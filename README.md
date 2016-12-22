@@ -1,6 +1,6 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version 0.1.0.3 (2016-11-08)~
+~Version 0.1.0.4 (2016-12-22)~
 
 **Quick startup**
 1. Unzip the content preserving directory structure
@@ -25,4 +25,5 @@
 - UsageExamples/xxx_ElementaryFunctions.nb (Clifford function expansions)
 - UsageExamples/xxx_Idempotents.nb (algebras idempotents)
 - UsageExamples/xxx_Blades (general blade formulas test)
+- UsageExamples/xxx_MultivectorInverse (general multivector inverses and formulas test)
 - UsageExamples/xxx_MatrixRepresentations.nb (Clifford elements matrix representations)

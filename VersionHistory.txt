@@ -17,4 +17,8 @@ corrections in other examples notebooks to meet the changes
 Critical geometric product expansion function is completely rewritten. It is now 
 much faster (especially for longer symbolic multivectors).
 
+0.1.0.4 (2016.12.22)
+New example notebook 04a_MultivectorInverse.nb. 
+Tiny enhancment/bugfix of gaGetMV and gaGetGrade.
+Setup and configuration clarifications.
  
