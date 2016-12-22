@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     93950,       1807]
-NotebookOptionsPosition[     92542,       1752]
-NotebookOutlinePosition[     92882,       1767]
-CellTagsIndexPosition[     92839,       1764]
+NotebookDataLength[     94839,       1822]
+NotebookOptionsPosition[     93391,       1766]
+NotebookOutlinePosition[     93731,       1781]
+CellTagsIndexPosition[     93688,       1778]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1401,6 +1401,20 @@ OPifuTcHhZdH+4/2H+3PHPsLXUXhYA==\
  FontSize->14,
  Background->RGBColor[0.9882352941176471, 0.7725490196078432, 1.]],
 
+Cell["Version 0.1.0.4 ", "Text",
+ CellChangeTimes->{{3.67376951349532*^9, 3.673769543889651*^9}, {
+   3.6737695866194*^9, 3.67376991194879*^9}, {3.673770077765577*^9, 
+   3.673770103308448*^9}, {3.673771577776294*^9, 3.673771599492188*^9}, {
+   3.673834892424491*^9, 3.673834894345981*^9}, {3.673927983678887*^9, 
+   3.67392798456468*^9}, {3.674891152468318*^9, 3.674891156851493*^9}, 
+   3.6755760731935854`*^9, {3.683527869229*^9, 3.683527873852418*^9}, {
+   3.683533799120074*^9, 3.683533799969429*^9}, {3.684816113894662*^9, 
+   3.684816136826643*^9}, {3.685077117233587*^9, 3.685077118039125*^9}, {
+   3.685160059603444*^9, 3.68516007901051*^9}, {3.685160136671106*^9, 
+   3.685160150114083*^9}, {3.687258182795609*^9, 3.687258183479135*^9}, {
+   3.691383806002789*^9, 3.691383815513912*^9}, {3.691388201984412*^9, 
+   3.69138821093077*^9}}],
+
 Cell[CellGroupData[{
 
 Cell[TextData[StyleBox[ButtonBox["Press me and read!",
@@ -1751,7 +1765,7 @@ Cell["MULTIVECTOR GEOMETRY", "Text",
 }, Open  ]]
 },
 WindowSize->{964, 668},
-WindowMargins->{{479, Automatic}, {Automatic, 196}},
+WindowMargins->{{464, Automatic}, {Automatic, 192}},
 FrontEndVersion->"10.3 for Linux x86 (32-bit) (December 10, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1767,47 +1781,48 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 81783, 1381, 175, InheritFromParent],
+Cell[82344, 1403, 846, 12, 30, "Text"],
 Cell[CellGroupData[{
-Cell[82366, 1405, 437, 13, 40, "Section",
+Cell[83215, 1419, 437, 13, 40, "Section",
  CellOpen->True],
-Cell[82806, 1420, 537, 12, 51, "Text",
+Cell[83655, 1434, 537, 12, 71, "Text",
  CellOpen->True],
-Cell[83346, 1434, 417, 9, 31, "Text",
+Cell[84195, 1448, 417, 9, 51, "Text",
  CellOpen->True],
-Cell[83766, 1445, 636, 16, 31, "Text",
+Cell[84615, 1459, 636, 16, 51, "Text",
  CellOpen->True]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[84439, 1466, 302, 8, 48, "Section",
+Cell[85288, 1480, 302, 8, 48, "Section",
  CellOpen->True],
-Cell[84744, 1476, 214, 7, 73, "Text",
+Cell[85593, 1490, 214, 7, 73, "Text",
  CellOpen->True],
-Cell[84961, 1485, 272, 6, 34, "Text"],
-Cell[85236, 1493, 730, 26, 34, "Text",
+Cell[85810, 1499, 272, 6, 34, "Text"],
+Cell[86085, 1507, 730, 26, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[85969, 1521, 493, 17, 285, "Text"],
-Cell[86465, 1540, 275, 9, 148, "Text"],
-Cell[86743, 1551, 767, 27, 34, "Text",
+Cell[86818, 1535, 493, 17, 285, "Text"],
+Cell[87314, 1554, 275, 9, 148, "Text"],
+Cell[87592, 1565, 767, 27, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[87513, 1580, 819, 27, 34, "Text",
+Cell[88362, 1594, 819, 27, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[88335, 1609, 822, 28, 34, "Text",
+Cell[89184, 1623, 822, 28, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[89160, 1639, 344, 10, 128, "Text"],
-Cell[89507, 1651, 920, 29, 34, "Text",
+Cell[90009, 1653, 344, 10, 128, "Text"],
+Cell[90356, 1665, 920, 29, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[90430, 1682, 918, 29, 34, "Text",
+Cell[91279, 1696, 918, 29, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[91351, 1713, 898, 28, 34, "Text",
+Cell[92200, 1727, 898, 28, 34, "Text",
  Evaluatable->False,
  CellOpen->True],
-Cell[92252, 1743, 274, 6, 34, "Text"]
+Cell[93101, 1757, 274, 6, 34, "Text"]
 }, Open  ]]
 }
 ]

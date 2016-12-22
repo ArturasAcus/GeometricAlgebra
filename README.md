@@ -25,5 +25,5 @@
 - UsageExamples/xxx_ElementaryFunctions.nb (Clifford function expansions)
 - UsageExamples/xxx_Idempotents.nb (algebras idempotents)
 - UsageExamples/xxx_Blades (general blade formulas test)
-- UsageExamples/xxx_MultivectorInverse (general multivector inverses and formulas test)
+- UsageExamples/xxx_MultivectorInverse (general multivector inverses and formula test)
 - UsageExamples/xxx_MatrixRepresentations.nb (Clifford elements matrix representations)
