@@ -1,6 +1,10 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version 0.1.0.4 (2016-12-22)~
+~Version 0.2.x.x forced prerelease (2019-07-01)~
+
+**Warning**
+Example notebooks are not fully consistent with the updated package: many contains old names and invalid syntax!  
+
 
 **Quick startup**
 1. Unzip the content preserving directory structure
@@ -11,19 +15,14 @@
 - Textbook notation and precedences of products (without Mathematica palettes)
 - Algebraic operations in orthonormal frame (additive representation, symbolic coefficients)
 - Switching between multiple algebras in same Mathematica session
--  Matrix representations of Cl(p,q) algebras
+-  Matrix representations of Cl(p,q) algebras (two algorithms)
 - Idempotents with different base element sorting
-- Main involutions and general multivector inverse
+- Main involutions and general multivector inverse (n<=6)
+- Ideal and operator (Hestenes) spinors (not finished)
+- Explicit square roots of general MV in n=3
 
 **Short file description**
 - GAC_Base.nb (main file, contains installation information)
 - UnicodeCharactersAdd.tr (add-on for Mathematica system file for Linux and Mac)
 - UnicodeCharactersAddWin10.tr (add-on for Mathematica system file for Windows) 
-- UsageExamples/00_Content.nb (examples main file)
-- UsageExamples/01_Start.nb (first usage example with short introduction)
-- UsageExamples/xxx_AlgebraFormulary.nb (Clifford algebra formulary)
-- UsageExamples/xxx_ElementaryFunctions.nb (Clifford function expansions)
-- UsageExamples/xxx_Idempotents.nb (algebras idempotents)
-- UsageExamples/xxx_Blades (general blade formulas test)
-- UsageExamples/xxx_MultivectorInverse (general multivector inverses and formula test)
-- UsageExamples/xxx_MatrixRepresentations.nb (Clifford elements matrix representations)
+-

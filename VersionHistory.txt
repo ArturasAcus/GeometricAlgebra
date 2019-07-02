@@ -21,4 +21,9 @@ much faster (especially for longer symbolic multivectors).
 New example notebook 04a_MultivectorInverse.nb. 
 Tiny enhancment/bugfix of gaGetMV and gaGetGrade.
 Setup and configuration clarifications. 
- 
+
+0.2.x.x (2019.07.01)
+This is forced prerelease to support our recently submitted article about square roots.
+The package itself is working, however, the examples are not consistent
+(contains old syntax, old names of commands, etc). Wait till end of the year
+for fully consistent 0.2 release. 
