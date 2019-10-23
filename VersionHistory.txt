@@ -27,3 +27,8 @@ This is forced prerelease to support our recently submitted article about square
 The package itself is working, however, the examples are not consistent
 (contains old syntax, old names of commands, etc). Wait till end of the year
 for fully consistent 0.2 release. 
+
+0.2 (2019.10.22)
+Many new features: faster product multiplication, gaSqrt function for n=3 algebras, 
+more or less working sorting of MV, many small changes and bug fixes. All example files
+were recomputed and now should work with the package version. 
