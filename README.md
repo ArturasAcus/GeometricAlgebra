@@ -1,6 +1,6 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version 0.2 (2019-10-22)~  
+~Version 0.2 (2020-08-01)~  
 
 
 **Quick startup**
@@ -14,7 +14,7 @@
 - Switching between multiple algebras in same Mathematica session
 -  Matrix representations of Cl(p,q) algebras (two algorithms)
 - Idempotents with different base element sorting
-- Main involutions and general multivector inverse (n<=6)
+- Main involutions and general multivector inverse (preliminary realization of D. Shirokov algorithm for any dimension)
 - Ideal and operator (Hestenes) spinors (not finished)
 - Explicit square roots of general MV in n=3
 - Sorting/ordering of general MV

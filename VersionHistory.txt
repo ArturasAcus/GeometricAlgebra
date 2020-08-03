@@ -37,3 +37,5 @@ were recomputed and now should work with the package version.
 New example notebook about computation of algebraic spinors included. Expansion method 
 defaulted back to "RealTimePairProduct", since the new method has problems when coefficients are
 quaternions (problem with gaGetMVComponents[ ]).
+
+0.2.0.x (2020.08.01) Preliminary commit for ICCA12, some of examples requires modifications and my not work.
