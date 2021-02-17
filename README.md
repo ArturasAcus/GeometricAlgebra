@@ -12,12 +12,13 @@
 - Textbook notation and precedences of products (without Mathematica palettes)
 - Algebraic operations in orthonormal frame (additive representation, symbolic coefficients)
 - Switching between multiple algebras in same Mathematica session
--  Matrix representations of Cl(p,q) algebras (two algorithms)
+- Matrix representations of Cl(p,q) algebras (two algorithms)
 - Idempotents with different base element sorting
-- Main involutions and general multivector inverse (preliminary realization of D. Shirokov algorithm for any dimension)
+- Main involutions and general multivector inverse (realization of D. Shirokov algorithm for any dimension)
 - Ideal and operator (Hestenes) spinors (not finished)
-- Explicit square roots of general MV in n=3
+- Explicit square roots and exponents of general MV in n=3
 - Sorting/ordering of general MV
+- Transformation and AdjointTranformation implemented (no usage examples provided at the moment)
 
 **Short file description**
 - GA.nb (main file, contains installation information)

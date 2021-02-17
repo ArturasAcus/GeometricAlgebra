@@ -39,3 +39,8 @@ defaulted back to "RealTimePairProduct", since the new method has problems when 
 quaternions (problem with gaGetMVComponents[ ]).
 
 0.2.0.x (2020.08.01) Preliminary commit for ICCA12, some of examples requires modifications and my not work.
+
+0.2.0.9 (2021.02.17) New implementation of sqrt function of MV for n<=3 allows symbolic
+inputs. Exponents (exact formulas) for MV of algebras n<=3 were implemented.
+New option handling, user more friendly bad option detection/suggestion
+mechanism mostly implemented. Many small improvements/bug fixes.
