@@ -47,4 +47,8 @@ mechanism mostly implemented. Many small improvements/bug fixes.
 
 0.2.1.9 (2021.12.07) Exact formulas for elementary functions (sqrt, Exp, Log, hyperbolic, trigonometric (when exist)
  and their inverses for algebras n<=3 were implemented. Many small improvements/bug fixes. 
-Exampleon computing adjoint transformations included. Conference oriented notebooks removed.
+Example on computing adjoint transformations included. Conference oriented notebooks removed.
+
+0.2.4 (2022.06.10) Exact formulas for most of elementary and special functions  for arbitrary(!) algebras were implemented for diagonalizable MV using novel spectral decomposition formulas.
+Example notebook on functions was significantly extended. Number of commands renamed, some obsotete/rarely used functions moved to obsolete.nb (which have to be run separately). 
+Option handling improved (still not very convenient). Many other smaller changes and bug fixes.
