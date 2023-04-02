@@ -1,6 +1,6 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version 0.2.4 (2022-06-10)~  
+~Version 0.2.5 (2023-04-01)~  
 
 
 **Quick startup**
@@ -15,11 +15,12 @@
 - Matrix representations of Cl(p,q) algebras (two algorithms)
 - Idempotents with different base element sorting
 - Main involutions and general multivector inverse (realization of D. Shirokov algorithm for any dimension)
-- Ideal and operator (Hestenes) spinors (not finished)
+- Algebraic (ideal) and operator (Hestenes) spinors (not finished)
 - Series of elementary functions (arbitrary Cl(p,q) algebras)
 - Explicit (exact) formulas for most elementary/special functions for diagonalizable MV (arbitrary Cl(p,q) algebras, for n<=3 two independent/complementary algorithms provided) 
 - Sorting/ordering of general MV
 - Transformation and AdjointTranformation for linear transformations
+- Clifford algebra on tangent bundle (early development stage)
 
 **Short file description**
 - GA.nb (main file, contains installation information)

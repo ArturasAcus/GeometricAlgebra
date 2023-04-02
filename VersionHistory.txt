@@ -52,3 +52,6 @@ Example on computing adjoint transformations included. Conference oriented noteb
 0.2.4 (2022.06.10) Exact formulas for most of elementary and special functions  for arbitrary(!) algebras were implemented for diagonalizable MV using novel spectral decomposition formulas.
 Example notebook on functions was significantly extended. Number of commands renamed, some obsotete/rarely used functions moved to obsolete.nb (which have to be run separately). 
 Option handling improved (still not very convenient). Many other smaller changes and bug fixes.
+
+0.2.5 (2023.04.01) Start of implementation of Clifford algebra on tangent space. At the moment one can set the coordinate system, multiply basis elements and compute very limited set of properties. 
+Many bug fixes: in particular correction of Log for Cl(3,0) for one very specific case. Few new small functions.
