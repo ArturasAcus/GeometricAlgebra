@@ -55,3 +55,6 @@ Option handling improved (still not very convenient). Many other smaller changes
 
 0.2.5 (2023.04.01) Start of implementation of Clifford algebra on tangent space. At the moment one can set the coordinate system, multiply basis elements and compute very limited set of properties. 
 Many bug fixes: in particular correction of Log for Cl(3,0) for one very specific case. Few new small functions.
+
+
+(2023.04.23) Further development of derivative operators. This part is yet to change significantly. Many bugs expected
