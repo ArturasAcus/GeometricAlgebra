@@ -1,6 +1,6 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version 0.2.5 (2023-04-01)~  
+~Version (2023-06-19)~  
 
 
 **Quick startup**

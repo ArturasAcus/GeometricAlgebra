@@ -58,3 +58,5 @@ Many bug fixes: in particular correction of Log for Cl(3,0) for one very specifi
 
 
 (2023.04.23) Further development of derivative operators. This part is yet to change significantly. Many bugs expected
+
+(2023.06.19) Linking to notebooks was made working under user request. Many bugs expected.
