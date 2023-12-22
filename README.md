@@ -1,6 +1,6 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version (2023-06-19)~  
+~Version (2023-12-22)~  
 
 
 **Quick startup**
@@ -20,7 +20,7 @@
 - Explicit (exact) formulas for most elementary/special functions for diagonalizable MV (arbitrary Cl(p,q) algebras, for n<=3 two independent/complementary algorithms provided) 
 - Sorting/ordering of general MV
 - Transformation and AdjointTranformation for linear transformations
-- Clifford algebra on tangent bundle (early development stage)
+- Clifford calculus (directional and vector derivatives) in  arbitrary signature flat space
 
 **Short file description**
 - GA.nb (main file, contains installation information)
