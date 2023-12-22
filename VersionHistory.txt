@@ -61,4 +61,5 @@ Many bug fixes: in particular correction of Log for Cl(3,0) for one very specifi
 
 (2023.06.19) Linking to notebooks was made working under user request. Many bugs expected.
 
-(2023.12.22) Half year progress update. Now $Pre is clear and all input cheking is implemented in $Preread alone. Directional and vector derivatives functions acting in Cartessian arbitrary signature sapce now are rather well tested. Many small fixes.
+(2023.12.22) Half year progress update. Now $Pre is clear and all input cheking is implemented in $Preread alone. Directional and vector derivatives functions acting 
+in Cartessian arbitrary signature sapce now are rather well tested. Many small fixes.

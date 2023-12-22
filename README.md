@@ -26,4 +26,3 @@
 - GA.nb (main file, contains installation information)
 - UnicodeCharactersAdd.tr (add-on for Mathematica system file for Linux and Mac)
 - UnicodeCharactersAddWin10.tr (add-on for Mathematica system file for Windows) 
--
