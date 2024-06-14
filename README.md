@@ -1,6 +1,6 @@
 # GeometricAlgebra
 *Mathematica* package for Clifford (geometric) algebra calculations
-~Version (2023-12-22)~  
+~Version (2024-06-14)~  
 
 
 **Quick startup**
@@ -11,18 +11,18 @@
 **Main features**
 - Textbook notation and precedences of products (without Mathematica palettes)
 - Algebraic operations in orthonormal frame (additive representation, symbolic coefficients)
-- Switching between multiple algebras in the same Mathematica session
+- Multiple algebras in the same Mathematica session
 - Matrix representations of Cl(p,q) algebras (two algorithms)
-- Idempotents with different base element sorting
-- Main involutions and general multivector inverse (realization of D. Shirokov algorithm for any dimension)
+- Idempotents with different basis sorting
+- Main involutions and general multivector inverse
 - Algebraic (ideal) and operator (Hestenes) spinors (not finished)
-- Series of elementary functions (arbitrary Cl(p,q) algebras)
-- Explicit (exact) formulas for most elementary/special functions for diagonalizable MV (arbitrary Cl(p,q) algebras, for n<=3 two independent/complementary algorithms provided) 
+- Series of elementary functions of Cl(p,q) (one MV argument functions only) 
+- Functions for MV (arbitrary Cl(p,q) algebras) 
 - Sorting/ordering of general MV
 - Transformation and AdjointTranformation for linear transformations
-- Clifford calculus (directional and vector derivatives) in  arbitrary signature flat space
+- Clifford calculus (directional and vector derivatives) in arbitrary signature flat space
 
 **Short file description**
 - GA.nb (main file, contains installation information)
 - UnicodeCharactersAdd.tr (add-on for Mathematica system file for Linux and Mac)
-- UnicodeCharactersAddWin10.tr (add-on for Mathematica system file for Windows) 
+- UnicodeCharactersAddWin10.tr (add-on for Mathematica system file for Windows)

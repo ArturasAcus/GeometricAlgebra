@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     91306,       1830]
+NotebookDataLength[     91308,       1830]
 NotebookOptionsPosition[     88019,       1749]
-NotebookOutlinePosition[     88899,       1779]
-CellTagsIndexPosition[     88856,       1776]
+NotebookOutlinePosition[     88901,       1779]
+CellTagsIndexPosition[     88858,       1776]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1752,7 +1752,7 @@ ScreenStyleEnvironment->"Working",
 WindowToolbars->{},
 Evaluator->"Local",
 WindowSize->{993.75, 1122.},
-WindowMargins->{{96, Automatic}, {Automatic, 6.75}},
+WindowMargins->{{21, Automatic}, {Automatic, 131.25}},
 PrintingOptions->{"FacingPages"->True,
 "PrintCellBrackets"->True,
 "PrintMultipleHorizontalPages"->True,

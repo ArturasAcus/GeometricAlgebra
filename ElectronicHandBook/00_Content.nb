@@ -1,0 +1,660 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23253,        652]
+NotebookOptionsPosition[     20415,        582]
+NotebookOutlinePosition[     21299,        612]
+CellTagsIndexPosition[     21256,        609]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {
+    GraphicsBox[{GraphicsComplexBox[CompressedData["
+1:eJxd102ITWEYwPGbZGFFzMaObBVZWIh3oWgkC8nXhnxshBELYZRmR2jSNAuK
+U2QlamKIt6YmkzJRRs2MhjsfivWUDQu599x+b73v7U7Tr9M55/7vnea5z9rj
+PftOLWk0Gn9aP+3fV1c/2zV/ZSA06sfcyLJ3Tyb6Lz5P/rX97fXp/W+Sf95e
+uef3pdHkQ71jB3vH3id/OH35xNJVH5MfPB3csnPj5+SpR+e3LZ/6krzi/u4d
+n65NJnffXd96fk3uu/Fv74HxmeT2q1lzoZn8d+vhDT235pLru83OJ2+uHz+S
+9X4bPjvTeqZe1st6WS/rZb2sl/WyXtbLelkv62W9rPd1zcnUy3pZL+tlvayX
+9bJe1st6WS/rZb2sl/UOtG/TPZF6WS/rZb2sl/WyXtbLelkv62W9rJf1st7Z
++vMeT72sl/WyXtbLelkv62W9rJf1sl7Wy3pZ72DdP5p6WS/rZb2sl/WyXtbL
+elkv62W9rJf1st57tYdSL+tlvayX9bJe1st6WS/rZb2sl/WyXs7nURXzeVTF
+fB5VMZ9HVcznURXzeVTFfB5VMZ9HVcznURXzeVTFfB5VMZ9HVcznURXzeVTF
+fB5VUe/NTn/Qy3pZL+tlvayX9bJe1st6WS/rZb2sl/Xe6fx9p17Wy3pZL+tl
+vayX9bJe1st6WS/rZb2sd6rz/yv1sl7Wy3pZL+tlvayX9bJe1st6WS/rZb39
+nfmUelkv62W9rJf1sl7Wy3pZL+tlvayX9bLeF53vH6mX9bJe1st6WS/rZb2s
+l/WyXtbLelkv653ufL9MvayX9bJe1st6WS/rZb2sl/WyXtbLernYj0KxH4Vi
+PwrFfhSK/SgU+1Eo9qNQ7Eeh2I9SLxf7USj2o1DsR6HYj0I+j+bCujrocTjX
+rh/+nuYxn3wZN/XdWEh2Pjv/TMfp/WPnly7vb18rjo8Ux9Prd71ji11HF7se
+hlf1x9ccaX0YQ0eaC8mOdz7eZnCcvd7yfPd3fnl/5xfH0/vjeq5f3t/1/gMq
+O1pF
+       "], {
+        {GrayLevel[0.8], EdgeForm[None], 
+         GraphicsGroupBox[PolygonBox[CompressedData["
+1:eJwBCQX2+iFib1JiAgAAAKgBAAADAAAA4gIRFQUGEgIDEwMEFgYHFwcIGgoL
+HAwNGAgJGQkKFAQFKhobGwsMKRkaIxMUIBARIRESJBQVJRUWKBgZ7+XkJhYX
+JxcYHQ0OKxscLBwdPy8wRzc4MSEiLR0eMiIjNCQlNycoMyMkNSUmNiYnLx8g
+MCAhOCgpOSkqQDAxPCwtPi4vQTEyIhITQjIzRDQ1OiorOyssQzM0RTU2gHBx
+RjY3f29wTj4/Sjo7Szs8Tz9AUEBBU0NEVUVGUUFCUkJDTT0+Y1NUVERFYlJT
+XExNWEhJWUlKXU1OXk5PYVFSV0dIX09QYFBRVkZHZFRVZVVWd2doSTk6aVla
+ZlZXa1tcbV1ecGBhbFxdbl5fb19gZ1dYaFhZcWFicmJjeGhpdWVmdmZnempr
+SDg5e2tsfW1uc2NkdGRlfGxtfm5vWkpLgXFyzb2+hnZ3g3N0hHR1nIyNh3d4
+inp7i3t8jHx9jX1+hXV2iXl6jn5/kICBlYWGkoKDk4OEloaHmIiJm4uMkYGC
+mYmKmoqLj3+A8PjnnY2On4+Qo5OUoJCRoZGSno6PpJSVp5eYqJiZqZmaqpqb
+opKTq5ucrJydrZ2er5+gsKChsaGisqKjlISFs6OkuKiprp6ftqant6eotKSl
+gnJzuamqu6uswLCxva2uvq6vwbGywrKzxra3yLi5w7O0xbW2v6+w1sbHx7e4
+1cXGzr6/y7u8zLy9z7/A0MDB5sXUyrq70cHC0sLDybm618fI2MjJCBgXvKyt
+3MzN2cnK3c3O38/Q4+IQ3s7P4NDR7ejS2srL28vMAhIRAxMSCRkYBhYVBxcW
+ChoZuqqrCxsaDR0cBBQTBRUUDBwb5B0OECAfESEgEiIhFCQjFSUkFiYlFycm
+GCgnGSkoGiopGysqHCwrHS0sHy8uIDAvITEwIjIxIzMyJDQzJTU0JjY1Jzc2
+KDg3KTk4Kjo5Kzs6LDw7Lj49Lz8+M0NCMEA/MUFASVlYNERDNkZFN0dGOEhH
+OUlIMkJBOkpJO0tKPU1MP09OQFBPQVFQQlJRSFhXQ1NSR1dWPk5NRVVURlZV
+RFRTNUVESlpZbn59TV1cTl5dT19eUGBfUWFgUmJhU2NiVGRjVWVkVmZlV2dm
+WGhnWWloW2tqXGxrXW1sXm5tX29uYHBvYXFwYnJxY3NyZHRzZXV0ZnZ1Z3d2
+bHx7aHh3anp5TFxbbX18b39+cIB/cYGAcoKBa3t6c4OCdISDdYWEd4eGeYmI
+eoqJe4uKgZGQfIyLgJCPdoaFfo6Nf4+OfY2MEyMigpKRhJSTiZmYhZWUhpaV
+ipqZi5uajp6dkKCfjJybjZ2ciJiXnq6tj5+ena2sl6emk6OilKSjmKinmamo
+nKyrkqKhmqqpm6uqkaGgn6+uoLCvssLBu8vKpLSzobGwpra1qLi3q7u6p7e2
+qbm4qrq5orKxo7OyrLy7rb28s8PCsMC/scHAtcXElaWktsbFuMjHrr69r7++
+t8fGucnIusrJvMzLg5OSwdHQvs7Nv8/OwtLR8Ofmx9fWydnYxdXUxtbVwNDP
+yNjXytrZ6+QOzNzbzd3czt7dz9/eHeQe0ODf8u7jy9va7uriEOIR6ODRpZWW
+5OUe+fHhvc3M8eno7ObU6Ong8+/r9u4B4uoC9PDs9fHt5ufE0ujR4+7i9+8P
+7vIB7PDm7fHo7/MPxebE8PTT7vbq6+/k+PDT8fXh7/fl8fnpl2heKQ==
+           "]]]}, {}, {}, {}, {}},
+       VertexColors->CompressedData["
+1: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
+        "]], 
+      StyleBox[
+       InsetBox["\<\"A.Dargys and A.Acus, \\\"Multivector \
+handbook\\\"\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\"Italic\\\"]\\)\"\
+\>", {0, 0.2}, {-1.25, 1.5}],
+       StripOnInput->False,
+       FontFamily->"Arial",
+       FontSize->20,
+       FontWeight->Bold], 
+      StyleBox[InsetBox["\<\"electronic supplement\"\>", {0, 0.2}, {-9, 4}],
+       StripOnInput->False,
+       FontFamily->"Arial",
+       FontSize->18,
+       FontWeight->Bold]},
+     AspectRatio->NCache[
+       Rational[1, 15], 0.06666666666666667],
+     AxesLabel->{None, None},
+     DisplayFunction->Identity,
+     FrameLabel->{{None, None}, {None, None}},
+     FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+     GridLinesStyle->Directive[
+       GrayLevel[0.5, 0.4]],
+     ImageSize->{1400, 140},
+     Method->{
+      "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> Automatic, 
+       "ScalingFunctions" -> None},
+     PlotRange->{{0.02, 0.6}, {-0.5, 0.5}},
+     PlotRangeClipping->True,
+     PlotRangePadding->{{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.02]}},
+     Ticks->{Automatic, Automatic}]},
+   {
+    RowBox[{"\t\t", 
+     RowBox[{
+      ButtonBox["Content",
+       Appearance->{Automatic, "DialogBox"},
+       BaseStyle->"Hyperlink",
+       ButtonData:>{"00_Content.nb", None},
+       ButtonNote->"Multivector handbook"], "\t\t", 
+      ButtonBox[
+       RowBox[{"Next", " ", "notebook"}],
+       Appearance->{Automatic, "DialogBox"},
+       BaseStyle->"Hyperlink",
+       ButtonData:>{"01_StartAlgebra.nb", None},
+       ButtonNote->"Next notebook"]}]}]}
+  },
+  GridBoxItemSize->{
+   "Columns" -> {{All}}, "ColumnsIndexed" -> {}, "Rows" -> {{0}}, 
+    "RowsIndexed" -> {}},
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.27999999999999997`], {
+       Offset[0.5599999999999999]}, 
+      Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[-0.8]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}}]],
+ Editable->False,
+ PageWidth->DirectedInfinity[1],
+ ShowCellBracket->True,
+ CellMargins->{{-30, 0}, {0, 0}},
+ Deployed->True,
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ ShowCellLabel->False,
+ CellChangeTimes->{3.674888404214503*^9},
+ FontFamily->"Verdana",
+ FontSize->14,
+ Background->RGBColor[
+  0.9882352941176471, 0.7725490196078432, 
+   1.],ExpressionUUID->"bd3d971b-ae2c-4fb2-91bd-1fd9c303558a"],
+
+Cell[CellGroupData[{
+
+Cell["Electronic  version, 2024-06-14", "Section",
+ CellFrame->False,
+ CellDingbat->None,
+ CellOpen->True,ExpressionUUID->"fcebd6a5-ed89-4282-9c90-7c7a41ecd51a"],
+
+Cell[TextData[{
+ "Division into chapter/sections etc. in  match the  text version (not \
+shared). Electronic version also contains some  additional notebooks, which \
+covers some Geometric algebra package (GA.nb) usage topics (not relevant for \
+handbook). These can be distinguished by light blue hyperlink color and \
+absent text handbook chapter number (N/A) in the contents. Notebooks that \
+match handbook version are slightly shortened, some notations here will \
+differ (because of different ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "31f1213b-218e-4c90-a9ab-10436ebf51e9"],
+ "/Mathematica typing capabilities and because here we want to stress \
+computational aspects). In particular, computation cells (which are absent in \
+the textbook) are ... Footnotes of text book are moved out of sentence and \
+indicated by light blue background.  Notes. Most of hyperlinks don\
+\[CloseCurlyQuote]t work at this development stage. Don\[CloseCurlyQuote]t \
+try to edit cells with ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "60b45edc-d933-4c9c-9bdc-3845b8264a49"],
+ " content: the Mathematica system files were locally modified and in most \
+cases content will be corrupted. "
+}], "Text",ExpressionUUID->"0a480c9d-11b6-4238-af65-afa602506121"],
+
+Cell[TextData[StyleBox["Contents",
+ FontFamily->"Britannic Bold",
+ FontSize->36,
+ FontWeight->"Bold"]], "Text",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellOpen->True,
+ TextAlignment->Left,
+ FontColor->RGBColor[
+  0, 0, 0.500008],ExpressionUUID->"76399338-54ef-4c51-b4ac-44d9e8dac1d6"],
+
+Cell["Part I, Algebra", "Text",
+ CellChangeTimes->{{3.896146843071602*^9, 3.896146849766114*^9}, {
+  3.896151417739955*^9, 3.896151426130661*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ FontColor->RGBColor[
+  1, 0, 1],ExpressionUUID->"74e419f0-34eb-488f-a323-a92bf68254e8"],
+
+Cell[TextData[{
+ StyleBox[" Text book chapter  ",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["Computation notebook(s) devoted to that chapter",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontWeight->Bold,
+  FontColor->RGBColor[0.2, 0.2, 0.5]],
+ "\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"91615232-498d-4b18-8ca4-bb0963b9b469"],
+
+Cell[TextData[{
+ StyleBox[" N/A",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["01-NA_StartAlgebra.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"01-NA_StartAlgebra.nb", None},
+  ButtonNote->"01-NA_StartAlgebra.nb"],
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ "\t\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"92a3f6ec-ebd9-4e12-b64b-c170f85d0014"],
+
+Cell[TextData[{
+ StyleBox[" 1",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["Introduction.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"Intro.nb", None},
+  ButtonNote->"Intro.nb"],
+  FontWeight->"Bold"],
+ "\t\t(absent)"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"7dddbf7f-7076-4eb5-8cc3-98febd20eb39"],
+
+Cell[TextData[{
+ StyleBox[" 2",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["02-01-1_BasicDefinitionsInGeometricAlgebra.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"02-01-1_BasicDefinitionsInGeometricAlgebra.nb", None},
+  ButtonNote->"02-01-1_BasicDefinitionsInGeometricAlgebra.nb"],
+  FontWeight->"Bold"],
+ "\t\t\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"d9e7a41f-b749-46e5-9a20-62e4379ff977"],
+
+Cell[TextData[{
+ StyleBox[" 3",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["02-02-1_VectorsAndBivectors.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"02-02-1_VectorsAndBivectors.nb", None},
+  ButtonNote->"02-02-1_VectorsAndBivectors.nb"],
+  FontWeight->"Bold"],
+ "\t\t\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"dce46648-6d6b-4747-beee-9db8750ca60b"],
+
+Cell[TextData[{
+ StyleBox[" 4",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["03-03-1_BladesAndMultivectors.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"03-03-1_BladesAndMultivectors.nb", None},
+  ButtonNote->"03-03-1_BladesAndMultivectors.nb"],
+  FontWeight->"Bold"],
+ "\t\t(not finished)\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"e9577c9d-92e3-4b50-b8b0-19417adc5091"],
+
+Cell["Part II, Calculus", "Text",
+ CellChangeTimes->{{3.896151313490958*^9, 3.896151318933838*^9}, {
+  3.89615142873294*^9, 3.896151431093603*^9}},
+ TextAlignment->Center,
+ FontSize->18,
+ FontColor->RGBColor[
+  1, 0, 1],ExpressionUUID->"437a25d4-43c5-445f-b072-6877224dde70"],
+
+Cell[TextData[{
+ StyleBox[" N/A",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["11-NA_StartCalculus.nb.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"11-NA_StartCalculus.nb", None},
+  ButtonNote->"11-NA_StartCalculus.nb"],
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ "\t\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"14ea2f6b-758c-4746-88aa-1d0eb361929a"],
+
+Cell[TextData[{
+ StyleBox[" 10",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["10-10-1_DifferentiationByScalar.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"10-10-1_DifferentiationByScalar.nb", None},
+  ButtonNote->"10-10-1_DifferentiationByScalar.nb"],
+  FontWeight->"Bold"],
+ "\t\t(not ready)\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"2b0aa5da-9a40-47d2-84f1-c21887851f5f"],
+
+Cell[TextData[{
+ StyleBox[" 11",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["11-11-1_DifferentiationByVector.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"11-11-1_DifferentiationByVector.nb", None},
+  ButtonNote->"11-11-1_DifferentiationByVector.nb"],
+  FontWeight->"Bold"],
+ "\t\t\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"f54ecf34-ef23-4654-b36d-baf0d7728862"],
+
+Cell[TextData[{
+ StyleBox[" 11",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["11-11-2_DifferentiationByVector.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"11-11-2_DifferentiationByVector.nb", None},
+  ButtonNote->"11-11-2_DifferentiationByVector.nb"],
+  FontWeight->"Bold"],
+ "\t\t\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"a2476164-716c-44cf-b671-968bcdb75706"],
+
+Cell[TextData[{
+ StyleBox[" 14",
+  FontFamily->"Arial",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\t",
+  FontSize->18],
+ StyleBox[ButtonBox["12-12-1_DifferentiationByMultiVector.nb",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{"12-12-1_DifferentiationByMultiVector.nb", None},
+  ButtonNote->"12-12-1_DifferentiationByMultiVector.nb"],
+  FontWeight->"Bold"],
+ "\t\t(not ready)\t"
+}], "Text",
+ Evaluatable->False,
+ CellOpen->True,
+ FontFamily->"Times New Roman",
+ FontWeight->"Plain",
+ FontSlant->"Plain",
+ FontTracking->"Plain",
+ FontVariations->{"Outline"->False,
+ "Shadow"->False,
+ "Underline"->False},
+ FontColor->GrayLevel[0],
+ Background->GrayLevel[
+  1],ExpressionUUID->"a3eca6b3-e210-4764-a92e-c9aaa3089ebd"]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+ScreenStyleEnvironment->"Working",
+WindowToolbars->{},
+Evaluator->"Local",
+WindowSize->{993.75, 1122.},
+WindowMargins->{{38.25, Automatic}, {Automatic, 28.5}},
+PrintingOptions->{"FacingPages"->True,
+"PrintCellBrackets"->True,
+"PrintMultipleHorizontalPages"->True,
+"PrintRegistrationMarks"->False,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+ShowCellLabel->True,
+ShowCellTags->False,
+CounterBoxOptions->{CounterFunction:>RomanNumeral},
+FrontEndVersion->"14.0 for Linux x86 (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"1944cbe5-f513-4838-bc80-6f7187aa16fd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 9530, 193, 176, InheritFromParent,ExpressionUUID->"bd3d971b-ae2c-4fb2-91bd-1fd9c303558a"],
+Cell[CellGroupData[{
+Cell[10113, 217, 161, 3, 62, "Section",ExpressionUUID->"fcebd6a5-ed89-4282-9c90-7c7a41ecd51a",
+ CellOpen->True],
+Cell[10277, 222, 1616, 34, 181, "Text",ExpressionUUID->"0a480c9d-11b6-4238-af65-afa602506121"],
+Cell[11896, 258, 276, 8, 74, "Text",ExpressionUUID->"76399338-54ef-4c51-b4ac-44d9e8dac1d6",
+ CellOpen->True],
+Cell[12175, 268, 274, 6, 38, "Text",ExpressionUUID->"74e419f0-34eb-488f-a323-a92bf68254e8"],
+Cell[12452, 276, 622, 23, 39, "Text",ExpressionUUID->"91615232-498d-4b18-8ca4-bb0963b9b469",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[13077, 301, 695, 26, 39, "Text",ExpressionUUID->"92a3f6ec-ebd9-4e12-b64b-c170f85d0014",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[13775, 329, 637, 25, 39, "Text",ExpressionUUID->"7dddbf7f-7076-4eb5-8cc3-98febd20eb39",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[14415, 356, 735, 25, 39, "Text",ExpressionUUID->"d9e7a41f-b749-46e5-9a20-62e4379ff977",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[15153, 383, 690, 25, 39, "Text",ExpressionUUID->"dce46648-6d6b-4747-beee-9db8750ca60b",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[15846, 410, 710, 25, 39, "Text",ExpressionUUID->"e9577c9d-92e3-4b50-b8b0-19417adc5091",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[16559, 437, 275, 6, 38, "Text",ExpressionUUID->"437a25d4-43c5-445f-b072-6877224dde70"],
+Cell[16837, 445, 701, 26, 39, "Text",ExpressionUUID->"14ea2f6b-758c-4746-88aa-1d0eb361929a",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[17541, 473, 714, 25, 39, "Text",ExpressionUUID->"2b0aa5da-9a40-47d2-84f1-c21887851f5f",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[18258, 500, 703, 25, 39, "Text",ExpressionUUID->"f54ecf34-ef23-4654-b36d-baf0d7728862",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[18964, 527, 703, 25, 39, "Text",ExpressionUUID->"a2476164-716c-44cf-b671-968bcdb75706",
+ Evaluatable->False,
+ CellOpen->True],
+Cell[19670, 554, 729, 25, 39, "Text",ExpressionUUID->"a3eca6b3-e210-4764-a92e-c9aaa3089ebd",
+ Evaluatable->False,
+ CellOpen->True]
+}, Open  ]]
+}
+]
+*)
+
