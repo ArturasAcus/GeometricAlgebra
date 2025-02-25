@@ -61,8 +61,13 @@ Many bug fixes: in particular correction of Log for Cl(3,0) for one very specifi
 
 (2023.06.19) Linking to notebooks was made working under user request. Many bugs expected.
 
-(2023.12.22) Half year progress update. Now $Pre is clear and all input cheking is implemented in $Preread alone. Directional and vector derivatives functions acting 
-in Cartessian arbitrary signature space now are rather well tested. Many small fixes.
+(2023.12.22) Half year progress update. Now $Pre is clear and all input checking is implemented in $Preread alone. Directional and vector derivatives functions acting 
+in Cartesian arbitrary signature space now are rather well tested. Many small fixes.
 
 (2024.06.14) Half year progress update. Function of multivector now can compute with non-diagonalizible (defective) multivectors. Started to add
 handbook text with verifications (eventually they should replace most of example notebooks).
+
+(2025.02.25) More than half year update. Started to introduce non commutative
+coefficients that can multiply MVs. This required reworking of a number of core
+functions, so many bugs/inconsistencies expected. Computation of functions of
+non-diagonalizable MVs was improved.
