@@ -71,3 +71,5 @@ handbook text with verifications (eventually they should replace most of example
 coefficients that can multiply MVs. This required reworking of a number of core
 functions, so many bugs/inconsistencies expected. Computation of functions of
 non-diagonalizable MVs was improved.
+
+(2025.03.22) Many bug fixes only. Now most of notebooks were checked to work more or less properly. 
