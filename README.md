@@ -22,6 +22,7 @@
 - Transformation and AdjointTranformation for linear transformations
 - Clifford calculus (directional and vector derivatives) in arbitrary signature flat space
 - Attempt to introduce non-commutative coefficients for calculations with Clifford algebra 
+- Attempt to introduce commutative geometric product
 
 **Short file description**
 - GA.nb (main file, contains installation information)

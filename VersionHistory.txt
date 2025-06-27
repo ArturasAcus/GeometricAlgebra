@@ -73,3 +73,5 @@ functions, so many bugs/inconsistencies expected. Computation of functions of
 non-diagonalizable MVs was improved.
 
 (2025.03.22) Many bug fixes only. Now most of notebooks were checked to work more or less properly. 
+
+(2025.06.20) Half year update. New commutative geometric product introduced but not yet integrated. Starting documentation for well established commands.  

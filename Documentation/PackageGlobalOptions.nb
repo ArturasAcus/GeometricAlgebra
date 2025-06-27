@@ -1,0 +1,952 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     40298,        944]
+NotebookOptionsPosition[     30991,        739]
+NotebookOutlinePosition[     35916,        848]
+CellTagsIndexPosition[     35576,        834]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Package global option description/Unfinished", "Title",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{
+  3.9537206672030573`*^9, {3.953803531812572*^9, 3.953803535077985*^9}, {
+   3.954388083954179*^9, 3.954388087816832*^9}, {3.958018353883727*^9, 
+   3.958018366154307*^9}, {3.9581217919364777`*^9, 3.958121794419083*^9}, {
+   3.9589519789076023`*^9, 3.958951991415081*^9}, {3.958952273420258*^9, 
+   3.958952276021482*^9}, {3.9589534175993023`*^9, 3.958953424082069*^9}},
+ CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+ CellID->551670664,ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5"],
+
+Cell[TextData[{
+ "Describes available global settings of GA.nb package in more details  ",
+ StyleBox["(2025-06-16)",
+  FontSize->16]
+}], "Text",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{
+  3.95372067069228*^9, {3.958038859437345*^9, 3.958038879098184*^9}, {
+   3.958039383396599*^9, 3.958039383718432*^9}, {3.958093118264441*^9, 
+   3.958093118902988*^9}, {3.9581218075234423`*^9, 3.958121813353311*^9}, {
+   3.958951999856927*^9, 3.9589520388723707`*^9}, {3.959047316070031*^9, 
+   3.959047316900627*^9}},
+ CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
+ CellID->167819324,ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646"],
+
+Cell[CellGroupData[{
+
+Cell["gaCompileTo", "Section",
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "Documentation"},
+ CellChangeTimes->{{3.958952079019672*^9, 3.958952084589727*^9}, 
+   3.9589521205380898`*^9, {3.959046795676128*^9, 3.959046795956205*^9}},
+ CellTags->{"Documentation", "TemplateSection"},
+ CellID->109475398,ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9"],
+
+Cell[TextData[{
+ "Setting  gaCompileTo\[Rule]\[OpenCurlyDoubleQuote]WVM\
+\[CloseCurlyDoubleQuote]|\[OpenCurlyDoubleQuote]C\[CloseCurlyDoubleQuote]  \
+determines compilation of some signature functions. Value  \
+\[OpenCurlyDoubleQuote]WVM\[CloseCurlyDoubleQuote] (default) compiles to  \
+Wolfram virtual machine code (bytecode) , the value \[CloseCurlyDoubleQuote]C\
+\[CloseCurlyDoubleQuote] to the binary code. Compilation to binary code takes \
+package far longer to load and the speed gain is minimal.  This option may be \
+removed in future to save some space.  In particular, the following internal \
+functions are compiled: ",
+ Cell[BoxData[
+ "mvIndexToBinaryLikeRepresentationC"], "Input",ExpressionUUID->
+  "613e7375-9d39-4464-bcdb-01bc8bac2e05"],
+ " (convert index set to binary like representations by inserting zeroes in \
+proper places), ",
+ Cell[BoxData[
+ "mvMu"], "Input",ExpressionUUID->"52fa38c3-c428-4db1-af60-4b4582649e9a"],
+ " (Counts  elements of subset j that are greater than nonnegative integer i. \
+j is subset of natural numbers),  ",
+ Cell[BoxData["mvMuS"], "Input",
+  CellGroupingRules->{GroupTogetherGrouping, 10001.},ExpressionUUID->
+  "f7f3f9ce-b003-49e0-8024-e997dfcb79ec"],
+ " (Counts total number of  elements of subset j that are greater of  each of \
+integers, listed in the list i), ",
+ Cell[BoxData["mvProductSignatureMapC"], "Input",
+  CellGroupingRules->{GroupTogetherGrouping, 10000.},ExpressionUUID->
+  "d8ad0a95-4d4d-4020-ae47-f9fe018e6910"],
+ " (GeometricProduct signature map), ",
+ Cell[BoxData["mvAltProductSignatureMapC"], "Input",
+  Evaluatable->False,
+  CellGroupingRules->{GroupTogetherGrouping, 10002.},ExpressionUUID->
+  "a3d80c51-dcfc-4113-a46f-32a8680f56b3"],
+ " (alternating product signature map, unused at the moment), ",
+ Cell[BoxData["mvAntisymmetricProductSignatureMapC"], "Input",
+  CellGroupingRules->{GroupTogetherGrouping, 10003.},ExpressionUUID->
+  "bf13115c-5538-4746-9963-63518c3b7f2e"],
+ " (OuterProduct signature map), ",
+ Cell[BoxData["commProductSignatureMapC"], "Input",
+  CellGroupingRules->{"GroupTogetherGrouping", 10002.},ExpressionUUID->
+  "b9842e01-2d2c-433b-bf62-8eaef9f33ee4"],
+ " (commutative geometric product signature map)"
+}], "Text",
+ CellChangeTimes->{{3.958952145561288*^9, 3.958952190266382*^9}, {
+  3.9589527806087837`*^9, 3.9589528806061373`*^9}, {3.958952980032202*^9, 
+  3.958953038595187*^9}, {3.9589530736992893`*^9, 3.9589533015926037`*^9}, {
+  3.9589533324531593`*^9, 3.9589533513763227`*^9}, {3.9590472826474733`*^9, 
+  3.959047282699853*^9}},
+ CellID->251727735,ExpressionUUID->"05837727-ef00-4e43-99de-d479d554949e"],
+
+Cell["\<\
+In order to use \[OpenCurlyDoubleQuote]C\[CloseCurlyDoubleQuote] compilation \
+target C compiler should be installed. \
+\>", "Text",
+ CellChangeTimes->{{3.958953517023939*^9, 3.958953577966333*^9}},
+ CellID->844253449,ExpressionUUID->"c8bd7bed-46df-4553-aec0-239450ae5836"],
+
+Cell[CellGroupData[{
+
+Cell["How to test whether compilation to C works properly", "Subsubsection",
+ CellID->878142032,ExpressionUUID->"480c6f21-09a7-487f-8b7f-fba6645027df"],
+
+Cell["\<\
+The speed of base elements products slightly depends on compilation type.  In \
+order to make decision make cells below evaluatable. First, test what C \
+compilers are available in your system. By default on Windows external \
+compilers are absent.\
+\>", "Text",
+ CellID->582826928,ExpressionUUID->"102f643c-ae4e-47b9-b834-66fc353186c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"<<", "CCompilerDriver`"}], "\n", 
+ RowBox[{"CCompilers", "[", "]"}]}], "Input",
+ Evaluatable->False,
+ CellID->882897408,ExpressionUUID->"9073a541-37ff-4e9b-a715-d76333a33e3e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"GCC\"\>"}], ",", 
+     RowBox[{"\<\"Compiler\"\>", "\[Rule]", 
+      "CCompilerDriver`GCCCompiler`GCCCompiler"}], ",", 
+     RowBox[{"\<\"CompilerInstallation\"\>", "\[Rule]", "\<\"/usr/bin\"\>"}], 
+     ",", 
+     RowBox[{"\<\"CompilerName\"\>", "\[Rule]", "Automatic"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"GCC\"\>"}], ",", 
+     RowBox[{"\<\"Compiler\"\>", "\[Rule]", 
+      "CCompilerDriver`GCCCompiler`GCCCompiler"}], ",", 
+     RowBox[{"\<\"CompilerInstallation\"\>", 
+      "\[Rule]", "\<\"/usr/bin/X11\"\>"}], ",", 
+     RowBox[{"\<\"CompilerName\"\>", "\[Rule]", "Automatic"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellID->304455665,ExpressionUUID->"2d928dc7-8941-4419-8d1c-ad7931842846"]
+}, Open  ]],
+
+Cell["\<\
+If you get nonempty list,  then try to compile trivial function. The output \
+should be CompiledFunction[ ].\
+\>", "Text",
+ CellID->1665919107,ExpressionUUID->"dd7f12d8-51df-420c-afff-5087404d0ca3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Compile", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "_Real"}], "}"}], "}"}], ",", "x", ",", 
+    RowBox[{"CompilationTarget", "\[Rule]", "\"\<C\>\""}]}], "]"}], "//", 
+  "FullForm"}]], "Input",
+ Evaluatable->False,
+ CellID->711248515,ExpressionUUID->"aff64d8f-257e-47d8-9855-afa10c99bac1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"CompiledFunction", "[", 
+    RowBox[{
+     RowBox[{"List", "[", 
+      RowBox[{"10", ",", "10.3`", ",", "5468"}], "]"}], ",", 
+     RowBox[{"List", "[", 
+      RowBox[{"Blank", "[", "Real", "]"}], "]"}], ",", 
+     RowBox[{"List", "[", 
+      RowBox[{
+       RowBox[{"List", "[", 
+        RowBox[{"3", ",", "0", ",", "0"}], "]"}], ",", 
+       RowBox[{"List", "[", 
+        RowBox[{"3", ",", "0", ",", "0"}], "]"}]}], "]"}], ",", 
+     RowBox[{"List", "[", "]"}], ",", 
+     RowBox[{"List", "[", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "0", ",", "0"}], "]"}], ",", 
+     RowBox[{"List", "[", 
+      RowBox[{"List", "[", "1", "]"}], "]"}], ",", 
+     RowBox[{"Function", "[", 
+      RowBox[{
+       RowBox[{"List", "[", "x", "]"}], ",", "x"}], "]"}], ",", "Evaluate", ",", 
+     RowBox[{"LibraryFunction", "[", 
+      RowBox[{"\"\</home/acus/.Mathematica/ApplicationData/CCompilerDriver/\
+BuildFolder/acus-7694/compiledFunction26.so\>\"", 
+       ",", "\"\<compiledFunction26\>\"", ",", 
+       RowBox[{"List", "[", 
+        RowBox[{"List", "[", 
+         RowBox[{"Real", ",", "0", ",", "\"\<Constant\>\""}], "]"}], "]"}], ",",
+        "Real"}], "]"}]}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellID->669790318,ExpressionUUID->"b5c51a11-7bcc-43a0-9d0d-f007032cf794"]
+}, Open  ]],
+
+Cell["\<\
+If compilation was successful, then in subsection \[OpenCurlyDoubleQuote]Help \
+functions, installations options\[CloseCurlyDoubleQuote] below (see \
+subsection 3.2.1) one of $gaPackageOptions options can be changed be \
+CompileTo\[Rule]\[CloseCurlyDoubleQuote]C\[CloseCurlyDoubleQuote]. If \
+compilation to C is not possible, then this option should to set to CompileTo\
+\[Rule]\[CloseCurlyDoubleQuote]WVM\[CloseCurlyDoubleQuote] . After adjusting, \
+make these cells unevaluatable again.\
+\>", "Text",
+ CellID->1115137989,ExpressionUUID->"3c085eb6-21af-49d1-b337-30ad13031a52"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CompilePrint", "[", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "_Real"}], "}"}], "}"}], ",", "x", ",", 
+     RowBox[{"CompilationTarget", "\[Rule]", "\"\<WVM\>\""}]}], "]"}], "]"}], 
+  "//", "FullForm"}]], "Input",
+ Evaluatable->False,
+ CellID->297278673,ExpressionUUID->"4406c00a-50a6-42c5-9e17-b7b389f48000"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox["\"\<\\n\\t\\t1 argument\\n\\t\\t1 Real register\\n\\t\\tUnderflow \
+checking off\\n\\t\\tOverflow checking off\\n\\t\\tInteger overflow checking \
+on\\n\\t\\tRuntimeAttributes -> {}\\n\\n\\t\\tR0 = A1\\n\\t\\tResult = \
+R0\\n\\n1\\tReturn\\n\>\"",
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellID->1394303467,ExpressionUUID->"e5d442b7-7867-4e2b-97f2-4a987f6bd968"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Tools to analyse compilation to C problems (unevaluatable by default, useful \
+in the case of compilation problems)\
+\>", "Subsubsection",
+ CellID->41209238,ExpressionUUID->"d6eb77ae-5cf2-4996-9068-4698c1f376c6"],
+
+Cell["\<\
+For example after upgrade to ubuntu 14.04 I had to make symbolic link of \
+/lib/libgcc_s.so link to /lib/i386-linux-gnu.\
+\>", "Text",
+ CellID->1746173405,ExpressionUUID->"501c21e9-2224-4dc7-9205-4a3030082c05"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"<<", "CCompilerDriver`"}], "\n", 
+ RowBox[{"CCompilers", "[", "]"}]}], "Input",
+ Evaluatable->False,
+ CellID->1826667781,ExpressionUUID->"17ba786a-0b99-49df-aa14-c6b5143a0d60"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"GCC\"\>"}], ",", 
+     RowBox[{"\<\"Compiler\"\>", "\[Rule]", 
+      "CCompilerDriver`GCCCompiler`GCCCompiler"}], ",", 
+     RowBox[{"\<\"CompilerInstallation\"\>", "\[Rule]", "\<\"/usr/bin\"\>"}], 
+     ",", 
+     RowBox[{"\<\"CompilerName\"\>", "\[Rule]", "Automatic"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"GCC\"\>"}], ",", 
+     RowBox[{"\<\"Compiler\"\>", "\[Rule]", 
+      "CCompilerDriver`GCCCompiler`GCCCompiler"}], ",", 
+     RowBox[{"\<\"CompilerInstallation\"\>", 
+      "\[Rule]", "\<\"/usr/bin/X11\"\>"}], ",", 
+     RowBox[{"\<\"CompilerName\"\>", "\[Rule]", "Automatic"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellID->59374500,ExpressionUUID->"951525ab-a0b1-42dd-8592-4a9b6e6dea33"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Compiler`$CCompilerOptions", "=", 
+   RowBox[{"{", 
+    RowBox[{"\"\<ShellCommandFunction\>\"", "\[Rule]", "Print"}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Compile", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", "x", "}"}], "}"}], ",", 
+   RowBox[{"x", "^", "2"}], ",", 
+   RowBox[{"CompilationTarget", "\[Rule]", "\"\<C\>\""}]}], "]"}]}], "Input",
+ Evaluatable->False,
+ CellID->1264210599,ExpressionUUID->"2c8200ef-9436-4244-9eff-246cd929093a"],
+
+Cell[BoxData["\<\"/usr/bin/gcc -shared -o \
+\\\"/home/acus/.Mathematica/ApplicationData/CCompilerDriver/BuildFolder/acus4-\
+3080/Working-acus4-3080-2977229760-1/compiledFunction0.so\\\" -m32 -fPIC -O2 \
+-D\\\"MINT_32\\\" \
+-I\\\"/usr/local/Wolfram/Mathematica/10.2/SystemFiles/IncludeFiles/C\\\" -I\\\
+\"/usr/local/Wolfram/Mathematica/10.2/SystemFiles/Links/MathLink/DeveloperKit/\
+Linux/CompilerAdditions\\\" \
+\\\"/home/acus/.Mathematica/ApplicationData/CCompilerDriver/BuildFolder/acus4-\
+3080/Working-acus4-3080-2977229760-1/compiledFunction0.c\\\"  \
+-L\\\"/usr/local/Wolfram/Mathematica/10.2/SystemFiles/Links/MathLink/\
+DeveloperKit/Linux/CompilerAdditions\\\" \
+-L\\\"/usr/local/Wolfram/Mathematica/10.2/SystemFiles/Libraries/Linux\\\"    \
+2>&1\"\>"], "Print",
+ CellID->464948100,ExpressionUUID->"0c0f2690-b647-45cd-afee-0ad7044bcbe2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["CompiledFunction",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False}, 
+    PanelBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquarePlusIconMedium"],
+            ImageSizeCache->{12., {0., 12.}}],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = True),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         GraphicsBox[
+          {Thickness[0.038461538461538464`], 
+           {FaceForm[{GrayLevel[0.93], Opacity[1.]}], 
+            FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.499999999999996`,
+              2.5}, {25.499999999999996`, 1.3953100000000003`}, {
+             24.604699999999998`, 0.49999999999999994`}, {23.5, 
+             0.49999999999999994`}, {2.5, 0.49999999999999994`}, {
+             1.3953100000000003`, 0.49999999999999994`}, {
+             0.49999999999999994`, 1.3953100000000003`}, {
+             0.49999999999999994`, 2.5}, {0.49999999999999994`, 23.5}, {
+             0.49999999999999994`, 24.604699999999998`}, {1.3953100000000003`,
+              25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
+             25.499999999999996`}, {24.604699999999998`, 
+             25.499999999999996`}, {25.499999999999996`, 
+             24.604699999999998`}, {25.499999999999996`, 23.5}, {
+             25.499999999999996`, 2.5}}}]}, 
+           {FaceForm[{RGBColor[0.5, 0.5, 0.5], Opacity[1.]}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+             1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
+             19.116799999999998`}, {16.3832, 21.876199999999997`}, {16.3832, 
+             20.021499999999996`}, {6.930469999999999, 20.021499999999996`}, {
+             6.930469999999999, 18.212100000000003`}, {16.3832, 
+             18.212100000000003`}, {16.3832, 16.357399999999995`}, {20.5426, 
+             19.116799999999998`}}}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+             1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {9.46445, 
+             11.079700000000003`}, {9.46445, 12.933999999999997`}, {
+             18.917199999999998`, 12.933999999999997`}, {18.917199999999998`, 
+             14.7438}, {9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 
+             13.8391}}}], 
+            FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 
+             1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
+              3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {
+             1, 3, 3}, {1, 3, 3}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGJjIGYCYq4u+eR3VWoOxhkv5j+Qk3SA8fu/r5rKOVHM
+Yd2vmNyjZ9Qcrt9QXbW9S8RBg59767IidQcPMYPGaHFhB+Nn61SfiGo4xBwp
+T7o2V9Dh0Iolfg6/NBxEHv/x1Xgi4FB1XNNqkqQWnP+axUTQjFkbzn+oO2HB
+j/3aDg/Xn5T6WiDoYLs3aJpiqI7DrHN+bO6tQg4zfUR7vF7pQOyfIQyRd9d1
+WLL0U1kLoyjEPdm6DpoTXfQX7xBzKPjQejLkhDacL5J4+LL2Gm2HtNnSl4Vf
+iELM69J2qPZM3tLnJerQX1oozZugDfHPUxGI/4W1HQ5p3TthoyDi4D7lG1v8
+Mi2HgqL9zoEHhB1inOxe3BRG8MH62zXhfIbN1Z82CGhC/GMg4nCm3mN/7TYN
+iHlCUPdGakDc/1kUEr46GhD/eYnD+d9iBf/kC0vC+TuCrSL+X5Vy2HGR4R5T
+uAbEfxYykPBYp+HQqsCuesZAFhL+rJoQ/2rIQdxTpwkJ7yVycPfD+GDzVqLx
+xbUd5HYt2JfqBdWfpA2Jj9mykPDpgYaXtaxDy7yzq86vg8qvlIHE5ylY/Eo7
+XAt7o787TxfOB5ufqesQ9PbyxxkPZSDhZ6nrMAGU3u7LQtLLEx2HN2253UbX
+ofZ76jis/Pay4oynAsT8QG0HKZMv/gW7FCDyTFpwPsz/MD44/Mw1HFjb1uR9
+TVVwWKy880/7FHWIexrkIfLX1RzOMDZZVjHIOaDkh3vSDuj5AwCF11Vc
+             "]]}},
+          AspectRatio->1,
+          Axes->False,
+          Background->GrayLevel[0.93],
+          Frame->True,
+          FrameStyle->Directive[
+            Thickness[Tiny], 
+            GrayLevel[0.7]],
+          FrameTicks->None,
+          ImageSize->{Automatic, 
+            Dynamic[
+            3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification]), ImageSizeCache -> {45., {0., 9.}}]}], 
+         GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Argument count: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["1",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Argument types: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox[
+              StyleBox[
+               PaneBox[
+                RowBox[{"{", "_Real", "}"}],
+                BaselinePosition->Baseline,
+                ContentPadding->False,
+                FrameMargins->0,
+                ImageSize->{{1, 300}, Automatic},
+                StripOnInput->True],
+               LineBreakWithin->False],
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True->
+      GridBox[{
+        {
+         PaneBox[
+          ButtonBox[
+           
+           DynamicBox[FEPrivate`FrontEndResource[
+            "FEBitmaps", "SquareMinusIconMedium"]],
+           Appearance->None,
+           ButtonFunction:>(Typeset`open$$ = False),
+           Evaluator->Automatic,
+           Method->"Preemptive"],
+          Alignment->{Center, Center},
+          
+          ImageSize->
+           Dynamic[{
+            Automatic, 
+             3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification])}]], 
+         GraphicsBox[
+          {Thickness[0.038461538461538464`], 
+           {FaceForm[{GrayLevel[0.93], Opacity[1.]}], 
+            FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 
+             3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.499999999999996`,
+              2.5}, {25.499999999999996`, 1.3953100000000003`}, {
+             24.604699999999998`, 0.49999999999999994`}, {23.5, 
+             0.49999999999999994`}, {2.5, 0.49999999999999994`}, {
+             1.3953100000000003`, 0.49999999999999994`}, {
+             0.49999999999999994`, 1.3953100000000003`}, {
+             0.49999999999999994`, 2.5}, {0.49999999999999994`, 23.5}, {
+             0.49999999999999994`, 24.604699999999998`}, {1.3953100000000003`,
+              25.499999999999996`}, {2.5, 25.499999999999996`}, {23.5, 
+             25.499999999999996`}, {24.604699999999998`, 
+             25.499999999999996`}, {25.499999999999996`, 
+             24.604699999999998`}, {25.499999999999996`, 23.5}, {
+             25.499999999999996`, 2.5}}}]}, 
+           {FaceForm[{RGBColor[0.5, 0.5, 0.5], Opacity[1.]}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+             1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{20.5426, 
+             19.116799999999998`}, {16.3832, 21.876199999999997`}, {16.3832, 
+             20.021499999999996`}, {6.930469999999999, 20.021499999999996`}, {
+             6.930469999999999, 18.212100000000003`}, {16.3832, 
+             18.212100000000003`}, {16.3832, 16.357399999999995`}, {20.5426, 
+             19.116799999999998`}}}], 
+            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
+             1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{5.30508, 13.8391}, {9.46445, 
+             11.079700000000003`}, {9.46445, 12.933999999999997`}, {
+             18.917199999999998`, 12.933999999999997`}, {18.917199999999998`, 
+             14.7438}, {9.46445, 14.7438}, {9.46445, 16.598}, {5.30508, 
+             13.8391}}}], 
+            FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 
+             1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
+              3, 3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {
+             1, 3, 3}, {1, 3, 3}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGJjIGYCYq4u+eR3VWoOxhkv5j+Qk3SA8fu/r5rKOVHM
+Yd2vmNyjZ9Qcrt9QXbW9S8RBg59767IidQcPMYPGaHFhB+Nn61SfiGo4xBwp
+T7o2V9Dh0Iolfg6/NBxEHv/x1Xgi4FB1XNNqkqQWnP+axUTQjFkbzn+oO2HB
+j/3aDg/Xn5T6WiDoYLs3aJpiqI7DrHN+bO6tQg4zfUR7vF7pQOyfIQyRd9d1
+WLL0U1kLoyjEPdm6DpoTXfQX7xBzKPjQejLkhDacL5J4+LL2Gm2HtNnSl4Vf
+iELM69J2qPZM3tLnJerQX1oozZugDfHPUxGI/4W1HQ5p3TthoyDi4D7lG1v8
+Mi2HgqL9zoEHhB1inOxe3BRG8MH62zXhfIbN1Z82CGhC/GMg4nCm3mN/7TYN
+iHlCUPdGakDc/1kUEr46GhD/eYnD+d9iBf/kC0vC+TuCrSL+X5Vy2HGR4R5T
+uAbEfxYykPBYp+HQqsCuesZAFhL+rJoQ/2rIQdxTpwkJ7yVycPfD+GDzVqLx
+xbUd5HYt2JfqBdWfpA2Jj9mykPDpgYaXtaxDy7yzq86vg8qvlIHE5ylY/Eo7
+XAt7o787TxfOB5ufqesQ9PbyxxkPZSDhZ6nrMAGU3u7LQtLLEx2HN2253UbX
+ofZ76jis/Pay4oynAsT8QG0HKZMv/gW7FCDyTFpwPsz/MD44/Mw1HFjb1uR9
+TVVwWKy880/7FHWIexrkIfLX1RzOMDZZVjHIOaDkh3vSDuj5AwCF11Vc
+             "]]}},
+          AspectRatio->1,
+          Axes->False,
+          Background->GrayLevel[0.93],
+          Frame->True,
+          FrameStyle->Directive[
+            Thickness[Tiny], 
+            GrayLevel[0.7]],
+          FrameTicks->None,
+          ImageSize->{Automatic, 
+            Dynamic[
+            3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+              Magnification]), ImageSizeCache -> {45., {0., 9.}}]}], 
+         GridBox[{
+           {
+            RowBox[{
+             TagBox["\<\"Argument count: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox["1",
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Argument types: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox[
+              PaneBox[
+               RowBox[{"{", "_Real", "}"}],
+               BaselinePosition->Baseline,
+               ContentPadding->False,
+               FrameMargins->0,
+               ImageSize->{{1, 500}, Automatic},
+               StripOnInput->True],
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Variables: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox[
+              RowBox[{"{", "x", "}"}],
+              "SummaryItem"]}]},
+           {
+            RowBox[{
+             TagBox["\<\"Expression: \"\>",
+              "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+             TagBox[
+              PaneBox[
+               SuperscriptBox["x", "2"],
+               BaselinePosition->Baseline,
+               ContentPadding->False,
+               FrameMargins->0,
+               ImageSize->{{1, 500}, Automatic},
+               StripOnInput->True],
+              "SummaryItem"]}]}
+          },
+          AutoDelete->False,
+          
+          BaseStyle->{
+           ShowStringCharacters -> False, NumberMarks -> False, 
+            PrintPrecision -> 3, ShowSyntaxStyles -> False},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
+       },
+       AutoDelete->False,
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Rows" -> {{Top}}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open$$],
+      ImageSize->Automatic],
+     BaselinePosition->Baseline],
+    DynamicModuleValues:>{}], "]"}],
+  CompiledFunction[{10, 10.2, 5468}, {
+    Blank[Real]}, {{3, 0, 0}, {3, 0, 1}}, {}, {0, 0, 2, 0, 
+   0}, {{40, 56, 3, 0, 0, 3, 0, 1}, {1}}, 
+   Function[{$CellContext`x}, $CellContext`x^2], Evaluate, 
+   LibraryFunction[
+   "/home/acus/.Mathematica/ApplicationData/CCompilerDriver/BuildFolder/acus4-\
+3080/compiledFunction0.so", "compiledFunction0", {{Real, 0, "Constant"}}, 
+    Real]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellID->493416866,ExpressionUUID->"755f31d8-495f-468d-a821-afb7a1787547"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Compiler`$CCompilerOptions", "=", 
+   RowBox[{"{", 
+    RowBox[{"\"\<ShellOutputFunction\>\"", "\[Rule]", "Print"}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Compile", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", "x", "}"}], "}"}], ",", 
+    RowBox[{"x", "^", "2"}], ",", 
+    RowBox[{"CompilationTarget", "\[Rule]", "\"\<C\>\""}]}], "]"}], 
+  ";"}]}], "Input",
+ Evaluatable->False,
+ CellID->1364622222,ExpressionUUID->"7f7c0549-933c-4462-8bfb-0bc9328062ae"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["gaCheckIndexConsistencyOnInput", "Section",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "Examples"},
+ CellChangeTimes->{{3.958952192749878*^9, 3.9589522091503687`*^9}, 
+   3.958952252614608*^9},
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->692797660,ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130"],
+
+Cell["\<\
+(into  mvDownUp[down_List, up_List])  . Specifically it check if indices are \
+strictly increasingly ordered (no same indices in mvDownUp[] and if maximal \
+value don\[CloseCurlyQuote]t exceed either dimension of vector space of \
+algebra or dimension of manifold.  Inconsistent index sets should never \
+appear in calculations. Index inconsistency will definitely mean that that \
+user input or program code contains error. This option modifies $Pre  \
+behaviour. The check can be disabled by setting the option to False.  No \
+problems so far were encountered, thought large output is rendered more \
+slowly. \
+\>", "Text",
+ CellChangeTimes->{{3.958952227543302*^9, 3.958952232747684*^9}, 
+   3.9590477673614693`*^9},
+ CellID->514667925,ExpressionUUID->"2beeeb35-1b86-4639-abe1-f99ae09e4e19"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["gaMemoizeBasisElementProduct", "Section",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "Examples"},
+ CellChangeTimes->{{3.958952192749878*^9, 3.9589522091503687`*^9}, {
+  3.958952455747534*^9, 3.958952472994933*^9}},
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->1095035999,ExpressionUUID->"76748d3f-7cca-4b4f-8cd6-09cd58f9c3fd"],
+
+Cell["\<\
+
+True|False  enables/disables memoization of  basis  element product. \
+Memoization is implemented for geometric product expansion in the Association \
+form and yields significant speed gain (about 30%). From the other side when \
+uses it takes more memory and makes development much more difficult.\
+\>", "Text",
+ CellChangeTimes->{{3.9590480991262627`*^9, 3.959048110553146*^9}},
+ CellID->1149216477,ExpressionUUID->"e3f0a50e-1ebe-4494-9b59-8ddcb7013e50"]
+}, Open  ]],
+
+Cell["\<\
+gaOrthonormalBasisSymbolName and gaOrthonormalBasisSymbolInputAlias\
+\>", "Section",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "Examples"},
+ CellChangeTimes->{{3.958952192749878*^9, 3.9589522091503687`*^9}, 
+   3.958952266050981*^9, {3.958952354180649*^9, 3.958952359942998*^9}},
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->1935611882,ExpressionUUID->"78722561-d222-459a-bde2-bea4de30c602"],
+
+Cell["gaInternalMultivectorRepresentation", "Section",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "Examples"},
+ CellChangeTimes->{{3.958952192749878*^9, 3.9589522091503687`*^9}, 
+   3.958952266050981*^9, {3.9589523009782743`*^9, 3.958952320658732*^9}},
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->828489976,ExpressionUUID->"5368e772-3bc8-4649-b996-f960962e2ad4"],
+
+Cell["\<\
+ gaDirectionalDerivativeSymbolName and gaDirectionalDerivativeInputAlias\
+\>", "Section",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "Examples"},
+ CellChangeTimes->{{3.958952192749878*^9, 3.9589522091503687`*^9}, 
+   3.958952266050981*^9, {3.9589523009782743`*^9, 3.95895237438013*^9}},
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->2130690969,ExpressionUUID->"7eead288-277b-418d-9e9c-dae2d6e54877"],
+
+Cell["gaFieldBasisSymbolName and gaFieldBasisSymbolInputAlias", "Section",
+ Editable->True,
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "Examples"},
+ CellChangeTimes->{{3.958952192749878*^9, 3.9589522091503687`*^9}, 
+   3.958952266050981*^9, {3.9589523009782743`*^9, 3.95895230110647*^9}, {
+   3.958952394420918*^9, 3.95895243473845*^9}},
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->1390070617,ExpressionUUID->"bec85619-c82b-4c4d-9d18-ff6f44363a14"]
+}, Open  ]]
+},
+WindowSize->{1416.75, 1516.5},
+WindowMargins->{{Automatic, -18}, {Automatic, 15}},
+TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
+CreateCellID->True,
+InputAutoReplacements->{
+ "gaDD" -> "\[DoubleStruckCapitalD]", "e" -> "\[DoubleStruckE]", "ee" -> 
+  "\[DoubleStruckF]"},
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (December 7, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f4ed9056-27f5-4d78-9a47-024623046fa8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "DefaultContent"->{
+  Cell[1614, 41, 1083, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+   CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
+   CellID->167819324]},
+ "Description"->{
+  Cell[1614, 41, 1083, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+   CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
+   CellID->167819324]},
+ "Documentation"->{
+  Cell[2722, 66, 369, 6, 68, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
+   CellTags->{"Documentation", "TemplateSection"},
+   CellID->109475398]},
+ "Examples"->{
+  Cell[27144, 650, 351, 7, 68, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->692797660],
+  Cell[28339, 677, 373, 7, 68, "Section",ExpressionUUID->"76748d3f-7cca-4b4f-8cd6-09cd58f9c3fd",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->1095035999],
+  Cell[29197, 697, 443, 9, 68, "Section",ExpressionUUID->"78722561-d222-459a-bde2-bea4de30c602",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->1935611882],
+  Cell[29643, 708, 404, 7, 54, "Section",ExpressionUUID->"5368e772-3bc8-4649-b996-f960962e2ad4",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->828489976],
+  Cell[30050, 717, 449, 9, 54, "Section",ExpressionUUID->"7eead288-277b-418d-9e9c-dae2d6e54877",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->2130690969],
+  Cell[30502, 728, 473, 8, 54, "Section",ExpressionUUID->"bec85619-c82b-4c4d-9d18-ff6f44363a14",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->1390070617]},
+ "Name"->{
+  Cell[576, 22, 1035, 17, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+   CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+   CellID->551670664]},
+ "TabNext"->{
+  Cell[576, 22, 1035, 17, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+   CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+   CellID->551670664],
+  Cell[1614, 41, 1083, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+   CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
+   CellID->167819324]},
+ "TemplateCell"->{
+  Cell[576, 22, 1035, 17, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+   CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+   CellID->551670664],
+  Cell[1614, 41, 1083, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+   CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
+   CellID->167819324]},
+ "TemplateCellGroup"->{
+  Cell[27144, 650, 351, 7, 68, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->692797660],
+  Cell[28339, 677, 373, 7, 68, "Section",ExpressionUUID->"76748d3f-7cca-4b4f-8cd6-09cd58f9c3fd",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->1095035999],
+  Cell[29197, 697, 443, 9, 68, "Section",ExpressionUUID->"78722561-d222-459a-bde2-bea4de30c602",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->1935611882],
+  Cell[29643, 708, 404, 7, 54, "Section",ExpressionUUID->"5368e772-3bc8-4649-b996-f960962e2ad4",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->828489976],
+  Cell[30050, 717, 449, 9, 54, "Section",ExpressionUUID->"7eead288-277b-418d-9e9c-dae2d6e54877",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->2130690969],
+  Cell[30502, 728, 473, 8, 54, "Section",ExpressionUUID->"bec85619-c82b-4c4d-9d18-ff6f44363a14",
+   CellTags->{"Examples", "TemplateCellGroup"},
+   CellID->1390070617]},
+ "TemplateSection"->{
+  Cell[2722, 66, 369, 6, 68, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
+   CellTags->{"Documentation", "TemplateSection"},
+   CellID->109475398]},
+ "Title"->{
+  Cell[576, 22, 1035, 17, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+   CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+   CellID->551670664]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"DefaultContent", 31554, 755},
+ {"Description", 31765, 759},
+ {"Documentation", 31978, 763},
+ {"Examples", 32163, 767},
+ {"Name", 33187, 786},
+ {"TabNext", 33378, 790},
+ {"TemplateCell", 33766, 797},
+ {"TemplateCellGroup", 34159, 804},
+ {"TemplateSection", 35194, 823},
+ {"Title", 35376, 827}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 1035, 17, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+ CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+ CellID->551670664],
+Cell[1614, 41, 1083, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+ CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
+ CellID->167819324],
+Cell[CellGroupData[{
+Cell[2722, 66, 369, 6, 68, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
+ CellTags->{"Documentation", "TemplateSection"},
+ CellID->109475398],
+Cell[3094, 74, 2614, 47, 150, "Text",ExpressionUUID->"05837727-ef00-4e43-99de-d479d554949e",
+ CellID->251727735],
+Cell[5711, 123, 283, 5, 35, "Text",ExpressionUUID->"c8bd7bed-46df-4553-aec0-239450ae5836",
+ CellID->844253449],
+Cell[CellGroupData[{
+Cell[6019, 132, 151, 1, 45, "Subsubsection",ExpressionUUID->"480c6f21-09a7-487f-8b7f-fba6645027df",
+ CellID->878142032],
+Cell[6173, 135, 347, 6, 55, "Text",ExpressionUUID->"102f643c-ae4e-47b9-b834-66fc353186c4",
+ CellID->582826928],
+Cell[CellGroupData[{
+Cell[6545, 145, 200, 4, 49, "Input",ExpressionUUID->"9073a541-37ff-4e9b-a715-d76333a33e3e",
+ Evaluatable->False,
+ CellID->882897408],
+Cell[6748, 151, 862, 20, 53, "Output",ExpressionUUID->"2d928dc7-8941-4419-8d1c-ad7931842846",
+ CellID->304455665]
+}, Open  ]],
+Cell[7625, 174, 208, 4, 33, "Text",ExpressionUUID->"dd7f12d8-51df-420c-afff-5087404d0ca3",
+ CellID->1665919107],
+Cell[CellGroupData[{
+Cell[7858, 182, 361, 10, 29, "Input",ExpressionUUID->"aff64d8f-257e-47d8-9855-afa10c99bac1",
+ Evaluatable->False,
+ CellID->711248515],
+Cell[8222, 194, 1398, 35, 73, "Output",ExpressionUUID->"b5c51a11-7bcc-43a0-9d0d-f007032cf794",
+ CellID->669790318]
+}, Open  ]],
+Cell[9635, 232, 589, 9, 55, "Text",ExpressionUUID->"3c085eb6-21af-49d1-b337-30ad13031a52",
+ CellID->1115137989],
+Cell[CellGroupData[{
+Cell[10249, 245, 408, 11, 29, "Input",ExpressionUUID->"4406c00a-50a6-42c5-9e17-b7b389f48000",
+ Evaluatable->False,
+ CellID->297278673],
+Cell[10660, 258, 469, 10, 53, "Output",ExpressionUUID->"e5d442b7-7867-4e2b-97f2-4a987f6bd968",
+ CellID->1394303467]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11178, 274, 222, 4, 37, "Subsubsection",ExpressionUUID->"d6eb77ae-5cf2-4996-9068-4698c1f376c6",
+ CellID->41209238],
+Cell[11403, 280, 220, 4, 35, "Text",ExpressionUUID->"501c21e9-2224-4dc7-9205-4a3030082c05",
+ CellID->1746173405],
+Cell[CellGroupData[{
+Cell[11648, 288, 201, 4, 51, "Input",ExpressionUUID->"17ba786a-0b99-49df-aa14-c6b5143a0d60",
+ Evaluatable->False,
+ CellID->1826667781],
+Cell[11852, 294, 861, 20, 55, "Output",ExpressionUUID->"951525ab-a0b1-42dd-8592-4a9b6e6dea33",
+ CellID->59374500]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12750, 319, 484, 13, 51, "Input",ExpressionUUID->"2c8200ef-9436-4244-9eff-246cd929093a",
+ Evaluatable->False,
+ CellID->1264210599],
+Cell[13237, 334, 844, 13, 125, "Print",ExpressionUUID->"0c0f2690-b647-45cd-afee-0ad7044bcbe2",
+ CellID->464948100],
+Cell[14084, 349, 12487, 277, 68, "Output",ExpressionUUID->"755f31d8-495f-468d-a821-afb7a1787547",
+ CellID->493416866]
+}, Open  ]],
+Cell[26586, 629, 509, 15, 51, "Input",ExpressionUUID->"7f7c0549-933c-4462-8bfb-0bc9328062ae",
+ Evaluatable->False,
+ CellID->1364622222]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27144, 650, 351, 7, 68, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->692797660],
+Cell[27498, 659, 804, 13, 81, "Text",ExpressionUUID->"2beeeb35-1b86-4639-abe1-f99ae09e4e19",
+ CellID->514667925]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28339, 677, 373, 7, 68, "Section",ExpressionUUID->"76748d3f-7cca-4b4f-8cd6-09cd58f9c3fd",
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->1095035999],
+Cell[28715, 686, 467, 8, 81, "Text",ExpressionUUID->"e3f0a50e-1ebe-4494-9b59-8ddcb7013e50",
+ CellID->1149216477]
+}, Open  ]],
+Cell[29197, 697, 443, 9, 68, "Section",ExpressionUUID->"78722561-d222-459a-bde2-bea4de30c602",
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->1935611882],
+Cell[29643, 708, 404, 7, 54, "Section",ExpressionUUID->"5368e772-3bc8-4649-b996-f960962e2ad4",
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->828489976],
+Cell[30050, 717, 449, 9, 54, "Section",ExpressionUUID->"7eead288-277b-418d-9e9c-dae2d6e54877",
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->2130690969],
+Cell[30502, 728, 473, 8, 54, "Section",ExpressionUUID->"bec85619-c82b-4c4d-9d18-ff6f44363a14",
+ CellTags->{"Examples", "TemplateCellGroup"},
+ CellID->1390070617]
+}, Open  ]]
+}
+]
+*)
+
