@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    178400,       4282]
-NotebookOptionsPosition[    164835,       3999]
-NotebookOutlinePosition[    171826,       4146]
-CellTagsIndexPosition[    171288,       4127]
+NotebookDataLength[    177917,       4259]
+NotebookOptionsPosition[    164358,       3976]
+NotebookOutlinePosition[    171337,       4123]
+CellTagsIndexPosition[    170799,       4104]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -42,7 +42,7 @@ Cell["CommutativeProduct/to be continued", "Title",
 
 Cell[TextData[{
  "denotes commutative geometric product of  multivectors ",
- StyleBox["(2025-06-18)",
+ StyleBox[" (2025-11-28)",
   FontSize->16]
 }], "Text",
  Editable->True,
@@ -59,7 +59,8 @@ Cell[TextData[{
    3.958039383396599*^9, 3.958039383718432*^9}, {3.958093118264441*^9, 
    3.958093118902988*^9}, {3.9581218075234423`*^9, 3.958121813353311*^9}, {
    3.959055309044387*^9, 3.9590553393284616`*^9}, {3.959132721362163*^9, 
-   3.959132723346661*^9}, {3.959216594884329*^9, 3.959216615724017*^9}},
+   3.959132723346661*^9}, {3.959216594884329*^9, 3.959216615724017*^9}, {
+   3.9754843743097553`*^9, 3.97548437905469*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->167819324,ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646"],
 
@@ -217,7 +218,7 @@ Cell[TextData[{
      "TeXAssistantTemplate"]}], "TI"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
   "180ad2da-521d-408c-ba2a-8f31d14e867e"],
- "  are arbitrary expressions."
+ "  are arbitrary expressions. The product is associative and commutative."
 }], "Notes",
  Editable->True,
  TaggingRules->{},
@@ -227,7 +228,8 @@ Cell[TextData[{
    3.958023109268331*^9}, {3.958023154174371*^9, 3.9580231718252783`*^9}, {
    3.958024639245215*^9, 3.9580246442871227`*^9}, {3.959055586590817*^9, 
    3.959055597036553*^9}, {3.959135421773443*^9, 3.959135510085773*^9}, {
-   3.9591378720939207`*^9, 3.95913787859871*^9}},
+   3.9591378720939207`*^9, 3.95913787859871*^9}, {3.960020100343726*^9, 
+   3.960020143468185*^9}},
  CellTags->"TabNext",
  CellID->728537014,ExpressionUUID->"df1aa6ec-9fd5-4465-ba35-dc7ca61e886a"],
 
@@ -475,8 +477,8 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"ParentDirectory", "[", 
         RowBox[{"NotebookDirectory", "[", 
-         RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], "]"}], ",", 
-       "\"\<GA.nb\>\""}], "}"}], "]"}], "]"}]}], "]"}]], "Input",
+         RowBox[{"EvaluationNotebook", "[", "]"}], "]"}], "]"}], 
+       ",", "\"\<GA.nb\>\""}], "}"}], "]"}], "]"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.673770020900804*^9, 3.673770052959599*^9}, {
    3.67377255744574*^9, 3.673772560984225*^9}, {3.673772957194665*^9, 
    3.673772964956344*^9}, {3.673773010571767*^9, 3.673773014511329*^9}, {
@@ -568,7 +570,7 @@ Cell[BoxData[{
    3.9580245121848707`*^9, {3.958024550691111*^9, 3.958024562344502*^9}, {
    3.958024976285516*^9, 3.958024980455453*^9}, {3.959141455879822*^9, 
    3.959141471268363*^9}, {3.9591415208663692`*^9, 3.959141538873733*^9}},
- CellLabel->"In[8]:=",
+ CellLabel->"In[77]:=",
  CellID->654960013,ExpressionUUID->"3fbe7af2-bcbf-42f8-8319-3c674ea0e2c2"],
 
 Cell[BoxData[
@@ -590,12 +592,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -617,12 +619,12 @@ Cell[BoxData[
               Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -644,12 +646,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -672,12 +674,12 @@ Cell[BoxData[
               Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -700,12 +702,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -728,12 +730,12 @@ Cell[BoxData[
               Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -757,12 +759,12 @@ Cell[BoxData[
               Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish",
        Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -774,9 +776,10 @@ Cell[BoxData[
    3.9549880586338453`*^9, 3.954988347393375*^9, 3.9549891846880827`*^9, 
    3.9580246582550898`*^9, 3.958024981620699*^9, 3.9580394090388203`*^9, 
    3.958093362614609*^9, 3.9591378256445303`*^9, 3.959141418585079*^9, 
-   3.959141541625004*^9, 3.95914694233862*^9, 3.959216874886786*^9},
- CellLabel->"Out[8]=",
- CellID->1096727170,ExpressionUUID->"66523315-e74a-4f35-a513-53a7bdb6882e"],
+   3.959141541625004*^9, 3.95914694233862*^9, 3.959216874886786*^9, 
+   3.975487012906518*^9},
+ CellLabel->"Out[77]=",
+ CellID->1918337929,ExpressionUUID->"c4eacbe9-a47a-4bb4-9e4a-41e0d4a47332"],
 
 Cell[BoxData[
  RowBox[{
@@ -799,12 +802,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -828,12 +831,12 @@ Cell[BoxData[
               Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -857,12 +860,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -887,12 +890,12 @@ Cell[BoxData[
               Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -917,12 +920,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -947,12 +950,12 @@ Cell[BoxData[
               Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -978,12 +981,12 @@ Cell[BoxData[
               Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish",
        Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -995,9 +998,10 @@ Cell[BoxData[
    3.9549880586338453`*^9, 3.954988347393375*^9, 3.9549891846880827`*^9, 
    3.9580246582550898`*^9, 3.958024981620699*^9, 3.9580394090388203`*^9, 
    3.958093362614609*^9, 3.9591378256445303`*^9, 3.959141418585079*^9, 
-   3.959141541625004*^9, 3.95914694233862*^9, 3.9592168749142647`*^9},
- CellLabel->"Out[9]=",
- CellID->8702567,ExpressionUUID->"3b98d768-4a21-4c3b-ac56-9332cef0ae9e"],
+   3.959141541625004*^9, 3.95914694233862*^9, 3.959216874886786*^9, 
+   3.975487012911553*^9},
+ CellLabel->"Out[78]=",
+ CellID->1176082327,ExpressionUUID->"49887ec2-3910-4cad-8860-e78102bd2095"],
 
 Cell[BoxData[
  RowBox[{
@@ -1020,12 +1024,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1049,12 +1053,12 @@ Cell[BoxData[
               Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1078,12 +1082,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1108,12 +1112,12 @@ Cell[BoxData[
               Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1138,12 +1142,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1168,12 +1172,12 @@ Cell[BoxData[
               Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1199,12 +1203,12 @@ Cell[BoxData[
               Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish",
        Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1216,9 +1220,10 @@ Cell[BoxData[
    3.9549880586338453`*^9, 3.954988347393375*^9, 3.9549891846880827`*^9, 
    3.9580246582550898`*^9, 3.958024981620699*^9, 3.9580394090388203`*^9, 
    3.958093362614609*^9, 3.9591378256445303`*^9, 3.959141418585079*^9, 
-   3.959141541625004*^9, 3.95914694233862*^9, 3.9592168749199057`*^9},
- CellLabel->"Out[10]=",
- CellID->1804373182,ExpressionUUID->"91a513ac-6d2e-422b-969b-1e40437db310"]
+   3.959141541625004*^9, 3.95914694233862*^9, 3.959216874886786*^9, 
+   3.975487012914034*^9},
+ CellLabel->"Out[79]=",
+ CellID->2109411950,ExpressionUUID->"45464d88-a8f3-47a0-aea4-abbe5a22cc54"]
 }, Open  ]],
 
 Cell["Commutative geometric product of these two multivectors is ", "Text",
@@ -1235,7 +1240,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"mva", "\[CommutativeProduct]", "mvb"}]], "Input",
  CellChangeTimes->{{3.959217636732957*^9, 3.959217640500671*^9}},
- CellLabel->"In[11]:=",
+ CellLabel->"In[80]:=",
  CellID->1310713513,ExpressionUUID->"64b61fc3-9188-43c6-b726-b00b607a95af"],
 
 Cell[BoxData[
@@ -1261,13 +1266,12 @@ Cell[BoxData[
                 Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1291,13 +1295,12 @@ Cell[BoxData[
                 Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1321,13 +1324,12 @@ Cell[BoxData[
                 Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1352,13 +1354,12 @@ Cell[BoxData[
                 Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1383,13 +1384,12 @@ Cell[BoxData[
                 Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1414,13 +1414,12 @@ Cell[BoxData[
                 Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1446,13 +1445,12 @@ Cell[BoxData[
                 Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> 
         "fish", Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1479,13 +1477,12 @@ Cell[BoxData[
                 Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1509,13 +1506,12 @@ Cell[BoxData[
                 Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1539,13 +1535,12 @@ Cell[BoxData[
                 Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1570,13 +1565,12 @@ Cell[BoxData[
                 Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1601,13 +1595,12 @@ Cell[BoxData[
                 Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1632,13 +1625,12 @@ Cell[BoxData[
                 Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1664,21 +1656,20 @@ Cell[BoxData[
                 Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> 
         "fish", Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
       SyntaxForm->"fish",
       Tooltip->"Cl[3, 0, 0]"]}]}], ")"}]}]], "Output",
- CellChangeTimes->{3.9592176451080227`*^9},
- CellLabel->"Out[11]=",
- CellID->271475013,ExpressionUUID->"c2e898c6-9eab-4abb-b2b4-417525e460c2"]
+ CellChangeTimes->{3.9592176451080227`*^9, 3.97548701489121*^9},
+ CellLabel->"Out[80]=",
+ CellID->1387165795,ExpressionUUID->"58a0b10a-79d1-4a4c-b2f1-81a1f98610ee"]
 }, Open  ]],
 
 Cell["\<\
@@ -1700,7 +1691,7 @@ Cell[BoxData[
  RowBox[{"mva", "\[GeometricProduct]", "mvb"}]], "Input",
  CellChangeTimes->{{3.9580249681002283`*^9, 3.9580249905343027`*^9}, {
   3.9591416427122393`*^9, 3.95914165181096*^9}},
- CellLabel->"In[12]:=",
+ CellLabel->"In[81]:=",
  CellID->2054631568,ExpressionUUID->"7da41dcb-2d4e-4563-9ee2-6b660042cd79"],
 
 Cell[BoxData[
@@ -1726,13 +1717,12 @@ Cell[BoxData[
                 Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1756,13 +1746,12 @@ Cell[BoxData[
                 Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1786,13 +1775,12 @@ Cell[BoxData[
                 Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1817,13 +1805,12 @@ Cell[BoxData[
                 Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1848,13 +1835,12 @@ Cell[BoxData[
                 Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1879,13 +1865,12 @@ Cell[BoxData[
                 Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1911,13 +1896,12 @@ Cell[BoxData[
                 Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> 
         "fish", Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1944,13 +1928,12 @@ Cell[BoxData[
                 Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -1974,13 +1957,12 @@ Cell[BoxData[
                 Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2004,13 +1986,12 @@ Cell[BoxData[
                 Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2035,13 +2016,12 @@ Cell[BoxData[
                 Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 2}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2066,13 +2046,12 @@ Cell[BoxData[
                 Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{1, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2097,13 +2076,12 @@ Cell[BoxData[
                 Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
         Tooltip -> "mvDownUp[{2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2129,13 +2107,12 @@ Cell[BoxData[
                 Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> 
         "fish", Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
        TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-          StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+          StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
           RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
       "\[DoubleStruckE]",
       DisplayFunction:>(StyleBox[
         RowBox[{
-          StyleBox[
-          "\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+          StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
         AutoSpacing -> False, FontTracking -> "Condensed"]& ),
       InterpretationFunction:>(
        RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2143,9 +2120,9 @@ Cell[BoxData[
       Tooltip->"Cl[3, 0, 0]"]}]}], ")"}]}]], "Output",
  CellChangeTimes->{3.958024991771299*^9, 3.958039413507052*^9, 
   3.95809336383291*^9, 3.9591416553139257`*^9, 3.9591469459634438`*^9, 
-  3.95921768474533*^9},
- CellLabel->"Out[12]=",
- CellID->980161793,ExpressionUUID->"86810843-759c-47e1-8a43-3ff74cd5c8fd"]
+  3.95921768474533*^9, 3.9754870158649797`*^9},
+ CellLabel->"Out[81]=",
+ CellID->136498985,ExpressionUUID->"18891fbe-7324-4431-a435-348b30b14d06"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -2172,7 +2149,7 @@ Cell[BoxData[
  RowBox[{"gaPE", "[", 
   RowBox[{"mva", "\[CommutativeProduct]", "mvb"}], "]"}]], "Input",
  CellChangeTimes->{{3.959217705591632*^9, 3.959217708092486*^9}},
- CellLabel->"In[14]:=",
+ CellLabel->"In[82]:=",
  CellID->666994509,ExpressionUUID->"b04fa575-a5f6-4ce3-93b8-2b74ab756915"],
 
 Cell[BoxData[
@@ -2244,12 +2221,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2298,12 +2275,12 @@ Cell[BoxData[
               Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2352,12 +2329,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2407,12 +2384,12 @@ Cell[BoxData[
               Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2462,12 +2439,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2517,12 +2494,12 @@ Cell[BoxData[
               Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2573,20 +2550,20 @@ Cell[BoxData[
               Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish",
        Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
     SyntaxForm->"fish",
     Tooltip->"Cl[3, 0, 0]"]}]}]], "Output",
- CellChangeTimes->{3.959217710035293*^9},
- CellLabel->"Out[14]=",
- CellID->987764994,ExpressionUUID->"75bf6351-28c5-43e1-96c7-bdd079c07883"]
+ CellChangeTimes->{3.959217710035293*^9, 3.975487016712368*^9},
+ CellLabel->"Out[82]=",
+ CellID->2087270800,ExpressionUUID->"84f00b8d-4bcf-4fdd-b902-078ad9c27a1b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2596,7 +2573,7 @@ Cell[BoxData[
   RowBox[{"mva", "\[GeometricProduct]", "mvb"}], "]"}]], "Input",
  CellChangeTimes->{{3.9580249967342567`*^9, 3.9580250047697783`*^9}, {
   3.95914180790381*^9, 3.959141828510293*^9}},
- CellLabel->"In[15]:=",
+ CellLabel->"In[83]:=",
  CellID->999393173,ExpressionUUID->"d29a0b71-9132-4564-b14e-091780e728aa"],
 
 Cell[BoxData[
@@ -2668,12 +2645,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2722,12 +2699,12 @@ Cell[BoxData[
               Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2776,12 +2753,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2831,12 +2808,12 @@ Cell[BoxData[
               Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2886,12 +2863,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2941,12 +2918,12 @@ Cell[BoxData[
               Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -2997,12 +2974,12 @@ Cell[BoxData[
               Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish",
        Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3011,9 +2988,9 @@ Cell[BoxData[
  CellChangeTimes->{
   3.9580250084313393`*^9, 3.958039414424945*^9, 3.958093364887911*^9, 
    3.9591419433107643`*^9, 3.959146947250543*^9, {3.959217700606278*^9, 
-   3.95921771237288*^9}},
- CellLabel->"Out[15]=",
- CellID->1241769263,ExpressionUUID->"e20487ca-230c-4df2-9117-b96a6624978f"]
+   3.95921771237288*^9}, 3.975487018283432*^9},
+ CellLabel->"Out[83]=",
+ CellID->1290033672,ExpressionUUID->"73865ffe-c79c-436d-a7d4-ab0a15b23f12"]
 }, Open  ]],
 
 Cell["Some terms differ by  signs:", "Text",
@@ -3031,7 +3008,7 @@ Cell[BoxData[
     RowBox[{"mva", "\[CommutativeProduct]", "mvb"}], "]"}]}], "]"}]], "Input",\
 
  CellChangeTimes->{{3.959217730663184*^9, 3.9592177406319227`*^9}},
- CellLabel->"In[17]:=",
+ CellLabel->"In[84]:=",
  CellID->413202583,ExpressionUUID->"a4a1afc8-48dc-4850-a560-c5e89a1fbeef"],
 
 Cell[BoxData[
@@ -3068,12 +3045,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3098,12 +3075,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3128,12 +3105,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3158,12 +3135,12 @@ Cell[BoxData[
               Length[{1}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3188,12 +3165,12 @@ Cell[BoxData[
               Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3218,12 +3195,12 @@ Cell[BoxData[
               Length[{2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3248,12 +3225,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3278,12 +3255,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3308,12 +3285,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3338,12 +3315,12 @@ Cell[BoxData[
               Length[{3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3369,12 +3346,12 @@ Cell[BoxData[
               Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3400,12 +3377,12 @@ Cell[BoxData[
               Length[{1, 2}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 2}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3431,12 +3408,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3462,12 +3439,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3493,12 +3470,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3524,12 +3501,12 @@ Cell[BoxData[
               Length[{1, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{1, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3555,12 +3532,12 @@ Cell[BoxData[
               Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3586,12 +3563,12 @@ Cell[BoxData[
               Length[{2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish", 
       Tooltip -> "mvDownUp[{2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3618,12 +3595,12 @@ Cell[BoxData[
               Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish",
        Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
@@ -3650,20 +3627,21 @@ Cell[BoxData[
               Length[{1, 2, 3}]}]}, StandardForm]}]]& ), SyntaxForm -> "fish",
        Tooltip -> "mvDownUp[{1, 2, 3}, {}]"], 
      TemplateBox[{"3", "0", "0"}, "Cl", DisplayFunction -> (SubscriptBox[
-        StyleBox["Cl", {FontColor -> RGBColor[0., 0., 1.]}], 
+        StyleBox["Cl", {FontColor -> RGBColor[1, 0, 0]}], 
         RowBox[{#, ",", #2}]]& ), Tooltip -> None]},
     "\[DoubleStruckE]",
     DisplayFunction:>(StyleBox[
       RowBox[{
-        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[0., 0., 1.]], #}], 
+        StyleBox["\[DoubleStruckE]", FontColor -> RGBColor[1, 0, 0]], #}], 
       AutoSpacing -> False, FontTracking -> "Condensed"]& ),
     InterpretationFunction:>(
      RowBox[{"\[DoubleStruckE]", "[", #, ",", #2, "]"}]& ),
     SyntaxForm->"fish",
     Tooltip->"Cl[3, 0, 0]"]}]}]], "Output",
- CellChangeTimes->{3.9592177411007767`*^9, 3.959217775804871*^9},
- CellLabel->"Out[17]=",
- CellID->751669879,ExpressionUUID->"e0746959-b20b-441a-be6f-2184460d4572"]
+ CellChangeTimes->{3.9592177411007767`*^9, 3.959217775804871*^9, 
+  3.9754870194192142`*^9},
+ CellLabel->"Out[84]=",
+ CellID->1978024280,ExpressionUUID->"3f568d0f-e0ec-4b56-9e31-f1c9a89ef87f"]
 }, Open  ]]
 }, Open  ]],
 
@@ -3728,10 +3706,10 @@ Cell[BoxData[
         RowBox[{"CommutativeProduct", "[", "b__", "]"}], ",", "c___"}], "]"}],
        "]"}], ":=", 
      RowBox[{"CommutativeProduct", "[", 
-      RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], ";"}], " ", "\n", 
-   RowBox[{"(*", " ", 
-    RowBox[{"commuting", " ", "quantities", " ", "out"}], " ", "*)"}], 
+      RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], ";"}], " ", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"commuting", " ", "quantities", " ", "out"}], " ", "*)"}], "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"HoldPattern", "[", 
@@ -3752,8 +3730,7 @@ Cell[BoxData[
       RowBox[{"b", "*", " ", 
        RowBox[{"CommutativeProduct", "[", 
         RowBox[{"a", ",", "c"}], "]"}]}], "/;", 
-      RowBox[{"gaCommutativeAllQ", "[", "b", "]"}]}]}], ";"}], 
-   "\[IndentingNewLine]", 
+      RowBox[{"gaCommutativeAllQ", "[", "b", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"HoldPattern", "[", 
@@ -3959,16 +3936,16 @@ Cell[TextData[{
   ButtonNote->"MV"],
  StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
   "InlineSeparator"],
- ButtonBox["gaGeometricProduct",
+ ButtonBox["GeometricProduct",
   BaseStyle->"Hyperlink",
-  ButtonData->{"gaGeometricProduct.nb", None},
-  ButtonNote->"gaGeometricProduct"],
+  ButtonData->{"GeometricProduct.nb", None},
+  ButtonNote->"GeometricProduct"],
  StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
   "InlineSeparator"],
- ButtonBox["gaInnerProduct",
+ ButtonBox["InnerProduct",
   BaseStyle->"Hyperlink",
-  ButtonData->{"gaInnerProduct.nb", None},
-  ButtonNote->"gaInnerProduct"],
+  ButtonData->{"InnerProduct.nb", None},
+  ButtonNote->"InnerProduct"],
  StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
   "InlineSeparator"],
  ButtonBox["gaPlainRepresentation",
@@ -3998,14 +3975,14 @@ Cell[TextData[{
 }, Open  ]]
 },
 WindowSize->{1416.75, 1516.5},
-WindowMargins->{{Automatic, -9.253937007873901}, {Automatic, 6}},
+WindowMargins->{{20.25, Automatic}, {-15.75, Automatic}},
 TaggingRules-><|
  "SlideshowSettings" -> <|"Toolbar" -> True|>, "TryRealOnly" -> False|>,
 CreateCellID->True,
 InputAutoReplacements->{
  "gaDD" -> "\[DoubleStruckCapitalD]", "e" -> "\[DoubleStruckE]", "ee" -> 
   "\[DoubleStruckF]"},
-FrontEndVersion->"13.2 for Linux x86 (64-bit) (December 7, 2022)",
+FrontEndVersion->"14.3 for Linux x86 (64-bit) (July 8, 2025)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f4ed9056-27f5-4d78-9a47-024623046fa8"
 ]
@@ -4015,271 +3992,271 @@ ExpressionUUID->"f4ed9056-27f5-4d78-9a47-024623046fa8"
 (*CellTagsOutline
 CellTagsIndex->{
  "Name"->{
-  Cell[576, 22, 1075, 18, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+  Cell[576, 22, 1075, 18, 96, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
    CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
    CellID->551670664]},
  "TabNext"->{
-  Cell[576, 22, 1075, 18, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+  Cell[576, 22, 1075, 18, 96, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
    CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
    CellID->551670664],
-  Cell[1654, 42, 1114, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+  Cell[1654, 42, 1166, 22, 34, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->167819324],
-  Cell[5149, 128, 889, 20, 27, "UsageInputs",ExpressionUUID->"a9440493-8707-4376-9c0a-16b8d4b87bd3",
+  Cell[5201, 129, 889, 20, 25, "UsageInputs",ExpressionUUID->"a9440493-8707-4376-9c0a-16b8d4b87bd3",
    CellTags->{"DefaultContent", "TabNext"},
    CellID->328649540],
-  Cell[6041, 150, 778, 19, 25, "UsageDescription",ExpressionUUID->"30891eb5-9b2a-42db-a587-21204efac5d0",
+  Cell[6093, 151, 778, 19, 24, "UsageDescription",ExpressionUUID->"30891eb5-9b2a-42db-a587-21204efac5d0",
    CellTags->{"DefaultContent", "TabNext"},
    CellID->586834956],
-  Cell[8405, 209, 1033, 22, 32, "Notes",ExpressionUUID->"df1aa6ec-9fd5-4465-ba35-dc7ca61e886a",
+  Cell[8457, 210, 1127, 23, 31, "Notes",ExpressionUUID->"df1aa6ec-9fd5-4465-ba35-dc7ca61e886a",
    CellTags->"TabNext",
    CellID->728537014],
-  Cell[9441, 233, 1025, 17, 30, "Notes",ExpressionUUID->"247b96b5-8c9d-4f5b-a8d8-a9fbeaa0d110",
+  Cell[9587, 235, 1025, 17, 31, "Notes",ExpressionUUID->"247b96b5-8c9d-4f5b-a8d8-a9fbeaa0d110",
    CellTags->"TabNext",
    CellID->1751586852],
-  Cell[19214, 442, 1026, 19, 35, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
+  Cell[19360, 444, 1026, 19, 33, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->263104304]},
  "TemplateCell"->{
-  Cell[576, 22, 1075, 18, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+  Cell[576, 22, 1075, 18, 96, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
    CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
    CellID->551670664],
-  Cell[1654, 42, 1114, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+  Cell[1654, 42, 1166, 22, 34, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->167819324],
-  Cell[19214, 442, 1026, 19, 35, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
+  Cell[19360, 444, 1026, 19, 33, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->263104304]},
  "Title"->{
-  Cell[576, 22, 1075, 18, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+  Cell[576, 22, 1075, 18, 96, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
    CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
    CellID->551670664]},
  "DefaultContent"->{
-  Cell[1654, 42, 1114, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+  Cell[1654, 42, 1166, 22, 34, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->167819324],
-  Cell[5149, 128, 889, 20, 27, "UsageInputs",ExpressionUUID->"a9440493-8707-4376-9c0a-16b8d4b87bd3",
+  Cell[5201, 129, 889, 20, 25, "UsageInputs",ExpressionUUID->"a9440493-8707-4376-9c0a-16b8d4b87bd3",
    CellTags->{"DefaultContent", "TabNext"},
    CellID->328649540],
-  Cell[6041, 150, 778, 19, 25, "UsageDescription",ExpressionUUID->"30891eb5-9b2a-42db-a587-21204efac5d0",
+  Cell[6093, 151, 778, 19, 24, "UsageDescription",ExpressionUUID->"30891eb5-9b2a-42db-a587-21204efac5d0",
    CellTags->{"DefaultContent", "TabNext"},
    CellID->586834956],
-  Cell[19214, 442, 1026, 19, 35, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
+  Cell[19360, 444, 1026, 19, 33, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->263104304]},
  "Description"->{
-  Cell[1654, 42, 1114, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+  Cell[1654, 42, 1166, 22, 34, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->167819324],
-  Cell[19214, 442, 1026, 19, 35, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
+  Cell[19360, 444, 1026, 19, 33, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
    CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
    CellID->263104304]},
  "Documentation"->{
-  Cell[2793, 67, 231, 4, 68, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
+  Cell[2845, 68, 231, 4, 65, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
    CellTags->{"Documentation", "TemplateSection"},
    CellID->109475398]},
  "TemplateSection"->{
-  Cell[2793, 67, 231, 4, 68, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
+  Cell[2845, 68, 231, 4, 65, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
    CellTags->{"Documentation", "TemplateSection"},
    CellID->109475398],
-  Cell[160754, 3897, 302, 5, 68, "Section",ExpressionUUID->"4b3e807c-c22e-4f8a-9a46-ac8694f25bdd",
+  Cell[160289, 3874, 302, 5, 65, "Section",ExpressionUUID->"4b3e807c-c22e-4f8a-9a46-ac8694f25bdd",
    CellTags->{"Source & Additional Information", "TemplateSection"},
    CellID->132008035]},
  "TemplateCellGroup"->{
-  Cell[3049, 75, 2097, 51, 55, "Subsection",ExpressionUUID->"b47259e7-3f77-473c-9bef-8f804bcee0f0",
+  Cell[3101, 76, 2097, 51, 53, "Subsection",ExpressionUUID->"b47259e7-3f77-473c-9bef-8f804bcee0f0",
    CellTags->{"TemplateCellGroup", "Usage"},
    CellID->586585833],
-  Cell[6856, 174, 1546, 33, 55, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
+  Cell[6908, 175, 1546, 33, 53, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
    CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
    CellID->450324809],
-  Cell[12075, 287, 7136, 153, 70, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
+  Cell[12221, 289, 7136, 153, 65, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
    CellTags->{"Examples", "TemplateCellGroup"},
    CellID->692797660],
-  Cell[161081, 3906, 1158, 28, 55, "Subsection",ExpressionUUID->"a8a8753a-78d5-4486-ae0e-de7546946a02",
+  Cell[160616, 3883, 1158, 28, 53, "Subsection",ExpressionUUID->"a8a8753a-78d5-4486-ae0e-de7546946a02",
    CellTags->{"Related Symbols", "TemplateCellGroup"},
    CellID->467106741]},
  "Usage"->{
-  Cell[3049, 75, 2097, 51, 55, "Subsection",ExpressionUUID->"b47259e7-3f77-473c-9bef-8f804bcee0f0",
+  Cell[3101, 76, 2097, 51, 53, "Subsection",ExpressionUUID->"b47259e7-3f77-473c-9bef-8f804bcee0f0",
    CellTags->{"TemplateCellGroup", "Usage"},
    CellID->586585833]},
  "Details & Options"->{
-  Cell[6856, 174, 1546, 33, 55, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
+  Cell[6908, 175, 1546, 33, 53, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
    CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
    CellID->450324809]},
  "Notes"->{
-  Cell[6856, 174, 1546, 33, 55, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
+  Cell[6908, 175, 1546, 33, 53, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
    CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
    CellID->450324809]},
  "Examples"->{
-  Cell[12075, 287, 7136, 153, 70, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
+  Cell[12221, 289, 7136, 153, 65, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
    CellTags->{"Examples", "TemplateCellGroup"},
    CellID->692797660]},
  "Source & Additional Information"->{
-  Cell[160754, 3897, 302, 5, 68, "Section",ExpressionUUID->"4b3e807c-c22e-4f8a-9a46-ac8694f25bdd",
+  Cell[160289, 3874, 302, 5, 65, "Section",ExpressionUUID->"4b3e807c-c22e-4f8a-9a46-ac8694f25bdd",
    CellTags->{"Source & Additional Information", "TemplateSection"},
    CellID->132008035]},
  "Related Symbols"->{
-  Cell[161081, 3906, 1158, 28, 55, "Subsection",ExpressionUUID->"a8a8753a-78d5-4486-ae0e-de7546946a02",
+  Cell[160616, 3883, 1158, 28, 53, "Subsection",ExpressionUUID->"a8a8753a-78d5-4486-ae0e-de7546946a02",
    CellTags->{"Related Symbols", "TemplateCellGroup"},
    CellID->467106741]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Name", 165428, 4016},
- {"TabNext", 165619, 4020},
- {"TemplateCell", 166829, 4042},
- {"Title", 167404, 4052},
- {"DefaultContent", 167602, 4056},
- {"Description", 168348, 4069},
- {"Documentation", 168755, 4076},
- {"TemplateSection", 168947, 4080},
- {"TemplateCellGroup", 169332, 4087},
- {"Usage", 170056, 4100},
- {"Details & Options", 170249, 4104},
- {"Notes", 170452, 4108},
- {"Examples", 170658, 4112},
- {"Source & Additional Information", 170868, 4116},
- {"Related Symbols", 171082, 4120}
+ {"Name", 164939, 3993},
+ {"TabNext", 165130, 3997},
+ {"TemplateCell", 166340, 4019},
+ {"Title", 166915, 4029},
+ {"DefaultContent", 167113, 4033},
+ {"Description", 167859, 4046},
+ {"Documentation", 168266, 4053},
+ {"TemplateSection", 168458, 4057},
+ {"TemplateCellGroup", 168843, 4064},
+ {"Usage", 169567, 4077},
+ {"Details & Options", 169760, 4081},
+ {"Notes", 169963, 4085},
+ {"Examples", 170169, 4089},
+ {"Source & Additional Information", 170379, 4093},
+ {"Related Symbols", 170593, 4097}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 1075, 18, 98, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
+Cell[576, 22, 1075, 18, 96, "Title",ExpressionUUID->"78f411a2-bad7-48b5-8e05-24abbebc2de5",
  CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
  CellID->551670664],
-Cell[1654, 42, 1114, 21, 36, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
+Cell[1654, 42, 1166, 22, 34, "Text",ExpressionUUID->"a52432f8-926f-46c6-a3bb-f2a3567e3646",
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->167819324],
 Cell[CellGroupData[{
-Cell[2793, 67, 231, 4, 68, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
+Cell[2845, 68, 231, 4, 65, "Section",ExpressionUUID->"8d22b28e-3e80-468e-ac31-3e21187e4eb9",
  CellTags->{"Documentation", "TemplateSection"},
  CellID->109475398],
 Cell[CellGroupData[{
-Cell[3049, 75, 2097, 51, 55, "Subsection",ExpressionUUID->"b47259e7-3f77-473c-9bef-8f804bcee0f0",
+Cell[3101, 76, 2097, 51, 53, "Subsection",ExpressionUUID->"b47259e7-3f77-473c-9bef-8f804bcee0f0",
  CellTags->{"TemplateCellGroup", "Usage"},
  CellID->586585833],
-Cell[5149, 128, 889, 20, 27, "UsageInputs",ExpressionUUID->"a9440493-8707-4376-9c0a-16b8d4b87bd3",
+Cell[5201, 129, 889, 20, 25, "UsageInputs",ExpressionUUID->"a9440493-8707-4376-9c0a-16b8d4b87bd3",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->328649540],
-Cell[6041, 150, 778, 19, 25, "UsageDescription",ExpressionUUID->"30891eb5-9b2a-42db-a587-21204efac5d0",
+Cell[6093, 151, 778, 19, 24, "UsageDescription",ExpressionUUID->"30891eb5-9b2a-42db-a587-21204efac5d0",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->586834956]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6856, 174, 1546, 33, 55, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
+Cell[6908, 175, 1546, 33, 53, "Subsection",ExpressionUUID->"c8513497-04d8-4f82-bd84-ffd15044ad82",
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
  CellID->450324809],
-Cell[8405, 209, 1033, 22, 32, "Notes",ExpressionUUID->"df1aa6ec-9fd5-4465-ba35-dc7ca61e886a",
+Cell[8457, 210, 1127, 23, 31, "Notes",ExpressionUUID->"df1aa6ec-9fd5-4465-ba35-dc7ca61e886a",
  CellTags->"TabNext",
  CellID->728537014],
-Cell[9441, 233, 1025, 17, 30, "Notes",ExpressionUUID->"247b96b5-8c9d-4f5b-a8d8-a9fbeaa0d110",
+Cell[9587, 235, 1025, 17, 31, "Notes",ExpressionUUID->"247b96b5-8c9d-4f5b-a8d8-a9fbeaa0d110",
  CellTags->"TabNext",
  CellID->1751586852],
-Cell[10469, 252, 619, 12, 30, "Notes",ExpressionUUID->"1d23b8e2-27af-4623-bfad-21b14926dfab",
+Cell[10615, 254, 619, 12, 31, "Notes",ExpressionUUID->"1d23b8e2-27af-4623-bfad-21b14926dfab",
  CellID->10241797],
-Cell[11091, 266, 935, 15, 45, "Notes",ExpressionUUID->"401b4cf6-32b0-414a-a0a4-165a5350a585",
+Cell[11237, 268, 935, 15, 47, "Notes",ExpressionUUID->"401b4cf6-32b0-414a-a0a4-165a5350a585",
  CellID->1861879662]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12075, 287, 7136, 153, 70, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
+Cell[12221, 289, 7136, 153, 65, "Section",ExpressionUUID->"91474bae-dd65-415b-8b0e-e8c71c1a1130",
  CellTags->{"Examples", "TemplateCellGroup"},
  CellID->692797660],
-Cell[19214, 442, 1026, 19, 35, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
+Cell[19360, 444, 1026, 19, 33, "Text",ExpressionUUID->"34dab689-8b54-456c-8386-244510be9ca9",
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->263104304],
-Cell[20243, 463, 1246, 26, 29, "Input",ExpressionUUID->"da0512a1-7fef-4d0e-a603-697bc8c458c1",
+Cell[20389, 465, 1246, 26, 29, "Input",ExpressionUUID->"da0512a1-7fef-4d0e-a603-697bc8c458c1",
  CellID->350642411],
 Cell[CellGroupData[{
-Cell[21514, 493, 170, 4, 54, "Subsection",ExpressionUUID->"8ad9d452-2e30-4456-a46b-e0afaf4735f7",
+Cell[21660, 495, 170, 4, 53, "Subsection",ExpressionUUID->"8ad9d452-2e30-4456-a46b-e0afaf4735f7",
  CellID->904125756],
-Cell[21687, 499, 1553, 30, 83, "Text",ExpressionUUID->"37f23341-1ff7-4621-9881-496525eb6d4a",
+Cell[21833, 501, 1553, 30, 78, "Text",ExpressionUUID->"37f23341-1ff7-4621-9881-496525eb6d4a",
  CellID->1780490455],
-Cell[23243, 531, 597, 13, 35, "Text",ExpressionUUID->"555b2e46-f92b-4449-904f-8fdad3a9619a",
+Cell[23389, 533, 597, 13, 33, "Text",ExpressionUUID->"555b2e46-f92b-4449-904f-8fdad3a9619a",
  CellID->1995874434],
 Cell[CellGroupData[{
-Cell[23865, 548, 971, 23, 71, "Input",ExpressionUUID->"3fbe7af2-bcbf-42f8-8319-3c674ea0e2c2",
+Cell[24011, 550, 972, 23, 69, "Input",ExpressionUUID->"3fbe7af2-bcbf-42f8-8319-3c674ea0e2c2",
  CellID->654960013],
-Cell[24839, 573, 9034, 205, 37, "Output",ExpressionUUID->"66523315-e74a-4f35-a513-53a7bdb6882e",
- CellID->1096727170],
-Cell[33876, 780, 9402, 219, 36, "Output",ExpressionUUID->"3b98d768-4a21-4c3b-ac56-9332cef0ae9e",
- CellID->8702567],
-Cell[43281, 1001, 9406, 219, 36, "Output",ExpressionUUID->"91a513ac-6d2e-422b-969b-1e40437db310",
- CellID->1804373182]
+Cell[24986, 575, 9019, 206, 34, "Output",ExpressionUUID->"c4eacbe9-a47a-4bb4-9e4a-41e0d4a47332",
+ CellID->1918337929],
+Cell[34008, 783, 9388, 220, 34, "Output",ExpressionUUID->"49887ec2-3910-4cad-8860-e78102bd2095",
+ CellID->1176082327],
+Cell[43399, 1005, 9388, 220, 34, "Output",ExpressionUUID->"45464d88-a8f3-47a0-aea4-abbe5a22cc54",
+ CellID->2109411950]
 }, Open  ]],
-Cell[52702, 1223, 479, 7, 35, "Text",ExpressionUUID->"58451f83-9d12-4054-93a5-8543faddaa66",
+Cell[52802, 1228, 479, 7, 33, "Text",ExpressionUUID->"58451f83-9d12-4054-93a5-8543faddaa66",
  CellID->2021547627],
 Cell[CellGroupData[{
-Cell[53206, 1234, 239, 4, 29, "Input",ExpressionUUID->"64b61fc3-9188-43c6-b726-b00b607a95af",
+Cell[53306, 1239, 239, 4, 29, "Input",ExpressionUUID->"64b61fc3-9188-43c6-b726-b00b607a95af",
  CellID->1310713513],
-Cell[53448, 1240, 19023, 440, 37, "Output",ExpressionUUID->"c2e898c6-9eab-4abb-b2b4-417525e460c2",
- CellID->271475013]
+Cell[53548, 1245, 18807, 426, 34, "Output",ExpressionUUID->"58a0b10a-79d1-4a4c-b2f1-81a1f98610ee",
+ CellID->1387165795]
 }, Open  ]],
-Cell[72486, 1683, 562, 11, 35, "Text",ExpressionUUID->"6652e0f3-0376-43e8-bfd1-352f0bcccbd9",
+Cell[72370, 1674, 562, 11, 33, "Text",ExpressionUUID->"6652e0f3-0376-43e8-bfd1-352f0bcccbd9",
  CellID->1084271591],
 Cell[CellGroupData[{
-Cell[73073, 1698, 291, 5, 30, "Input",ExpressionUUID->"7da41dcb-2d4e-4563-9ee2-6b660042cd79",
+Cell[72957, 1689, 291, 5, 29, "Input",ExpressionUUID->"7da41dcb-2d4e-4563-9ee2-6b660042cd79",
  CellID->2054631568],
-Cell[73367, 1705, 19137, 442, 37, "Output",ExpressionUUID->"86810843-759c-47e1-8a43-3ff74cd5c8fd",
- CellID->980161793]
+Cell[73251, 1696, 18923, 428, 34, "Output",ExpressionUUID->"18891fbe-7324-4431-a435-348b30b14d06",
+ CellID->136498985]
 }, Open  ]],
-Cell[92519, 2150, 722, 16, 35, "Text",ExpressionUUID->"905d0932-b9c1-4ec0-a902-9963106fe8cc",
+Cell[92189, 2127, 722, 16, 33, "Text",ExpressionUUID->"905d0932-b9c1-4ec0-a902-9963106fe8cc",
  CellID->1849256502],
 Cell[CellGroupData[{
-Cell[93266, 2170, 269, 5, 29, "Input",ExpressionUUID->"b04fa575-a5f6-4ce3-93b8-2b74ab756915",
+Cell[92936, 2147, 269, 5, 29, "Input",ExpressionUUID->"b04fa575-a5f6-4ce3-93b8-2b74ab756915",
  CellID->666994509],
-Cell[93538, 2177, 15344, 411, 183, "Output",ExpressionUUID->"75bf6351-28c5-43e1-96c7-bdd079c07883",
- CellID->987764994]
+Cell[93208, 2154, 15325, 411, 181, "Output",ExpressionUUID->"84f00b8d-4bcf-4fdd-b902-078ad9c27a1b",
+ CellID->2087270800]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[108919, 2593, 319, 6, 32, "Input",ExpressionUUID->"d29a0b71-9132-4564-b14e-091780e728aa",
+Cell[108570, 2570, 319, 6, 29, "Input",ExpressionUUID->"d29a0b71-9132-4564-b14e-091780e728aa",
  CellID->999393173],
-Cell[109241, 2601, 15493, 414, 183, "Output",ExpressionUUID->"e20487ca-230c-4df2-9117-b96a6624978f",
- CellID->1241769263]
+Cell[108892, 2578, 15473, 414, 181, "Output",ExpressionUUID->"73865ffe-c79c-436d-a7d4-ab0a15b23f12",
+ CellID->1290033672]
 }, Open  ]],
-Cell[124749, 3018, 188, 2, 35, "Text",ExpressionUUID->"2b299dbf-dc3d-4ed4-aa62-a7feaa5b82ee",
+Cell[124380, 2995, 188, 2, 33, "Text",ExpressionUUID->"2b299dbf-dc3d-4ed4-aa62-a7feaa5b82ee",
  CellID->1318211805],
 Cell[CellGroupData[{
-Cell[124962, 3024, 411, 10, 32, "Input",ExpressionUUID->"a4a1afc8-48dc-4850-a560-c5e89a1fbeef",
+Cell[124593, 3001, 411, 10, 29, "Input",ExpressionUUID->"a4a1afc8-48dc-4850-a560-c5e89a1fbeef",
  CellID->413202583],
-Cell[125376, 3036, 26698, 629, 78, "Output",ExpressionUUID->"e0746959-b20b-441a-be6f-2184460d4572",
- CellID->751669879]
+Cell[125007, 3013, 26606, 630, 76, "Output",ExpressionUUID->"3f568d0f-e0ec-4b56-9e31-f1c9a89ef87f",
+ CellID->1978024280]
 }, Open  ]]
 }, Open  ]],
-Cell[152101, 3669, 161, 4, 54, "Subsection",ExpressionUUID->"a7168d84-0a77-4940-9197-845017bdd9ef",
+Cell[151640, 3647, 161, 4, 53, "Subsection",ExpressionUUID->"a7168d84-0a77-4940-9197-845017bdd9ef",
  CellID->204653245],
 Cell[CellGroupData[{
-Cell[152287, 3677, 163, 4, 38, "Subsection",ExpressionUUID->"43b76c14-05c3-471d-9184-909f608807a7",
+Cell[151826, 3655, 163, 4, 37, "Subsection",ExpressionUUID->"43b76c14-05c3-471d-9184-909f608807a7",
  CellID->890561554],
-Cell[152453, 3683, 163, 2, 35, "Text",ExpressionUUID->"106b57bd-326a-461f-a306-ecd3bf7b1b48",
+Cell[151992, 3661, 163, 2, 33, "Text",ExpressionUUID->"106b57bd-326a-461f-a306-ecd3bf7b1b48",
  CellID->340727694]
 }, Open  ]],
-Cell[152631, 3688, 236, 5, 54, "Subsection",ExpressionUUID->"cbec14ba-a284-4503-ad9e-271772a36ffc",
+Cell[152170, 3666, 236, 5, 53, "Subsection",ExpressionUUID->"cbec14ba-a284-4503-ad9e-271772a36ffc",
  CellID->767103639],
 Cell[CellGroupData[{
-Cell[152892, 3697, 271, 5, 38, "Subsection",ExpressionUUID->"be49d325-880d-4648-b6ed-c044bc5000b4",
+Cell[152431, 3675, 271, 5, 37, "Subsection",ExpressionUUID->"be49d325-880d-4648-b6ed-c044bc5000b4",
  CellID->658115267],
-Cell[153166, 3704, 735, 12, 58, "Text",ExpressionUUID->"4ecacca5-1257-4668-bf18-5ac1acb0e01a",
+Cell[152705, 3682, 735, 12, 58, "Text",ExpressionUUID->"4ecacca5-1257-4668-bf18-5ac1acb0e01a",
  CellID->660196314],
-Cell[153904, 3718, 4078, 105, 305, "Input",ExpressionUUID->"288772e4-f009-4498-a6f3-d40163f575d3",
+Cell[153443, 3696, 4074, 104, 305, "Input",ExpressionUUID->"288772e4-f009-4498-a6f3-d40163f575d3",
  CellID->234638137],
-Cell[157985, 3825, 2425, 59, 127, "Text",ExpressionUUID->"4498f2bb-6b04-436e-b590-fda4315f6c92",
+Cell[157520, 3802, 2425, 59, 127, "Text",ExpressionUUID->"4498f2bb-6b04-436e-b590-fda4315f6c92",
  CellID->1419704611],
-Cell[160413, 3886, 292, 5, 35, "Text",ExpressionUUID->"bd4efe79-98ea-47e8-be69-cdd263c91743",
+Cell[159948, 3863, 292, 5, 35, "Text",ExpressionUUID->"bd4efe79-98ea-47e8-be69-cdd263c91743",
  CellID->193688083]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[160754, 3897, 302, 5, 68, "Section",ExpressionUUID->"4b3e807c-c22e-4f8a-9a46-ac8694f25bdd",
+Cell[160289, 3874, 302, 5, 65, "Section",ExpressionUUID->"4b3e807c-c22e-4f8a-9a46-ac8694f25bdd",
  CellTags->{"Source & Additional Information", "TemplateSection"},
  CellID->132008035],
 Cell[CellGroupData[{
-Cell[161081, 3906, 1158, 28, 55, "Subsection",ExpressionUUID->"a8a8753a-78d5-4486-ae0e-de7546946a02",
+Cell[160616, 3883, 1158, 28, 53, "Subsection",ExpressionUUID->"a8a8753a-78d5-4486-ae0e-de7546946a02",
  CellTags->{"Related Symbols", "TemplateCellGroup"},
  CellID->467106741],
-Cell[162242, 3936, 2553, 58, 35, "Text",ExpressionUUID->"ea902b26-7c44-4c80-aae8-a4a380503a16",
+Cell[161777, 3913, 2541, 58, 33, "Text",ExpressionUUID->"ea902b26-7c44-4c80-aae8-a4a380503a16",
  CellID->623418567]
 }, Open  ]]
 }, Open  ]]
