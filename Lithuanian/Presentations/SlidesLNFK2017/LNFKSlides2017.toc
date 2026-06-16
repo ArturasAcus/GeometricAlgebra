@@ -1,6 +1,0 @@
-\beamer@endinputifotherversion {3.24pt}
-\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Grade-negated self-product}{5}{0}{2}
-\beamer@sectionintoc {3}{Inverse of general MV of algebras of dimension $n=p+q\le 5$}{9}{0}{3}
-\beamer@sectionintoc {4}{Inverse of general MV of algebras of dimension $n=p+q=6$}{28}{0}{4}
-\beamer@sectionintoc {5}{Conclusions and perspective}{35}{0}{5}
