@@ -1,1 +1,0 @@
-This folder contains presentations of the authors in various conferences/seminars. For interactive presentations demonstration notebooks are included (together with compatible package version of that time).

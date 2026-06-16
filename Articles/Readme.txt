@@ -1,1 +1,0 @@
-The folder contains preprints and published articles with check/development versions of notebooks, when I was able to find them.

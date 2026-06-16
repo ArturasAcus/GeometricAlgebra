@@ -1,1 +1,0 @@
-This folder includes test cases for some nontrivial commands. 

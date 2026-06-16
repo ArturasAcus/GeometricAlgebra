@@ -1,1 +1,0 @@
-This folder contains practical calculation examples. 
