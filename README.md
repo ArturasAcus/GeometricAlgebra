@@ -34,4 +34,4 @@
 **Additional material**
 - The "Article" folder contains notebooks that are supplementary to the published article (with old GA.nb versions to ensure compatibility)
 - The "Presentations" folder includes slides and interactive notebooks presented at international conferences
-- The "LithuanianLanguage" content is devoted to local users (contains book and presentations in local conferences)
+- The "Lithuanian" content is devoted to local users (contains book and presentations in local conferences)
