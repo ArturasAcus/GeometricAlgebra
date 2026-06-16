@@ -1,0 +1,882 @@
+\documentclass{birkjour}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+
+% extended math fonts
+\usepackage{yhmath}
+
+\usepackage{srctex} % MikTex,Inverse Search in tex files from Yap screen
+
+\newcommand{\ii}{\mathrm{i}} %imaginary unit
+\newcommand{\ee}{\mathrm{e}} %exponent
+\newcommand{\dd}{\mathrm{d}} %differential
+\newcommand{\cl}[2]{\ensuremath{\mathit{Cl}_{#1,#2}}} % clifford algebra notation
+
+
+%\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+%\DeclareFontShape{U}{mathx}{m}{n}{
+%      <5> <6> <7> <8> <9> <10>
+%      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+%      mathx10
+%      }{}
+%\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+%\DeclareFontSubstitution{U}{mathx}{m}{n}
+%\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+%\DeclareMathAccent{\wideparen}{0}{mathx}{"75}
+
+
+\newcommand{\reverse}[1]{\widetilde{#1}}
+\newcommand{\gradeinverse}[1]{\wideparen{#1}}
+\newcommand{\cliffordconjugate}[1]{\wideparen{\widetilde{#1}}}
+
+\def\d{\!\cdot\!} %narrow-space dot product
+\def\w{\!\wedge\!} %narrow-space wedge product
+\def\D{\cdot} %wide-space dot product
+\def\W{\wedge} %wide-space wedge product
+
+
+\newcommand{\e}[1]{\mathbf{e}_{#1}} % Clifford basis vectors in Cl(3,1)
+\newcommand{\Ie}[1]{I\negthinspace\mathbf{e}_{#1}}%bivector in Cl(3,1)
+\newcommand{\inv}[1]{\overline{#1}} %space inversion
+\newcommand{\ba}{\mathbf{a}} %bold a
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bbf}{\mathbf{f}} %bold f
+
+\def\m#1{\mathsf{#1}} % general multivector
+
+\def\sR{\mathsf{R}} %sans serif Rotation
+\def\sH{\mathsf{H}} %sans serif Hamiltonian
+\def\sF{\mathsf{F}} %sans serif F
+\def\sG{\mathsf{G}} %sans serif G
+\def\cB{\mathcal{B}} %bivector
+
+
+\begin{document}
+
+%Insert here the title, affiliations and abstract:
+
+\title[Inverse of  multivector: Beyond p+q=5]
+ {Inverse of  multivector: Beyond p+q=5\\ threshold}
+
+%----------Author 1
+\author{A.~Acus}
+\address{Institute of Theoretical Physics and Astronomy,\br
+Vilnius University,\br Saul{\.e}tekio 3, LT-10257 Vilnius,
+Lithuania} \email{arturas.acus@tfai.vu.lt}
+
+%\thanks{This work was completed with the support of our \TeX-pert.}
+%----------Author 2
+\author{A.~Dargys}
+
+\address{%
+Center for Physical Sciences and Technology,\br Semiconductor
+Physics Institute,\br Saul{\.e}tekio 3, LT-10257 Vilnius,
+Lithuania}
+
+\email{adolfas.dargys@ftmc.lt}
+%----------classification, keywords, date
+%----------classification, keywords, date
+\subjclass{Primary 15A18; Secondary 15A66}
+
+\keywords{{C}lifford algebra, geometric algebra, inverse
+multivector, computer-aided theory}
+
+\date{June, 2017}
+%----------additions
+%\dedicatory{To my boss}
+
+
+\begin{abstract}
+The algorithm of finding inverse multivector (MV) in a symbolic
+form is of paramount importance in computational Clifford
+geometric algebra (GA). First attempts of inversion of general MV 
+(J.P.~Fletcher, 2002) were based on the decomposition of MV into
+basis elements. The complexity of such calculations, nonetheless,
+grows exponentially with the dimension $n=p+q$ of $Cl_{p,q}$
+algebra. The breakthrough occurred 10 years later (P.~Dadbeh,
+2011), after grade-negation operation was introduced. This allowed
+to write down  explicit and compact inverse MV as a product of
+initial MV and its carefully chosen grade-negation counterparts
+for all GAs up to dimension $n\le5$.  It this report we show that
+the grade-negation self-product method can be extended beyond
+p+q=5 threshold if, in addition, properly constructed multilinear
+combinations of such MV products are used. In particular, we write
+down explicit compact MV inverse formulas for $p+q=6$ algebras.
+\end{abstract}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction\label{sec:1}}
+
+The knowledge of how to find the inverse multivector (MV) in
+Clifford algebra in a symbolic and coordinate-free form is very
+important both from computational and theoretical point of views.
+A universal formula for inverse MV allows to write down a fast and
+general algorithm for all occasions rather then to resort to
+specific symbolic or numerical cases. The inverse of MV can be
+used to find explicit solutions of algebraic GA equations with all
+the ensuing consequences and applications. A closely related
+problem is the normalization of spinors~\cite{Vaz2016,Lundholm09}.
+Invertibility also serves as an important criterion on deciding
+whether homogeneous versors are the blades~\cite{Bouma2001} which
+are essential in numerous geometric constructions.
+
+First attempts of inversion of some specific forms of MVs can be
+traced to papers~\cite{Semenov1991, Semenov1993A,Semenov1993B}.
+However it was not until 2002 when
+J.P.~Fletcher~\cite{Fletcher2002} has suggested some general MV
+inverse formulas for low dimensional algebras. The algorithm of
+these inverse MVs was based on decomposition of MV into basis
+elements, and, as a consequence, resulted in exponential growth of
+the complexity of problem along with  Clifford algebra $Cl_{p,q}$
+dimension $n=p+q$.
+
+The breakthrough occurred 10 years later when
+P.~Dadbeh~\cite{Dadbeh2011} introduced grade-negation operation
+that has  allowed  to write down compact and explicit formulas for
+MV inverse in a coordinate-free form. The heart of the algorithm
+is a geometric product of initial MV and its carefully chosen
+grade-negated counterparts that after few iterations eventually
+yield a scalar. In fact, the product may be related with a
+determinant of matrix representation of general MV, from which the
+inverse multivector can be easily extracted  by simply removing
+the initial MV, which is always positioned either in the left-most
+or right-most side of the product. The described method allows to
+find explicit inverse formulas for a general MV in $n$-dimensional
+Clifford space  up to dimension $n=p+q\le 5$, independent of GA
+signature $(p,q)$. It was rewritten by number of authors using
+different notations and forms (see, for
+example,~\cite{Shirokov2012,Hitzer2016}). Similar formulas for the
+norms of MVs for a few specific Clifford algebras when  $n\le 5$
+was also given  few years before~\cite{Lundholm09}. Analysis of
+general structure of such formulas was presented
+in~\cite{Suzuki2016}. However, until now any attempts to
+step across the threshold  $p+q=5$ were unsuccessful.
+
+It this report we show that the grade-negation method can be
+extended beyond $p+q=5$ threshold if, in addition, properly
+constructed  multilinear combinations of grade-negated MVs are
+used. In particular,  we write down explicit MV inverse formulas
+for $p+q=6$ algebras having all possible   $(p,q)$ signatures. In
+Sec.~\ref{sec:2} the grade-negation method is shortly reviewed and
+required  notation is introduced. In Sec.~\ref{sec:3}  the inverse
+even MVs that follow from higher grade inverse MVs are considered.
+Finally, in Sec.~\ref{sec:4} a general algorithm for construction
+ of inverse MV at $p+q=6$ is explained and the obtained coordinate-free formulas
+are presented.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Grade-negated self-product and inverse of general MV of algebras of dimension $n=p+q\le5$ \label{sec:2}}
+
+Following~\cite{Dadbeh2011} we first introduce a grade-negated
+self-product, which  is defined via \textit{grade-$r$ negation
+operation}.  Applied to the multivector $\m{A}$ this operation
+does what it says, i.~e., it changes the sign of grade-$r$ part in the
+MV~$\m{A}$.  Such grade-$r$ negated MV  will be denoted as
+$\m{A}_{\bar r}$, with the bar over index designating which of the
+grades have opposite signs.  Formally the grade-$r$ negated MV can
+be expressed as $\m{A}_{\bar r}=\m{A}-2\langle \m{A}\rangle_r$,
+where $\langle \m{A}\rangle_r$ denotes grade-$r$ projection of
+multivector  $\m{A}$. In particular, we have
+$(\langle\m{A}\rangle_r)_{\bar r}=-\langle\m{A}\rangle_r$.
+
+The following properties are evident  from definition of
+grade-negation operation: $(\m{A}_{\bar p})_{\bar r}=\m{A}_{{\bar
+p},{\bar r}}=\m{A}_{{\bar r},{\bar p}}$, $\m{A}_{{\bar r},{\bar
+r}}=\m{A}$, $(\m{A}+\m{B})_{\bar r}=\m{A}_{\bar r}+\m{B}_{\bar
+r}$. However, $(\m{AB})_{\bar r}\ne \m{A}_{\bar r}\m{B}_{\bar r}$.
+If $\m{A}$ does not contain grade-$r$ elements then negation
+returns the same MV, $\m{A}_{\bar r}=\m{A}$. Commutator with
+grade-negated MV then can be expressed as $\m{A} \m{A}_{\bar
+r}-\m{A}_{\bar r}\m{A}=2(\langle \m{A}\rangle_r\m{A}-\m{A}\langle
+\m{A}\rangle_r)$. The standard reversion denoted as
+$\reverse{\m{A}}$, grade inversion $\gradeinverse{\m{A}}$, and
+Clifford conjugate
+$\cliffordconjugate{\m{A}}=\reverse{\gradeinverse{\m{A}}}$
+operations in term of negation, respectively, can be written as
+$\reverse{\m{A}}=\m{A}_{{\bar 2},{\bar 3},{\bar 6},{\bar 7},{\bar
+{10}},{\bar {11}}\dots}$, $\gradeinverse{\m{A}}=\m{A}_{{\bar
+1},{\bar 3},{\bar 5},{\bar 7},{\bar {9}},{\bar {11}}\dots}$ and
+$\cliffordconjugate{\m{A}}=\m{A}_{{\bar 1},{\bar 2},{\bar 5},{\bar
+6},{\bar {9}},{\bar {10}}\dots}$. For a concrete algebra the
+series of indices can be chopped off when the value of the
+negation index becomes larger than pseudoscalar index. It should
+be noted that grades $0,4,8,12,\dots$ are absent in the above list
+of standard GA involutions. From this follows that the inverse of
+a general MV cannot be expressed using just standard involutions,
+or their combinations. As we shall see this observation also is directly related to the MV inversion problem for $p+q\ge 6$.
+
+By grade-negated self-product we identify the geometric product of
+general multivector $\m{A}$ with any number of its grade-negated
+counterparts, for example, $\m{A} \m{A}_{\bar r} \m{A}_{\bar
+k,\bar l,\bar t} \m{A}_{\bar s, \bar t}\cdots$ or $\m{A}_{\bar r}
+\m{A}_{\bar k,\bar l,\bar t} \m{A}_{\bar s, \bar t}\cdots\m{A} $.
+Those negated self-products where the initial MV $\m{A}$ stands in
+the left-most or in the right-most position will be of special
+importance in finding the inverse multivector $\m{A}^{-1}$. It is
+obvious, that if we have  some identity written in Clifford
+algebra of dimension $n=p+q$ which includes only operations of
+geometric product and general grade negation operation  then this
+identity will be valid for any $n$-dimensional algebra having
+arbitrary signature $(p,q)$. This happens because grade negation
+(which is, of course, one of GA involutions) completely
+ignores the signature of the algebra.
+
+The explicit inverse formulas which we will construct rely on our
+ability to get a scalar using just grade-negated self-products
+(or, as we shall see, some multilinear combinations of them for
+$n>5$), where initial multivector is a mandatory and located
+either in the left-most or right-most position. We shall call in
+this way obtained scalar
+\begin{equation}\label{discriminant}
+s_m=\overbrace{\m{A}\m{A}_{\bar r,\bar t,\ldots}\m{A}_{\bar
+s,\ldots}\cdots}^m \end{equation}  \textit{a discriminant of the
+MV} if its symbolic expression coincides with the determinant of
+the matrix representation of the multivector $\m{A}$. If we succeed in
+constructing such a scalar then it is easy to see that left or
+right inverse of MV can be obtained simply by removing left or
+right  most positioned initial MV $\m{A}$ from the scalar
+$s_m=\m{A}\m{A}_{\bar r,\bar t,\ldots}\m{A}_{\bar s,\ldots}\cdots$
+and then dividing the result by $s_m$, i.~e., the left inverse of MV $\m{A}$
+is
+\begin{equation}\label{inverse}
+\m{A}^{-1}=\frac{\m{A}_{\bar r,\bar t,\ldots}\m{A}_{\bar
+s,\ldots}\cdots}{s_m}.\end{equation}
+
+For low dimensional algebras the construction of the scalar $s_m$
+is easy and can be done by a simple rule of thumb: in each of
+intermediate steps of construction,  the self-product of two terms
+should not repeat previous grades  and at the same time should
+eliminate a sufficient number of remaining grades, so that the
+midway MV will consist of smaller number of grades. However, the
+rule generally does not guarantee that this always will lead to the desired result
+(scalar). We will demonstrate that rule works for algebras with
+$n\le5$ and fails starting from $n\ge6$. To facilitate the guess
+which of grades must  be negated in the self-products we have
+written \textit{Mathematica} symbolic
+program~\cite{AcusDargys2017} for fast calculation of geometric
+products. Examples of such products can be seen in
+table~\ref{invall}.
+
+{\bf Two dimensional algebras.} Since one dimensional case is
+trivial we shall start from two dimensional algebras $Cl_{2,0}$,
+$Cl_{1,1}$ and $Cl_{0,2}$. As mentioned,  the  elimination of
+grades  by self-products does not depend on algebra signature,
+therefore, we may choose any of algebras. For $n=2$ let it be
+$Cl_{2,0}$. Writing $\m{A} = \sum_{J=0}^{2^n-1} a_J\e{J}$, where
+the multi-index $J$ covers all orthonormal base elements arranged
+in inverse degree lexicographic order, i.~e., the lowest grade
+elements appear first while elements of the same grade are ordered
+lexicographically. In the considered example the multi-index takes
+the following explicit values $J=[\{\},\{1\},\{2\},\{1,2\}]$. We
+can check that self-product $\m{A} \m{A}_{\bar 1,\bar 2}$
+immediately gives the required scalar $s_2=a_{\{\}}^2 - a_{1}^2 -
+a_{2}^2 + a_{1,2}^2$. In the standard notation it is more
+convenient to rewrite the coefficient indices as $s_2=a_{0}^2 -
+a_{1}^2 - a_{2}^2 + a_{3}^2$, which means that  in front of base
+scalar~$1$ the index in  coefficient  $a_{0}$ is zero, the
+coefficients at vectors run from $1$ to $n$ while numerical
+indices of higher grades increase monotonically up to $2^n$. In
+general, when programming, for a coefficient in front of grade-$r$
+base it is convenient to start the element index
+enumeration by $\sum_{k=0}^{r-1} (\begin{smallmatrix}n\\
+k\end{smallmatrix})$ and to end by
+$\Bigl(\sum_{k=0}^{r-1} (\begin{smallmatrix}n\\
+k\end{smallmatrix})\Bigr)+(\begin{smallmatrix}n\\
+r\end{smallmatrix})-1$.  Here $(\begin{smallmatrix}n\\
+k\end{smallmatrix})$ denotes the binomial coefficient. For
+example, for \cl{3}{0}, which has three vectors and three
+bivectors, these expressions give $1$ and $3$ for first/last
+vector indices, and $4$ and $6$ for first/last bivector indices.
+Taking into account that binomial with negative index vanishes,
+this convention enumerates all coefficients of MV and allows an
+easy transition to more standard notation in a consistent way, for
+example, $\m{A}=a_0 + a_1\e{1} + a_2\e{2} + a_3\e{12}$ for initial
+MV and $\m{A}_{\bar 1,\bar 2}=a_0 - a_1\e{1}- a_2\e{2}- a_3\e{12}$
+for grade-negated MV.  This notation  will be used throughout the
+paper. Note, that indices of base elements will never be renamed
+and always be referred to as multi-indices. If no ambiguity will
+arise, we also shall delete the separating commas between indices
+in base elements. Before  going to higher dimensional algebras few
+comments are in place.
+
+ (1) The explicit form of discriminant $s_m$ comprises all coefficients $a_i$ of multivector~$\m{A}$.
+
+ (2) The condition for a MV to have inverse is determined by
+ discriminant which must be unequal to zero, $s_m\ne 0$. This imposes
+ the requirement between MV coefficients.
+
+(3) Because reverse leaves the scalar (discriminant) invariant,
+the above formula for $n=2$ can be rewritten as
+$s_2=\m{A} \m{A}_{\bar 1,\bar 2}=\m{A}_{\bar 1,\bar 2}\m{A}$, from
+which the left/right inverse formulas follow,
+$\m{A}^{-1}=\m{A}_{\bar 1,\bar 2}/s_2= \m{A}_{\bar 1,\bar
+2}/(\m{A}\m{A}_{\bar 1,\bar 2})=\m{A}_{\bar 1,\bar 2}/(\m{A}_{\bar
+1,\bar 2}\m{A})$. Since  $\m{A}_{\bar 1,\bar
+2}=\cliffordconjugate{\m{A}}$, for \cl{2}{0} algebra the
+negated MV can be expressed through standard involutions.
+
+ (4) The discriminant expression for $n=2$ contains only two MVs.
+ From 8-periodicity table~\cite{Lounesto97} follows that GA
+ algebras \cl{2}{0}, \cl{1}{1} and \cl{0}{2}
+ can be represented  by  $2\times2$ real matrices $\mathbb{R}(2)$ or quaternion~$\mathbb{H}$.
+ Thus we have that both the determinant of real matrix and the product of two MVs are
+ quadratic in MV coefficients $a_i$. Below we shall see that in all cases the highest degree  of coefficients in the discriminant
+ always matches the degree of determinant of real matrix representation of $\m{A}$.
+ This suggests that the number of MVs needed in the grade-negated self-product can be determined
+ from the size of real irreducible matrix representation in 8-periodicity table.
+
+
+ (5) The eliminated grades are grade-negated in one of MVs in the self-product.
+ In the considered  example the grades $1$ and $2$ have been eliminated simultaneously
+ in  $\m{A}_{\bar 1,\bar 2}$. As we shall see this rule is valid for discriminants
+ up to $n\le5$.
+ For $n\ge6$ exceptions from the rule appear due to multiples of grade-$4$ and
+ because of reappearance of some previously eliminated grades.
+
+{\bf Three dimensional algebras.}  Our goal is to eliminate as
+many grades as possible by forming suitable self-products. What is
+important is that the remaining grades in the self-products should
+not regenerate already eliminated grades. As another example, let
+us  calculate the inverse of $Cl_{2,1}$ algebra. It is easy to
+check that the product of $\m{A}=a_{0}+a_{1} \e{1}+a_{2}
+\e{2}+a_{3} \e{3}+a_{4} \e{12}+a_{5} \e{13}+a_{6} \e{23}+a_{7}
+\e{123}$ with $\m{A}_{\bar 1,\bar 2}$ lacks grades $1$ and $2$.
+The result is the new multivector $\m{B}=\m{A} \m{A}_{\bar 1,\bar
+2}= b_{0}+b_{7} \e{123}$ which  consists of scalar and grade-$3$
+element. In particular, $b_0=a_{0}^2 - a_{1}^2 - a_{2}^2 + a_{3}^2
++ a_{4}^2 - a_{5}^2 - a_{6}^2 + a_{7}^2$ and $b_7=-2 a_{3} a_{4} +
+2 a_{2} a_{5} - 2 a_{1} a_{6} + 2 a_{0} a_{7}$. Repeating  grade
+negation procedure one finds that grade-$3$ part can be removed
+too, and we obtain the left-handed discriminant $s_4=\m{B}
+\m{B}_{\bar 3}=\m{A} \m{A}_{\bar 1,\bar 2}(\m{A} \m{A}_{\bar
+1,\bar 2})_{\bar 3}=b_0^2 - b_7^2$. Reversion of $s_4$ then
+immediately yields the $\m{A}$-right-handed discriminant
+$s_4^\prime=(\m{A}_{\bar 1,\bar 2}\m{A})_{\bar 3} \m{A}_{\bar
+1,\bar 2}\m{A}$ that contains four MVs. Of course, for different
+3D algebras the same formula will give different fully expanded
+expressions, which will differ in signs of individual
+coefficients~$a_i$. Note, that now the discriminant is determined
+by two terms, $b_0^2$ and $b_7^2$, the difference of which should
+not be zero for invertible multivector $\m{A}$ to exist. The
+condition $b_0^2-b_7^2\ne 0$ exactly matches the MV invertibility
+condition, which  according to 8-periodicity table may be obtained
+by calculating the determinant of matrix representation of MV,
+namely, the determinant of $4\times 4$ real matrices
+${^2\mathbb{R}(2)}$.
+
+{\bf Four dimensional algebras.} In $n=4$ case, trying to
+eliminate as much grades as possible  we can proceed in two
+alternative ways. Firstly, we can negate simultaneously grades $1$
+and $2$ and then in the next step the grades $3$ and $4$.
+Alternatively  we can eliminate $2$ and $3$, and then $1$ and $4$
+grades. Both choices are valid. However, if we choose  $1$ and
+$3$, and  $2$ and $4$ grade combinations, neither one will  do the
+job. Thus, we find the following formulas for the left-hand
+discriminant: $s_4= \m{A}\m{A}_{\bar{1},\bar{2}}(\m{A}
+\m{A}_{\bar{1},\bar{2}})_{\bar{3},\bar{4}}= \m{A}
+\m{A}_{\bar{2},\bar{3}}
+(\m{A}\m{A}_{\bar{2},\bar{3}})_{\bar{1},\bar{4}}$. The right-hand
+version  is similar,
+$s_4^\prime=(\m{A}_{\bar{2},\bar{3}}\m{A})_{\bar{1},\bar{4}}\m{A}_{\bar{2},\bar{3}}
+\m{A}=
+(\m{A}_{\bar{1},\bar{2}}\m{A})_{\bar{3},\bar{4}}\,\m{A}_{\bar{1},\bar{2}}
+\m{A}$.  The appearance of symbol $\m{A}$ as much as four times in
+the products $s_4$ and  $s_4^{\prime}$ is again what we expect
+from the matrix representation for $n=4$ algebras, namely, the
+highest degree of determinant polynomial should be of degree $4$
+as well, in accord with $4\times 4$ matrix representation
+$\mathbb{R}(4)$. Despite different forms, expanded explicit
+expressions for $s_m$ and $s_m^\prime$ in fact always are equal,
+$s_m=s_m^\prime$.
+
+
+{\bf Five dimensional algebras.} This is the largest dimension
+$n=p+q=5$ at which consecutive grade elimination algorithm, that
+factorizes the discriminant into product of initial and  negated
+MV's, works. The grade elimination sequence is similar: (1)
+Eliminate simultaneously grades $2$ and $3$; (2) Then eliminate
+grades $1$ and $4$; (3) Finally eliminate grade $5$. Apart from
+the last step this sequence is exactly the same as the second
+alternative of $n=4$ case. The final result is
+$s_8^\prime=(\m{F}\m{A})_{\bar{5}}\m{F}\m{A}$ with
+$\m{F}=(\m{A}_{\bar{2},\bar{3}}\m{A})_{\bar{1},\bar{4}}
+\m{A}_{\bar{2},\bar{3}}$ for right-hand sided form of the
+discriminant and $s_8=\m{A}\m{D}\, (\m{A}\m{D})_{\bar{5}}$ with
+$\m{D}=\m{A}_{\bar{2},\bar{3}}
+(\m{A}\m{A}_{\bar{2},\bar{3}})_{\bar{1},\bar{4}}$ for left-hand
+discriminant. Matrix representation of five dimensional Clifford
+algebras corresponds to   real ${^2\mathbb{R}(4)}$ matrix the the
+determinant of which is a polynomial of degree $8$. This is in
+accord with the structure of discriminant~$s_8=s_8^\prime$ where
+the $\m{A}$ occurs as much as eight times.
+
+
+Can this grade elimination procedure be extended beyond $n=5$? The
+short answer is 'yes' if, as shown below, we allow multilinear
+combinations of grade-negated self-products with properly chosen
+numerical coefficients. Before describing this case let us derive
+some useful formulas for even subalgebras when  $n\le6$. The even
+subalgebras are related with the spinor groups that are very
+important in the quantum mechanics~\cite{Vaz2016}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Inverse of even multivectors\label{sec:3}}
+
+
+\begin{table}
+\[\begin{array}{ll}
+Cl_{p,q}&\qquad  \bigl(\m{A}^{+}\bigr)^{-1} \\[5pt]\hline
+p+q=2&\qquad \frac{B \bigl(\m{A}^{+} B\bigr)} {\bigl(\m{A}^{+}
+B\bigr)^2}, \qquad B =(\e{i})_{\bar{1}}=-\e{i}
+\\[4pt]
+  p+q=3 &\qquad \frac{C \bigl(\m{A}^{+} C\bigr)}
+{\bigl(\m{A}^{+} C\bigr)^2}, \qquad C = (\m{A}^{+}
+\e{i})_{\bar{1}}
+\\[4pt]
+  p+q=4&\qquad \frac{C \bigl(\m{A}^{+} C\bigr)}
+{\bigl(\m{A}^{+} C\bigr)^2}, \qquad  C = (\m{A}^{+}
+\e{i})_{\bar{1}}
+\\[4pt]
+ p+q=5&\qquad \frac{D \bigl(\m{A}^{+} D\bigr)}
+{\bigl(\m{A}^{+} D\bigr)^2}, \qquad  D = (\m{A}^{+}
+\e{i})_{\bar{3}} \bigl(\m{A}^{+} (\m{A}^{+}
+\e{i})_{\bar{3}}\bigr)_{\bar{1}}
+\\[4pt]
+p+q=6&\qquad \frac{D \bigl(\m{A}^{+} D\bigr)_{\bar{6}}}
+{\bigl(\m{A}^{+} D\bigr)\bigl(\m{A}^{+} D\bigr)_{\bar{6}}}, \quad
+D = (\m{A}^{+} \e{i})_{\bar{3}} \bigl(\m{A}^{+} (\m{A}^{+}
+\e{i})_{\bar{3}}\bigr)_{\bar{1}}
+\end{array}
+\]
+\caption{\label{inveven} Explicit formulas of inverse of even
+multivectors in a coordinate-free form for Clifford algebras of
+dimension $p+q\le 6$. The quantities $\bigl(\m{A}^{+}
+B\bigr)^2/\e{i}^2$, $\bigl(\m{A}^{+} C\bigr)^2/\e{i}^2$,
+$\bigl(\m{A}^{+} D\bigr)^2/\e{i}^4$ and ${\bigl(\m{A}^{+}
+D\bigr)\bigl(\m{A}^{+} D\bigr)_{\bar{6}}}/\e{i}^4$  are the
+discriminants of respective multivectors. Here explicit
+$\e{i}^2=\pm 1$ and $\e{i}^4=+1$ factors take into account the
+correct sign and norm once the orthonormal base vector $\e{i}$ is replaced by arbitrary unnormalized and nonisotropic vector $v$.}
+\end{table}
+
+
+When  MV consists of even grade elements only, i.~e.
+$\m{A}^{+}=\langle\m{A}\rangle_{0}+\langle\m{A}\rangle_{2}+\langle\m{A}\rangle_{4}+\cdots$,
+simpler formulas for inverse MVs can be constructed as shown in
+table~\ref{inveven}. The given formulas in no way do restrict the
+general MV case. The base vectors $\e{i}$ in these formulas play
+the role of dummy variables and therefore may be replaced by
+different basis vectors, or even by any linear combination of base
+vectors of nonzero magnitude, i.~e., by any nonisotropic vector.
+By reversing numerators and denominators right-hand side formulas
+can be straightforwardly obtained.
+
+It is interesting to observe that in contrast to general case at
+$p+q=6$ there exists a single self-negated product  for an even
+inverse MV (see table~\ref{inveven}) that is not a multilinear
+combination. This property is to be expected (compare with  a
+general multivector form for $p+q=5$ in table~\ref{invall}),
+because there exists the well-known isomorphism between the even
+subalgebra of one dimension larger algebra  and the full lower
+dimensional Clifford algebra,
+\begin{equation}\label{iso}
+\cl{p}{q+1}^+\cong\cl{p}{q},\quad\cl{p+1}{q}^+\cong\cl{q}{p}\,.
+\end{equation}
+Because we can write inverse MV as a single self-negated product
+for dimension $p+q=5$ (see table~\ref{invall}), it is not
+surprising that according to isomorphisms~\eqref{iso} we can do
+this for even subalgebra of dimension $p+q=6$. Unfortunately, as
+we shall see in section~\ref{sec:4} this property does not extend
+to the full six dimensional Clifford algebra.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Inverse of general MV in $p+q=6$ dimensional Clifford algebra\label{sec:4}}
+\subsection{Insufficiency of single self-negated product in $p+q=6$ case\label{sec:4a}}
+
+Let us take $Cl_{6,0}$ algebra. Using \textit{Mathematica} GA
+package~\cite{AcusDargys2017}, after some experimentation with a
+pair of self-negated product formed from a general MV it is not
+difficult to discover that we can eliminate simultaneously either
+grades $1$, $2$, $5$ and $6$ (then $0$, $3$ and $4$ grades
+survive) or, alternatively,  the grades $2$, $3$ and $6$ (then
+grades $0$, $1$, $4$ and $5$ persist). It should be noted that in
+both cases the grade $4$ remains and, therefore, cannot be
+eliminated by the method of simple self-negated product used till
+now. This conclusion strictly follows from an attempt to simultaneously
+nullify all coefficients of grade-$4$ base elements using all
+$2^6=64$ possible combinations of grade negations in the two term
+product. The grade-$4$ therefore is distinct from the other grades and
+deserves special examination. It turns out that there exists a
+subalgebra with base  formed by elements $\{1, \e{1256},
+\e{1346},\e{2345}\}$ such that any self product of multivector
+$\m{B}=a_{0}+a_{47} \e{1256}+a_{49} \e{1346}+a_{52} \e{2345}$  by
+grade-negated $\m{B}$ will yield new MV having at least one
+grade-$4$ base element present. This is the reason why such single
+self-product fails in eliminating grade-$4$ part and, as we shall
+see, one has to use a combination of at least a pair of
+self-products to eliminate such an infinite loop.
+
+\subsection{Multilinear combination of self-products\label{sec:4b}}
+
+Before looking for coefficients of multilinear combination of two
+self-negated products, first, we shall note that the determinant
+of matrix representation of general MV that consists of scalar and general
+$4$-th grade element can be writen as $s_8=(s_4)^2$. So we can always take square
+root of it. It means that instead of $m=8$ in
+equations~\eqref{discriminant} just a half of them is enough to
+write down the discriminant for restricted to scalar + grade-$4$
+multivector, i.~e., we can look for the self-negated product which
+contains only four independent multivectors (the related
+discriminant of multilinear combination of two terms each
+consisting of geometric product of $4$ multivectors will be
+denoted as $s_{4+4}$). By forming a prototype of such a geometric product of the
+form $s_{4+4}=s_{4f} +s_{4g}$ we have
+\begin{equation}\begin{split}
+ &s_{4f}+s_{4g}=\\
+ &b_1 B f_5\Bigl(f_4(B) f_3\bigl(f_2(B) f_1(B)\bigr)\Bigr)
+ +b_2 B g_5\Bigl(g_4(B) g_3\bigl(g_2(B)
+  g_1(B)\bigr)\Bigr)\label{s1},
+\end{split}\end{equation}
+where $f_j, g_j$ denotes yet undetermined grade-$4$ negations and
+$b_1, b_2$ are unknown scalar coefficients of the multilinear
+combination. The above  choice of the discriminant, of course, is
+not unique. The other three possible choices (see below), however, yield the same answer.
+
+Once negation search pattern was fixed we can calculate explicit
+symbolic form of square root of the determinant of matrix
+representation of the multivector $\m{B}=a_{0}+a_{47}
+\e{1256}+a_{49} \e{1346}+a_{52} \e{2345}$ and compare it with
+ all possible negations of grade-$4$ substituted for $f_j$ and $g_j$ in~\eqref{s1}.
+The involutions of grade-$4$ can be modelled as a multiplication
+by unknown coefficient $p_{4jk}$, where the index $j$ denotes the
+involution number $f_j,g_j$ in the self-product and $k$ is the
+term in multilinear combination (in $p+q=6$ case $k=1$ for $f$ and
+$k=2$ for $g$). Later, when we shall deal with negations of other
+grades the first index $i$ in $p_{ijk}$ will indicate possible
+involuted grade-$i$. For the moment the index $i$ is fixed to $4$,
+which corresponds  to current grade of $\m{B}$ (we will ignore
+negations of scalar, because it is equivalent to negation of all
+other MV grades). The coefficients $p_{ijk}$ acquire the values
+$\pm 1$ only, where $-1$ means that involution that changes sign
+of grade $i$ is applied and $+1$ means that grade-$i$ remains
+unchanged.
+
+In the considered case, comparison with the square root of
+determinant of matrix representation of $\m{B}$ yields the
+following two sets of solutions, $\{b_1=-2/3,\; b_2=-1/3,\;
+p_{411}=-1,\; p_{412}=1,\; p_{421}=-1,\; p_{422}=1,\;
+p_{431}=-1,\; p_{432}=-1,\; p_{441}=-1,\; p_{442}=1,\;
+p_{451}=-1,\; p_{452}=1\}$ and $\{b_1=-1/3,\; b_2=-2/3,\;
+p_{411}=1,\; p_{412}=-1,\; p_{421}=1,\; p_{422}=-1,\;
+p_{431}=-1,\; p_{432}=-1,\; p_{441}=1,\; p_{442}=-1,\;
+p_{451}=1,\; p_{452}=-1\}$. It is enough to take only one of them,
+because the other, in fact,  represents the term interchange in
+multilinear combination. It is easy to check that the above
+solution though was computed from highly simplified MV (scalar
+plus three grade-$4$ base elements) works flawlessly for more
+general MV (scalar plus any number of grade-$4$ elements) $\m{C}=
+a_0+a_{42} \e{1234}+a_{43} \e{1235}+a_{44} \e{1236}+a_{45}
+\e{1245}+a_{46} \e{1246}+a_{47} \e{1256}+a_{48} \e{1345}+a_{49}
+\e{1346}+a_{50} \e{1356}+a_{51} \e{1456}+a_{52} \e{2345}+a_{53}
+\e{2346}+a_{54} \e{2356}+a_{55} \e{2456}+a_{56} \e{3456} $. This
+is what one expects, because grade involution acts on all equal
+grade elements in exactly identical way. This considerably speeds
+up search procedure for involutions, because we always can choose
+truncated or shorter  MVs when trying to balance calculation
+complexity against speed.
+
+We note that in $s_{4+4}=s_{4f} +s_{4g}$, general form of
+negated-product $s_{4f}\sim B f_5\Bigl(f_4(B) f_3\bigl(f_2(B)
+f_1(B)\bigr)\Bigr)$ could be replaced by similar products with
+interchanged negations, $s_{4f^\prime}\sim B
+f_5^\prime\Bigl(f_3^\prime\bigl(f_4^\prime(B)
+f_2^\prime(B)\bigl)f_1^\prime(B)\Bigl)$, and similarly for~$g_j$.
+We have explicitly verified that in the case of scalar + general
+grade-$4$ multivector all four possible variants of discriminant,
+i.~e. $(s_{4f}+s_{4g})(s_{4f}+s_{4g})$,
+$(s_{4f}+s_{4g^\prime})(s_{4f}+s_{4g^\prime})$,
+$(s_{4f^\prime}+s_{4g})(s_{4f^\prime}+s_{4g})$ and
+$(s_{4f^\prime}+s_{4g^\prime})(s_{4f^\prime}+s_{4g^\prime})$ yield
+the same solution, i.~e.  a single pair (multilinear combination
+of two terms) of self-negated products that eliminates grade-$4$
+elements from the MV may be selected. We will note that
+grade-negation of other grades in equation~\eqref{s1} is not
+unique and, in general, provides numerous possibilities. In the
+end this will yield different formulas for inverse MV, similarly
+as it was for algebras $p+q=4$.
+
+
+Once the coefficients $b_k$ in equation~\eqref{s1} and arrangement
+of involutions $f_j$ and $g_j$ that ensure that the problematic
+grade-$4$ elimination were successfully found, we can begin
+the search in exactly the same way for concrete involutions that
+consecutively will eliminate all other grades. It was already
+mentioned that in equations of type~\eqref{s1} either grades $1$,
+$2$, $5$ and $6$ (then grades $0$, $3$ and $4$ remain), or,
+alternatively grades $2$, $3$ and $6$ (then grades $0$, $1$, $4$
+and $5$ remain) can be simultaneously eliminated. All in all there
+are $\frac{6!}{2!4!}+\frac{6!}{3!3!} +1=36$ elements of grades
+$2$, $3$ and $6$ which can be eliminated simultaneously. This is
+more than $28$ total elements of grades $1$, $2$, $5$ and $6$ that need to be eliminated. Therefore, if we replace $\m{B}$ in
+equation~\eqref{s1} by self-negated product $\m{A}\m{A}_{{\bar
+2},{\bar 3},{\bar 6}}$ we then are left to deal with self-negated
+product of four multivectors of grades $0$, $1$, $4$, $5$ only,
+from which we can ignore  the grades $0$ and $4$. Thus, repeating
+the trick of finding remaining undetermined involutions of grades
+$1$, $2$, $5$ we arrive to a number of valid solutions for
+coefficients $p_{1jk},p_{2jk}$ and $p_{5jk}$. In order to speed up
+the derivation we had used the multivector $ a_{0}+a_{1}
+\e{1}+a_{22} \e{123}+a_{47} \e{1256}$ first. The obtained result
+then was checked symbolically using the most general $Cl_{6,0}$
+multivector. There are $320$ such solutions for the above
+considered case, which include different numbers and combinations
+of negation operations. Among them there is just one solution,
+which applies negation to the minimal number of MVs. It was found
+that  minimal number of negated MVs is $10$. However, from
+computation point of view the solution with minimal number of
+negations isn't optimal. Indeed, while the answer is correct, some
+grades cancel out in the last moment, during subtraction between 
+terms $s_{4f}$ and $s_{4g}$ in~\eqref{s1} (actually we
+had to rename $s_{4f}+s_{4g}\rightarrow s_{8f}+s_{8g}$ now, because $\m{B}$
+was replaced by product $\m{A}\m{A}_{{\bar 2},{\bar 3},{\bar 6}}$
+and formula~\eqref{s1} now contains multilinear combination of~8 multiplied MVs, which corresponds to polynomial degree of full, now unfactorizable, determinant). Using more involutions we can force these
+grades to be eliminated in each of terms separately. Then only
+grade-$4$ remains to be cancelled out by the multilinear
+combination itself.
+
+After  the discriminant has been found  the inverse multivector
+can be immediately written using equation~\eqref{inverse}. The
+results for inverse MVs for algebras $p+q\le 6$ are presented in
+table~\ref{invall}.
+\begin{table}
+\[\begin{array}{ll}
+\cl{p}{q}&\qquad  \m{A}^{-1} \\[5pt]\hline\\[-5pt]
+p+q=0&\qquad\frac{\m{B}}{\m{A}\m{B}},\qquad\qquad\qquad\qquad\m{B}=1\\[4pt]
+%
+ p+q=1&\qquad
+\frac{\m{B}(\m{A}\m{B})_{\bar{1}}}{\m{A}\m{B}\,(\m{A}\m{B})_{\bar{1}}}
+= \frac{\gradeinverse{\m{A}}}{\m{A} \gradeinverse{\m{A}}},\quad\qquad\m{B}=1\\[4pt]
+%
+  p+q=2&\qquad \frac{\m{C}}{\m{A}\m{C}}=\frac{\cliffordconjugate{\m{A}}}{\m{A} \cliffordconjugate{\m{A}}}
+,\qquad\qquad\quad\m{C}=\m{A}_{\bar{1},\bar{2}}\\[4pt]
+%
+  p+q=3 &\qquad
+ \frac{\m{C}(\m{A}\m{C})_{\bar{3}}}{\m{A}\m{C}\,(\m{A}\m{C})_{\bar{3}}}
+=\frac{\cliffordconjugate{\m{A}}\gradeinverse{\m{A}}\reverse{\m{A}}}{\m{A}
+\cliffordconjugate{\m{A}}\gradeinverse{\m{A}}\reverse{\m{A}}}
+,\qquad\m{C}=\m{A}_{\bar{1},\bar{2}}\\[4pt]
+%
+ p+q=4&\qquad\frac{\m{D}}{\m{A}\m{D}},\qquad\qquad\qquad\qquad
+\m{D}=\m{A}_{\bar{2},\bar{3}}
+(\m{A}\m{A}_{\bar{2},\bar{3}})_{\bar{1},\bar{4}}\quad \\
+   &\qquad\qquad\qquad\qquad\qquad\textrm{or}\quad \m{D}=\m{A}_{\bar{1},\bar{2}}(\m{A}
+\m{A}_{\bar{1},\bar{2}})_{\bar{3},\bar{4}}  \\[4pt]
+%
+ p+q=5&\qquad\frac{\m{D}(\m{A}\m{D})_{\bar{5}}}{\m{A}\m{D}\,
+(\m{A}\m{D})_{\bar{5}}},\qquad\qquad\qquad
+\m{D}=\m{A}_{\bar{2},\bar{3}}
+(\m{A}\m{A}_{\bar{2},\bar{3}})_{\bar{1},\bar{4}}\\[4pt]
+%
+p+q=6&\qquad\frac{\m{G}}{\m{A}\m{G}},\qquad\m{G}=\frac{1}{3} \m{A}_{\bar{2},\bar{3},\bar{6}} \Bigl(\m{H} (\m{H} \m{H})_{\bar{1},\bar{4},\bar{5}} + 2 \bigl(\m{H}_{\bar{4}} (\m{H}_{\bar{4}} \m{H}_{\bar{4}})_{\bar{1},\bar{4},\bar{5}}\bigr)_{\bar{4}}\Bigr)\\
+     &\quad\textrm{or}\quad \m{G}=\frac{1}{3} \m{A}_{\bar{2},\bar{3},\bar{6}} \Bigl(\bigl(\m{H} (\m{H} \m{H}_{\bar{1},\bar{5}})_{\bar{4}}\bigr)_{\bar{1},\bar{5}} + 2 \bigl(\m{H}_{\bar{4},\bar{5}} (\m{H}_{\bar{4},\bar{5}} \m{H}_{\bar{1},\bar{4}})_{\bar{4}}\bigr)_{\bar{1},\bar{4}}\Bigr)\\
+&\qquad \qquad \qquad\textrm{with}\quad \m{H}=\m{A} \m{A}_{\bar{2},\bar{3},\bar{6}}=\m{A}\reverse{\m{A}}
+\end{array}
+\]
+\caption{\label{invall}Summary of formulas for inverse
+multivectors in a left-side form of initial MV  for Clifford
+algebras of dimension $p+q\le 6$. In case $p+q=6$ the second more
+complicated algorithm (formula) for computation of discriminant
+$s_{8+8}=\m{A}\m{G}$ in orthonormal basis is faster.}
+\end{table}
+The denominators, which are scalars, in these expressions are the
+discriminants of respective MVs. At the same time they give the
+condition for existence of the inverse MV. It was found that
+discriminants exactly match expressions for determinants
+calculated from matrix representation of respective  MVs.
+All formulas presented in the table~\ref{invall} were checked by
+explicit calculation of symbolic inverses of the most general MV
+for concrete Clifford algebras with all passible signatures $(p,q)$.
+For this task we wrote the {\it Mathematica} package for symbolic
+calculations in the Clifford algebra~\cite{AcusDargys2017}  (to be
+described elsewhere), which also can be found in {\it Mathematica}
+package data base (\url{http://packagedata.net/}). The program can
+simultaneously deal with a number of Clifford algebras of
+different signatures $(p,q)$ what was a of great help in
+computer-assisted verifications.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Outline, perspective and discussion\label{sec:5}}
+From this computer-aided study we conjecture that the inverse of a
+general MV of arbitrary Clifford algebra can be always  expressed
+as a multilinear combination of proper number of specially
+constructed self-negated products, where the initial MV may stay
+in the left-most or right-most position. For the first time we
+have explicitly derived the expression for inverse of general MV
+for Clifford algebras of dimension $p+q=6$, which consists of
+multilinear combination of just two grade-negated products. The
+formulas are independent of a particular algebra signature
+$(p,q)$.  They reduce to known expressions in simple cases, for
+inverses of vectors, bivector or their combinations. 
+
+The computation of inverse MV by formulas presented in
+table~\ref{invall} require considerably smaller number of
+multiplications because many pieces in the formulas are iterated
+many times. The speed of calculation can be improved further if MV
+multiplication algorithm is realized in such a way, that it can skip 
+calculation of some specific grades. In this case a
+huge number of operations can be avoided. For example, for
+algebras of dimension $p+q=6$  the expression $\m{A}\m{A}_{{\bar
+2},{\bar 3},{\bar 6}}$ consists of grades $0$, $1$, $4$ and $5$
+and there is no need to calculate result for grades $2$, $3$ and $6$ since  we know
+in advance that the answer will be zero.
+
+It is easy to see that the number $m$ of multipliers in
+self-negated product of discriminant in
+equation~\eqref{discriminant} is determined by the dimension of
+real matrices $\mathbb{R}(2)$, ${^2\mathbb{R}(2)}$,
+$\mathbb{R}(4)$ etc that lie on anti-diagonals,
+$n=p+q=\mathrm{const}$, of the 8-periodicity
+table~\cite{Lounesto97}. For algebra with $p+q=2$ the discriminant
+consists just of two multipliers, whereas for $p+q=3$ as well as
+for $p+q=4$ we need to make product of four MV multipliers in
+accord with dimension of a respective matrices in 8-periodicity
+table. The Clifford algebras of dimensions $5$ and $6$, require
+$8$ MV multivectors to construct the discriminant. Then, looking
+at $8$-periodicity table one may guess that discriminant of
+algebras of dimension $7$ and $8$ can possibly be constructed by
+multilinear combinations from products of $16$ multivectors, etc.
+
+The question about how many terms is required to make minimal
+multilinear combination is much more difficult. We suspect that
+this number might be fixed by a number of "non-eliminatible"
+grades, i.~e., grades which cannot be eliminated by self-negated
+product of MV with itself, which in turn would point out to the
+existence of some cyclic substructures in Clifford algebra. There
+are no such "non-eliminatible" grades in algebras with $p+q\le 5$.
+There is only one grade, namely the grade-$4$, in algebras of
+dimension $6$ and $7$, whereas the algebras with $p+q =8$ already
+have two such special grades, $4$ and~$8$. It could happen that in $n=8$ case,
+because of special role played by pseudoscalar (grade $8$ element
+here), the both grades can be eliminated by same additive
+combination consisting just of two terms. In general case,
+however, multilinear combination of three terms is to be expected
+for $p+q =8$ as well as for algebras of dimension~$n=9$.
+
+From the considerations above it should be  clear that the
+complexity of finding explicit expression of general MV inverse grows
+rapidly with the increase of algebra dimension. For example,
+direct multiplication of eight general arbitrary multivectors of
+$p+q=6$ dimensional algebra requires
+$(2^6)^8=281\mspace{2mu}474\mspace{3mu}976\mspace{3mu}710\mspace{4mu}656$
+geometric multiplications of base elements, which fortunately can
+be bypassed due to significant grade reduction in calculating the
+discriminant formula as discussed in the paper. However, in
+practice it does not help much when searching for correct shape of
+discriminant formula. This is why reduced (shorter) MVs are always worth
+to try first which, under proper choice, may greatly reduce the
+number of candidates for possible combinations of multilinear
+multivectors. The obtained final discriminant and inverse expressions make computations self-contained within the geometric product structure without needing to go to a matrix representation.
+
+
+
+%\bibliographystyle{REPORT}
+%\bibliography{Ghent2017}
+
+
+\begin{thebibliography}{10}
+
+\bibitem{Vaz2016}
+J.~Vaz and R. {da}~Rocha,
+\newblock {\em An Introduction to {C}lifford Algebras and Spinors},
+\newblock Oxford University Press, Oxford, 2016.
+
+\bibitem{Lundholm09}
+D.~Lundholm and L.~Svensson,
+\newblock Clifford algebra, geometric algebra, and applications,
+\newblock arXiv:0907.5356v1 [math-ph], 1--117 (2009).
+
+
+\bibitem{Bouma2001}
+T.~A. Bouma and G.~Memowich,
+\newblock Invertible homogeneous versors are blades, 2001,
+\url{http://www.science.uva.nl/research/ias/ga/publications/blades.ps.gz}.
+
+\bibitem{Semenov1991}
+P.~V. Semenov,
+\newblock An invertibility criterion for multivectors in a real Clifford
+  algebra,
+\newblock Sibirsk. Mat. Zh. {\bf 34}(4), 177--183 (1991).
+
+\bibitem{Semenov1993A}
+P.~Semenov,
+\newblock On invertibility in high-dimensional {C}lifford algebras,
+\newblock Found. Phys. {\bf 23}(11), 1543--1546 (1993).
+
+\bibitem{Semenov1993B}
+P.~Semenov,
+\newblock On invertibility of {C}lifford algebras elements with disjoint
+  supports,
+\newblock in {\em Spinors, Twistors, Clifford Algebras and Quantum
+  Deformations: Proceedings of the Second Max Born Symposium held near
+  Wroc{\l}aw, Poland, September 1992}, edited by Z.~Oziewicz, B.~Jancewicz, and
+  A.~Borowiec, pages 167--169, Springer Netherlands, Dordrecht, 1993.
+
+\bibitem{Fletcher2002}
+J.~P. Fletcher,
+\newblock Clifford numbers and their inverses calculated using the matrix
+  representation,
+\newblock in {\em Applications of Geometric Algebra in Computer Science and
+  Engineering}, edited by L.~Dorst, C.~Doran, and J.~Lasenby, pages 169--178,
+  Birkh{\"a}user Boston, Boston, MA, 2002.
+
+\bibitem{Dadbeh2011}
+P.~{Dadbeh},
+\newblock {Inverse and determinant in 0 to 5 dimensional {C}lifford algebra},
+\newblock arXiv: 1104.0067  (Mar. 2011).
+
+\bibitem{Shirokov2012}
+D.~S. Shirokov,
+\newblock Concepts of trace, determinant and inverse of {C}lifford algebra
+  elements,
+\newblock in {\em Proceedings of the 8th Congress of the International Society
+  for Analysis, its Applications, and Computation (ISAAC)}, edited by V.~I.
+  Burenkov, M.~L. Goldman, E.~B. Laneev, and V.~D. Stepanov, volume~1, pages
+  187--194, Friendship University of Russia (ISBN 978-5-209-04582-3/hbk),
+  Moscow, Russia, 2012,
+\newblock arXiv: 1108.5447.
+
+\bibitem{Hitzer2016}
+E.~Hitzer and S.~Sangwine,
+\newblock Multivector and multivector matrix inverses in real Clifford
+  algebras,
+\newblock Technical report, School of computer science and electronic
+  engineering, Unversity of Essex, UK, Technical Report CES-534, 2016.
+
+\bibitem{Suzuki2016}
+Y.~Suzuki and N.~Yamaguchi,
+\newblock Structure of inverse elements of Clifford algebra of dimension at
+  most two to fifth power,
+\newblock arXiv:1601.03157v1 [math-RA] , 1--14 (2016).
+
+\bibitem{Lounesto97}
+P.~Lounesto,
+\newblock {\em Clifford Algebra and Spinors},
+\newblock Cambridge University Press, Cambridge, 1997.
+
+\bibitem{AcusDargys2017}
+A.~Acus and A.~Dargys,
+\newblock Geometric algebra Mathematica package, 2017,
+ \url{https://github.com/ArturasAcus/GeometricAlgebra}.
+
+
+
+\end{thebibliography}
+
+\end{document}

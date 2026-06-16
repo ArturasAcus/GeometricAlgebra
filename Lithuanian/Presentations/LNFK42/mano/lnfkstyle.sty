@@ -1,0 +1,121 @@
+%% Based on VUMIF.sty
+%% Copyright 2004, 2005, 2006, 2007 Laurynas Biveinis
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status ‘maintained’.
+%
+% The Current Maintainer of this work is Laurynas Biveinis.
+%
+% Darbo apiforminimas pagal Vilniaus universiteto
+% Matematikos ir informatikos fakulteto reikalavimus
+% bei adaptuotas VU Fizikos fakultetui
+% 2013-05-20 Pataisytas bibliografijos suderinamumas LyX
+
+\ProvidesPackage{lnfkstyle}[2015/02/23 LNFK-41 abstract style]
+
+\renewcommand{\rmdefault}{cmr}
+
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage{newtxmath}
+\usepackage[L7x]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\RequirePackage{setspace}
+\RequirePackage{vmargin}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage{esint}
+\RequirePackage{nopageno}
+\usepackage{bm}
+\setpapersize[portrait]{A4}
+\usepackage[labelsep=period]{caption}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tgtermes}
+
+\RequirePackage[lithuanian]{babel}
+
+
+
+\setlength{\columnsep}{1cm}
+
+\setmarginsrb{2cm}{2.5cm}{2cm}{2.5cm}{0cm}{0cm}{0pt}{0pt}
+\pagestyle{plain}%
+
+   
+\renewcommand\large{%
+   \@setfontsize\large{12pt}{13.4pt}%
+   \abovedisplayskip 11\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6\p@ \@plus3.5\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}\large
+
+\setlength{\parindent}{7.5mm}
+\setlength{\parskip}{0cm plus0mm minus0mm}
+
+\ProcessOptions
+
+\renewcommand\imath{\ensuremath{\mathrm{i}}}
+\renewcommand\vec[1]{\ensuremath{\mathbf{#1}}}
+
+\newcommand\titlelt[1]{\gdef\@titlelt{\reset@font\large\bfseries #1}}
+\newcommand\titleen[1]{\gdef\@titleen{\reset@font\large\bfseries #1}}
+\renewcommand\author[1]{\gdef\@author{\reset@font\normalsize #1}}
+
+\newcommand\keywords[1]{\gdef\@keywords{\reset@font\normalsize \noindent\textit{Reikšminiai žodžiai: #1}}}
+
+\setlength{\pdfpagewidth}{210mm}
+\setlength{\pdfpageheight}{297mm}
+
+   \def\@maketitle{%
+     \begin{center}%
+       {\@titlelt \par}%
+       \vspace{10pt}
+       {\@titleen \par}%
+	\vspace{10pt}
+       { \@author \par}%
+     \end{center}%
+	\vspace{-10pt}
+     }
+     
+\newcommand{\address}[1]{
+\par {\centering #1
+\noindent\par}
+}
+
+\newcommand{\rightaddress}[1]{
+\par {\centering \uline{#1}
+\noindent\par\vspace{10pt}}
+}
+
+
+\renewenvironment{thebibliography}[1]{%
+	{\@keywords } \vspace{10pt}
+	%\par\noindent\rule[0.5ex]{1\columnwidth}{0.5pt}\vspace{-0.2cm}
+	{\par \noindent \normalsize \textbf{Literatūra}}
+	\footnotesize
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin10pt
+            \advance\leftmargin\labelsep 
+            \itemsep\z@skip    % should this be commented out?
+            \parsep\z@skip     % should this be commented out?
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy\clubpenalty4000\widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+          

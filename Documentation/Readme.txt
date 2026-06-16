@@ -1,1 +1,1 @@
-This folder contains documentation notebooks of well established commands. Notebooks that have execution permision are unfinished and are included for space reservation purpose.
+This folder contains documentation notebooks of well established commands. Notebooks with execution permision are unfinished (this is for me).

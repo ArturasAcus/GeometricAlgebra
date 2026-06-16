@@ -1,0 +1,122 @@
+\documentclass[a4paper,10pt,lithuanian]{article}
+\usepackage{lnfkstyle}
+\usepackage{color}
+
+\usepackage[OT2,L7x]{fontenc}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\m}{\mathcal}
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\p}{\partial}
+\renewcommand{\Im}{\mathrm{Im}\,}
+
+\def\A{\mathsf{A}}
+\def\B{\mathsf{B}}
+\def\C{\mathsf{C}}
+\def\D{\mathsf{D}}
+
+\newcommand{\cA}{\ensuremath{\mathcal{A}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cC}{\ensuremath{\mathcal{C}}}
+
+\newcommand{\bv}{\ensuremath{\mathbf{v}}}
+\newcommand{\bV}{\ensuremath{\mathbf{V}}}
+
+
+\newcommand{\cl}[2]{\ensuremath{\mathit{Cl}_{#1,#2}}}
+% base vectors and related
+\def\e#1{\mathbf{e}_{#1}} %single numbered Clifford basis vectors. Input: $\e3$ or $\e{12}$
+
+\begin{document}
+
+\titlelt{Kvadratinė šaknis iš 3D Clifford'o multivektorių}
+
+\titleen{Square root of a multivector of Clifford algebras in~3D}
+
+\author{\uline{Artūras Acus$^1$}, Adolfas Dargys$^2$}
+
+\keywords{{C}lifford'o algebra, geometrinė algebra, kvadratinė šaknis iš multivektoriaus}
+
+\maketitle
+
+
+
+\address{$^1$Teorinės fizikos ir astronomijos institutas,
+Vilniaus universitetas, Saulėtekio 3, 10222 Vilnius}
+
+\address{$^2$Puslaidininkių fizikos institutas,
+Fizinių ir technologijos mokslų centras, Saulėtekio 3, 10222 Vilnius}
+
+\rightaddress{arturas.acus@tfai.vu.lt}
+%adolfas.dargys@ftmc.lt
+
+\begin{multicols*}{2}
+
+Matematikos ir fizikos istorijoje šaknies traukimas visada vaidino ypatingą vaidmenį. Galima prisiminti, pavyzdžiui, kad kvadratinės šaknies iš neigiamo skaičiaus koncepcija yra glaudžiai susijusi su kubinės lygties sprendinio užrašymu radikalais.  1872 A.~Cayley pirmasis įvedė šaknies iš matricos operaciją. Susidomėjus kvaternionais imta domėtis ir jų kvadratinėms šaknimis. Mūsų darbas žengia ta kryptimi dar toliau. Jame pateikiame algoritmą ir išreikštines formules kaip ištraukti šaknį iš Cliffordo algebros (CA) multivektorių (MV) apibrėžtų trimatėje (įvairių metrikų) erdvėje. Tokios formulės yra svarbios apibrėžiant multivektorių Fourier transformacijas, CA bangelių (wavelet) teorijoje, o taip pat gali turėti taikymų ir sistemų 
+  valdymo teorijoje, bei teorinėje fizikoje (ypač reliatyvumo teorijoje), kur CA dar tik pradedama naudoti.
+
+
+
+Matematiškai užduotis formuluojama labai paprastai. Būtent, duotam trimatės erdvės  multivektoriui $\B$
+\begin{equation}\label{AA}
+  \B=\A\A\equiv\A^2=b_0+\mathbf{b}+\cB+b_{123}I,
+\end{equation}
+kur $b_0, \mathbf{b}, \cB, I$ žymi, atitinkamai, CA skaliarą, vektorių, bivektorių ir pseudoskaliarą reikia surasti visus tokius MV $\A$, kurių geometrinė sandaugą duotų MV $\B$,  t.y., $\A \A=\B$. Multivektorius $\A=\sqrt{\B}$ vadinamas kvadratine šaknimi iš MV $\B$. Uždavinį patogiausia spręsti $\A$ parametrizavus tokiu būdu:
+\begin{equation}
+\A=s+\bv+(S+\bV)I.\label{mvA30}
+\end{equation}
+  Tuomet sudauginus ir sulyginus koeficientus prie tų pačių algebros bazinių elementų galima užrašyti 8~sukabintas lygtis, kurias turi tenkinti MV $\A$ koeficientai. Šių lygčių sprendinius pavyksta elegantiškai užrašyti per radikalus pirmiausia išsprendus lygtis vektoriams $\bv$ ir $\bV$, o po to likusioms dviem lygtims  pritaikius lygties laipsnį sumažinantį kintamųjų pakeitimą. 
+
+
+Darbuose [1,2] mes įrodėme, kas kvadratinę šaknį iš MV Clifford algebrose \cl{3}{0}, \cl{0}{3}, \cl{1}{2} ir \cl{2}{1} galima užrašyti per radikalus. Šaknų skaičius įvairiose algebrose skiriasi, be to, jei $\B$ tenkina tam tikras sąlygas, jis gali būti ir begalinis. Būtent, algebrose  $\cl{3}{0}$ ir $\cl{1}{2}$ kvadratinių šaknų aibė bendru atveju yra sąjunga trijų aibių: 1) izoliuotų šaknų aibės, kuri atsiranda kai skaliarai lygtyje \eqref{mvA30} tenkina sąlygą $s^2\neq S^2$, ir kurią gali sudaryti daugiausia keturios skirtingos šaknys, 2) izoliuotų šaknų aibės, kurią sudaro daugiausia dvi šaknys (atsirandančios kai tie patys skaliarai tenkina sąlygą $s^2 =S^2\neq 0$) ir 3) begalinės šaknų aibės (kai $s=S=0$), kuri gali būti parametrizuota daugiausia keturiais nepriklausomais parametrais.  
+  
+$\cl{0}{3}$ algebroje skirtumas yra tik toks, kad 2) atveju vietoje dviejų izoliuotų šaknų atsiranda begalinė šaknų aibė, kurią galima parametrizuoti daugiausia dviem nepriklausomais parametrais. 
+  
+  Tuo tarpu kvadratinių šaknų aibė $\cl{2}{1}$ algebroje yra panaši į $\cl{0}{3}$ algebros atvejį, tik  ypatinga tuo, kad jos izoliuotų šaknų aibę gali sudaryti net 16 šaknų. Pavyzdžiui, mūsų aprašytu būdu~\cite{AcusDargys2019} traukdami iš multivektoriaus $\B=2+\e{1}+\e{13}$ gauname tokias šaknis:
+\begin{equation}
+\begin{split}
+  &\A_{1,2}=\pm\tfrac{1}{2}\big(c_1 \e{2}-c_1 \e{2 3}-\sqrt{2}c_2\e{123}\big),\\
+ &\A_{3,4}=\pm\tfrac{1}{\sqrt{2}}\big(-c_1^{-1}\e{2}+c_1^{-1}\e{2 3}+c_1 \e{1 2 3}\big),\\
+&\A_{5,6}=\pm\tfrac{1}{2}\big(\sqrt{2}c_2+c_1\e{1}+c_1\e{13}\big),\\
+&\A_{7,8}=\pm\tfrac{1}{\sqrt{2}}\big(c_1+ c_1^{-1}\e{1}+c_1^{-1}\e{1 3}\big),\\
+&\A_{9,10}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_2-c_2\e{1}-c_1\e{2}-c_2\e{13}+c_1\e{2 3}\\
+&\phantom{A_{11,12}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_ 1+c_1 \e{1} -c_ 2 \e{2}+c_1} 
+  +\sqrt{2}c_1 \e{1 2 3}\big),\\
+  &A_{11,12}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_ 1+c_1 \e{1}-c_ 2 \e{2}+c_1 \e{1 3}+c_2 \e{2 3}\\
+&\phantom{A_{11,12}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_ 1+c_1 \e{1} -c_ 2 \e{2}+c_1} 
+ -2c_1^{-1}\e{1 2 3}\big),\\
+&\A_{13,14}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_1+c_1 \e{1}+c_2 \e{2}+c_1 \e{1 3}-c_2 \e{2 3}\\
+&\phantom{A_{11,12}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_ 1+c_1 \e{1} -c_ 2 \e{2}+c_1} 
+  +2c_1^{-1}\e{1 2 3}\big),\\
+&\A_{15,16}=\pm\tfrac{1}{2\sqrt{2}}\big(-\sqrt{2}c_2+c_2 \e{1}-c_1
+\e{2}+c_2 \e{13}+c_1 \e{2 3}\\
+&\phantom{A_{11,12}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_ 1+c_1 \e{1} -c_ 2 \e{2}+c_1} 
+  +\sqrt{2}c_1 \e{1 2 3}\big),
+\end{split}\end{equation}
+kur pažymėjome $c_1=\sqrt{2+\sqrt{2}}$ ir $c_2=\sqrt{2-\sqrt{2}}$.
+  
+  
+  Aprašytą algoritmą mes realizavome kompiuterinėje algebros sistemoje {\it Mathematica}. Algoritmas tinka ir kompleksinėms Clifford algebroms, kurioms jį taikyti netgi paprasčiau, nes nereikia atsižvelgti į tai, kad koeficientai prie bazinių elementų $\e{ij\ldots}$ turi būti realūs skaičiai.
+
+
+
+\begin{thebibliography}{References}
+
+\bibitem{Dargys2019}
+A.~Dargys and A.~Acus,
+\newblock Square root of a multivector in 3D {C}lifford algebras,
+\newblock Nonlinear Analysis: Modelling and Control , 1--20 (2019),
+\newblock accepted.
+
+\bibitem{AcusDargys2019}
+A.~Acus and A.~Dargys
+\newblock Square root of a multivector of Clifford algebras in~3D: A game with signs,
+\newblock submitted to Advances in Clifford algebras and applications.
+
+\end{thebibliography}
+
+\end{multicols*}
+
+\end{document}

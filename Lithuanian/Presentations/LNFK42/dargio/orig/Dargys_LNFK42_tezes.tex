@@ -1,0 +1,223 @@
+\documentclass[a4paper,10pt,twocolums,dvips]{proc}
+\usepackage{amssymb,amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+
+%\usepackage{newtxmath}
+%\usepackage[L7x]{fontenc}
+
+\newcommand{\e}[1]{\mathbf{e}_{#1}}
+\newcommand{\sig}[1]{\boldsymbol{\sigma}_{#1}}
+\newcommand{\Isig}[1]{I\!\boldsymbol{\sigma}_{#1}}
+\newcommand{\ii}{\mathrm{i}} %imaginary unit
+\newcommand{\ee}{\mathrm{e}} %exponent
+\def\eps#1{\varepsilon_{#1}} %dielectric constants
+
+%Cliffordo algebros simboliai
+\def\d{\!\cdot\!} %dot product
+\def\D{\cdot}
+\def\w{\!\wedge\!} %wedge product
+\def\W{\wedge}
+\def\e#1{\mathbf{e}_{#1}} %Clifford basis. Input: $\e3$ or $\e{12}$
+\def\g#1{\gamma_{#1}} %CL31 basis. Input: $\g3$ or $\g{12}$
+\def\Ig#1{I\!\gamma_{#1}}%CL31 trivectors
+\def\sig#1{\boldsymbol{\sigma}_{#1}} %CL30 basis vectors. $\sig{12}$
+\def\Isig#1{I\!\boldsymbol{\sigma}_{#1}}
+
+
+\def\bE{\mathbf{E}}
+\def\bH{\mathbf{H}}
+\def\bD{\mathbf{D}}
+\def\bF{\mathbf{F}}
+\def\bB{\mathbf{B}}
+\def\bW{\mathbf{W}}
+
+\def\ba{\mathbf{a}}
+\def\bb{\mathbf{b}}
+\def\bk{\mathbf{k}}
+\def\bx{\mathbf{x}}
+\def\bw{\mathbf{w}}
+
+\def\cF{\mathcal{F}}
+\def\cD{\mathcal{D}}
+\def\cE{\mathcal{E}}
+\def\cG{\mathcal{G}}
+\def\cB{\mathcal{B}}
+\def\cH{\mathcal{H}}
+\def\cW{\mathcal{W}}
+
+\def\beps{\boldsymbol{\varepsilon}}
+\def\bmu{\boldsymbol{\mu}}
+
+\renewcommand{\refname}{\normalsize Literat{\=u}ra}
+
+\renewcommand{\rmdefault}{cmr}
+
+\renewcommand{\familydefault}{\rmdefault}
+
+ \setlength{\textwidth}{17cm}
+ \setlength{\columnsep}{1cm}
+ \setlength{\textheight}{247mm}%230mm
+
+%\setmarginsrb{2cm}{2.5cm}{2cm}{2.5cm}{0cm}{0cm}{0pt}{0pt}
+% \pagestyle{plain}%
+\newcommand\titlelt[1]{\gdef\@titlelt{\reset@font\large\bfseries #1}}
+\newcommand\titleen[1]{\gdef\@titleen{\reset@font\large\bfseries #1}}
+%\renewcommand\author[1]{\gdef\@author{\reset@font\normalsize #1}}
+
+\thispagestyle{empty} % nuima puslapiu numeracija
+
+\setlength{\parindent}{7.5mm} \setlength{\parskip}{0cm plus0mm
+minus0mm} %5mm
+\setlength{\parskip}{0cm plus0mm minus0mm}
+
+\newcommand\keywords[1]{\gdef\@keywords{\reset@font\normalsize
+ \noindent\textit{Reikšminiai žodžiai: #1}}}
+
+
+
+   \def\@maketitle{%
+     \begin{center}%
+       {\@titlelt \par}%
+       \vspace{10pt}
+       {\@titleen \par}%
+    \vspace{10pt}
+       { \@author \par}%
+     \end{center}%
+    \vspace{-10pt}
+     }
+
+
+
+% Lietuviskos raides naudojant 8 bitus (ispell komandai taip patinka)
+\catcode`\à=\active \defà{\k{a}} \catcode`\À=\active \defÀ{\k{A}}
+\catcode`\è=\active \defè{\v{c}} \catcode`\È=\active \defÈ{\v{C}}
+\catcode`\æ=\active \defæ{\k{e}} \catcode`\Æ=\active \defÆ{\k{E}}
+\catcode`\ë=\active \defë{\.{e}} \catcode`\Ë=\active \defË{\.{E}}
+\catcode`\á=\active \defá{\k{i}} \catcode`\Á=\active \defÁ{\k{I}}
+\catcode`\ð=\active \defð{\v{s}} \catcode`\Ð=\active \defÐ{\v{S}}
+\catcode`\ø=\active \defø{\k{u}} \catcode`\Ø=\active \defØ{\k{U}}
+\catcode`\û=\active \defû{\={u}} \catcode`\Û=\active \defÛ{\={U}}
+\catcode`\þ=\active \defþ{\v{z}} \catcode`\Þ=\active \defÞ{\v{Z}}
+
+
+\title{\vspace{-20pt}\bf\large  Medþiaginiai ryðiai klasikinëje ir reliatyvistinëje optikoje GA poþiûriu \\
+ \vspace{10pt} Classical and relativistic constitutive relations from GA point of view\vspace{-10pt}}
+\author{{\normalsize Adolfas Dargys}\\
+{\normalsize Nacionalinis fiziniø ir technologijos mokslø centras, Saulëtekio 3, LT-10257 Vilnius}\\
+{\normalsize adolfas.dargys@ftmc.lt}\vspace{-40pt}}
+
+\begin{document}
+
+\maketitle
+
+Diferencialiniø Maxwell'o  lygèiø sistema nëra pilna.  Jà reikia
+papildyti medþiaginiais ryðiais tarp pirminiø laukø $(\bE,\bB$),
+elektrinio ir magnetinio, ir medþiagoje indukuotø antriniø laukø
+$(\bD,\bH)$~[1]. Ryðiai gali nusakyti medþiagos inertiðkumà ar
+netiesiðkumà jà þadinant, histerezæ ir pan. Paprasèiausiu atveju
+manoma, kad  ryðis tarp laukø $(\bE,\bB$) ir $(\bD,\bH)$ yra
+momentinis. Klasikinës elektrodinamikos atveju medþiaginiai ryðiai
+tokiais atvejais uþraðomi per $3\times 3$ matricas
+$\bar{\varepsilon}$, $\bar{\gamma}$, $\bar{\beta}$ ir
+$\bar{\mu}^{-1}$[1]:
+\begin{equation}\begin{split}
+&\bD=\bar{\varepsilon}\bE+\bar{\gamma}\bB,\\
+&\bH=\bar{\beta}\bE+\bar{\mu}^{-1}\bB.
+ \end{split}\end{equation}
+Kyla klausimas, koks  bendriausias matricø pavidalas tuo atveju,
+kai medþiaga yra homogeniðka. Á tokius klausimus leidþia atsakyti
+Cliffordo (\textit{Cl}) geometrinë algebra (GA): klasikiniu atveju
+\textit{Cl}$_{3,0}$, o reliatyvistiniu atveju \textit{Cl}$_{1,3}$,
+kur apatiniai indeksai nusako erdvës (medþiagos) metrikà~[2]. Mûsø
+darbuose [2,3] parodyta, kad elektromagnetiniø bangø sklidimo
+terpëse  savybës tokiais atvejais seka ið algebrø
+\textit{Cl}$_{3,0}$ ir \textit{Cl}$_{1,3}$  vidinës sandaros, ir
+todël medþiaginiai ryðiai, t.~y. matricø $\bar{\varepsilon}$,
+$\bar{\gamma}$, $\bar{\beta}$ ir $\bar{\mu}^{-1}$ pavidalas, seka
+ið GA multivektoriø simetrijos savybiø.  Darbe~[3] pateikti bendri
+medþiagø saryðiai klasikinës elektrodinamikos atvejui, t.~y. kai
+terpës greitis yra þymiai maþesnis uþ ðviesos greitá, o
+straipsniuose [4,5] -- reliatyvistinei elektrodinamikai.
+
+Reliatyvistinës eletrodinamikos atveju turime vienintelá laukà,
+taip vadinamà Faraday'aus laukà medþiagoje $\cF=\cE+\cB$.
+Geometrinëje algebroje laukai nusakomi bivektoriais (orientuotomis
+plokðtumomis). Plokðtumos dydis nusako lauko stiprá, o plokðtumos
+orientacija -- lauko kryptá. Matuojami laukai $\cE$ ir $\cB$
+priklauso nuo stebëtojo. Invariantu iðlieka tik ju suma  $\cF$.
+Panaðiai uþraðomas suþadintas  medþiagoje laukas,
+$\cG=\cD+\cH=\chi(\cF)$, kur $\chi$ yra apibendrinta medþiagos
+juta, kurià galima susieti du medþiaginëmis matricomis
+(1)~formulëje. Bivektoriai $\cF$ ir $\cG$ turi po ðeðias
+dedamàsias, todël medþiagos sàryðius yra patogu nusakyti $6\times
+6$ matricomos:
+\begin{equation}\begin{split}\label{transform}
+ \left[\begin{array}{c}
+\cD\\
+\cH\\
+\end{array}\right]&=\Big(
+\left|\begin{array}{c|c}
+\text{Diel.Birefr.}&\text{Fizeau}\\
+\hline
+\text{Fizeau}&\text{Magn.Birefr.}\\
+\end{array}\right|
++\\
+%%
+&\quad\left|\begin{array}{c|c}
+\text{Diel.Faraday}&\text{Opt. Aktyv.}\\
+\hline
+\text{Opt. Aktyv.}&\text{Magn.Faraday}\\
+\end{array}\right|
+\Big) \left[\begin{array}{c}
+\cE\\
+\cB\\
+\end{array}\right|.
+\end{split}\end{equation}
+Á kiekvienà ið blokø áraðëmæ po vienà charakteringà reiðkiná
+(Fizeau $\rightarrow$ Fizeau reiðkinys, Birefr. $\rightarrow$
+dvejopas lûþimas). Bivektoriai $\cE$ ir $\cD$ yra erdviðkieji, o
+bivektoriai $\cB$ ir $\cH$ -- laikiðkieji, t.~y. jø kvadratai yra
+atitinkamai teigiami/neigiami dydþiai. Taigi $6\times 6$ matricà,
+kurios pirmoji dalis yra simetrinë, o antroji antisimetrinë,
+galima interpretuoti kaip bendrojo bivektoriaus $\cF$
+transformacijà á kità bivektoriø. Kadangi \textit{Cl}$_{1,3}$
+algebra automatiðkai áskaito erdvëlaikio simetrijos savybes (CPT
+simetrijà) per involiucijas, atskiri matricø blokai (3) formulëje
+taip pat pasiþymi tam tikromis simetrijos  savybëmis, kurios ir
+nusako meþiagos reliatyvistinius sàryðius. Atitinkamos $6\times 6$
+matricos (jø yra penkios) yra pateiktos straipsniuose~[4,5],
+kurias sudedant ávairiomis kombinacijomis galima gauti paèius
+ávairiausius medþiaginius sàryðius, kurie seka ið relatyvistinës
+elektrodinamikos. Ið pateiktø visø galimø reliatyvistiniø $6\times
+6$ matricø galima sukonstruoti  klasikinius (1) sàryðius, kurie
+daþniausiai ir nauduojami bangø sklidimo analizëje. Smulkiai tokie
+sàryðiai iðraðyti [5] darbe.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{3mm}
+
+{\textit{Reikðminiai þodþiai: Medþiaginiai sàryðiai,
+elektromagnetiniø bangø sklidimas,  Cliffordo algebra}}
+
+ \vspace{10pt}
+ \textbf{Litaratûra}
+
+   \noindent[1] {\footnotesize M.~Born and E.~Wolf, 1999 \textit{Principles of Optics}
+   (Cambridge, CUP), 1999}
+
+  \noindent[2] {\footnotesize A.~Dargys, A.~Acus, 2015 \textit{Cliffordo
+  geometrinë algebra  ir jos taikymai} (UAB Petro ofsetas), 2015}
+
+ \noindent[3] {\footnotesize A.~Dargys,   Lith. J. Phys. {\bf 55}, 92-99 (2015)}
+
+
+ \noindent[4] {\footnotesize A.~Dargys, Opt. Comm. {\bf 354}, 259-65
+(2015)}
+
+ \noindent[5] {\footnotesize A.~Dargys,  arXiv:1609:04261v1,\
+ \ \ [physics.class-ph] (2016)}
+
+
+\end{document}

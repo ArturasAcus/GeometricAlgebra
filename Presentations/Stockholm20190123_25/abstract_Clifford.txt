@@ -1,0 +1,14 @@
+Introduction to Clifford algebra applications: Quantum eigens and the Inverse
+of a multivector
+
+
+After a short and slightly provocative "computational" introduction to
+Clifford algebras, two problems will be discussed in the seminar. In the first, 
+we shortly present how two-level model in physics can be reformulated and solved 
+in a purely geometric way by Clifford algebra. In the second, a detailed introduction 
+into problem of inverse of multivector when n=p+q<7 will be presented. It is hard to believe 
+that after seminal work published 130 years ago (in 1878) by Clifford, one of the fundamental 
+problems -- the inverse of a general multivector -- still has no answer. 
+Finally, if time will allow, an example on how the noncommutative multivector
+Clifford-Sylvester equation  (AX+BX=C, $p+q <= 3$) can be solved by inverse multivector
+algorithm will be demonstrated.

@@ -1,0 +1,976 @@
+\documentclass[xcolor=svgnames,hyperref={pdfpagemode=FullScreen}]{beamer}
+% struktûrizuojame, kad tas pats dokumentas tiktø ir konspektams ir skaidrëms
+% Todël \documentclass yra paðalinti
+
+\usefonttheme{professionalfonts} 
+\usepackage{lmodern}
+\usepackage{bm}
+\usepackage{yhmath}
+
+\usepackage[L7x,T1]{fontenc}
+\AtBeginDocument{\renewcommand\encodingdefault{L7x}\normalfont}
+
+
+\beamertemplatenavigationsymbolsempty
+
+%\defbeamertemplate*{footline}{infolines theme}
+%{
+%  \leavevmode%
+%  \hbox{%
+%  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\insertshortauthor
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%    \usebeamerfont{title in head/foot}\insertshorttitle
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+%  \end{beamercolorbox}}%
+%  \vskip0pt%
+%}
+
+
+
+%\usetheme{progressbar}
+%(or \usecolortheme{progressbar}, \usefonttheme{progressbar}, \useoutertheme{progressbar}, \useinnertheme{progressbar})
+
+
+% Tiek skaidrëms tiek konspektams naudojami paketai
+
+% svarbiausi paketai
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+%\usepackage{mathtools}
+\usepackage{mathrsfs}
+%\usepackage{bm}
+%\usepackage{latexsym}
+%\usepackage{esint}
+
+
+
+
+\usepackage{makecell}
+\newcolumntype{x}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{tikz}
+\newcommand\diag[4]{%
+  \multicolumn{1}{p{#2}}{\hskip-\tabcolsep
+  $\vcenter{\begin{tikzpicture}[baseline=0,anchor=south west,inner sep=#1]
+  \path[use as bounding box] (0,0) rectangle (#2+2\tabcolsep,\baselineskip);
+  \node[minimum width={#2+2\tabcolsep-\pgflinewidth},
+        minimum  height=\baselineskip+\extrarowheight-\pgflinewidth] (box) {};
+  \draw[line cap=round] (box.north west) -- (box.south east);
+  \node[anchor=south west] at (box.south west) {#3};
+  \node[anchor=north east] at (box.north east) {#4};
+ \end{tikzpicture}}$\hskip-\tabcolsep}}
+
+
+%\usepackage[authoryear]{natbib}
+
+\bibliographystyle{apalike}
+%\bibliographystyle{plainnat}
+%\setcitestyle{square,aysep={}}
+
+%\DeclareGraphicsExtensions{ps,eps,pdf}
+\graphicspath{{figures/}}
+%\usepackage[unicode]{hyperref}
+
+
+
+%lietuviskos raides
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage{fourier}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+%\usepackage[QX]{fontenc}
+
+%%Dabar uzkomentuota
+%\usepackage[L7x]{fontenc}
+%\usepackage{lmodern}
+
+
+%\usepackage[latin7]{inputenc}
+%\usepackage{textcomp}
+\usepackage[lithuanian]{babel}
+%\usepackage{hyperref}
+
+
+%\input /usr/local/texlive/2007/texmf-dist/tex/plain/amsfonts/cyracc.def
+
+%\input /usr/share/texmf/tex/plain/amsfonts/cyracc.def
+
+%\font\tencyr=wncyr10 at 10pt
+%\def\cyr{\tencyr\cyracc}
+%\font\tencyrbib=wncyr10 at 9pt
+%\def\cyrbib{\tencyrbib\cyracc}
+%\font\tencyrit=wncyi10 at 10pt
+%\def\cyrit{\tencyrit\cyracc}
+%\font\tencyritbib=wncyi10 at 9pt
+%\def\cyritbib{\tencyritbib\cyracc}
+%\font\tencyrbf=wncyb10 at 10pt
+%\def\cyrbf{\tencyrbf\cyracc}
+%\font\tencyrbfbib=wncyb10 at 10pt
+%def\cyrbfbib{\tencyrbfbib\cyracc}
+
+% pataisymai del neaiskaus paketu susipjovimo raidems i kratkaja ir jo \"e
+
+%\def\cyri{\hbox{\accent"24 i}}
+%\def\cyre{\hbox{\accent"20 e}}
+%\def\cyrI{\hbox{\accent"24 I}}
+%\def\cyrE{\hbox{\accent"20 E}}
+
+
+\newcommand{\e}[1]{\mathbf{e}_{#1}} % Clifford basis vectors in Cl(3,1)
+\newcommand{\Ie}[1]{I\negthinspace\mathbf{e}_{#1}}%bivector in Cl(3,1)
+\newcommand{\inv}[1]{\overline{#1}} %space inversion
+
+
+
+
+
+
+%%%%%%%%%%%%% OPERATORS %%%%%%%%%%%%%%%%
+
+% products notation
+% infix operators are defined with  \mathbin{}
+\renewcommand{\d}{\ensuremath{\mathbin{\cdot}}} %dot product 
+\newcommand{\w}{\ensuremath{\mathbin{\wedge}}} %wedge product 
+\newcommand{\lc}{\ensuremath{\mathbin{\lrcorner}}} %left contract
+\newcommand{\rc}{\ensuremath{\mathbin{\llcorner}}} %right contract
+
+
+% differentiation operators, 
+%recomended way to define operator is 
+%\newcommand{\diag}{\mathop{\mathrm{diag}}}
+%\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}, if don't want above/below super/subs 
+\newcommand{\bnabla}{\boldsymbol{\nabla}}%bold del operator
+\newcommand{\bpartial}{\mathop{\boldsymbol{\partial}}\nolimits}
+\newcommand{\pd}[1]{\partial_{#1}} %partial derivative
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\div}{\mathop{\mathrm{div}}} % \div command already defined as division
+\newcommand{\grad}{\mathop{\mathrm{grad}}}
+\newcommand{\curl}{\mathop{\mathrm{curl}}}
+
+%Alternatives. Puar man bold \bm command is not recommended 
+%\def\bnabla{\bm{\nabla}}
+%\def\bpartial{\bm{\partial}}
+
+\newcommand{\reverse}[1]{\widetilde{#1}}
+\newcommand{\gradeinverse}[1]{\wideparen{#1}}
+\newcommand{\cliffordconjugate}[1]{\widetilde{\wideparen{#1}}}
+
+% matrix related and general operators
+\newcommand\s[1]{\hat{\sigma}_{#1}} %Pauli matrix
+\newcommand{\HHat}[1]{\Hat{\Hat{{#1}}}}
+\newcommand{\Tr}{{\mathop{\textrm{Tr}}}}
+\newcommand{\meet}{\veebar}%geometric meet and join
+\newcommand{\join}{\barwedge}
+
+\linethickness{0.4pt}
+\unitlength1mm % LaTeX-Bilder Einheitslaenge
+\renewcommand{\arraystretch}{1.0} % matrix size reduction
+
+
+
+
+%%%%%%%%%%%%%%%%%% Notations for GA objects %%%%%%%%%%%%%
+
+%common mathematic functions and operators
+\renewcommand{\th}{\ensuremath{\mathrm{th}\mspace{2mu}}}
+\newcommand{\ee}{\ensuremath{\mathrm{e}}}
+\DeclareMathOperator{\sgn}{sgn} % the same as \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+% other hyperbolic trignometric already are defined in amslatex
+%\newcommand{\sh}{\ensuremath{\mathrm{sh}\mspace{2mu}}}
+%\newcommand{\ch}{\ensuremath{\mathrm{ch}\mspace{2mu}}}
+%\newcommand{\cth}{\ensuremath{\mathrm{cth}\mspace{2mu}}}
+
+
+
+
+% base vectors and related 
+\def\e#1{\mathbf{e}_{#1}} %single numbered Clifford basis vectors. Input: $\e3$ or $\e{12}$
+\def\f#1{\mathbf{f}_{#1}} %single numbered Clifford down basis vectors. Input: $\f3$ or $\f{12}$
+\def\en#1{\mathit{e}_{#1}}
+\def\eu#1{\mathbf{e}^{#1}} %single numbered Clifford up basis vectors. Input: $\eu3$ or $\eu{12}$
+\def\eun#1{\mathit{e}^{#1}}
+\newcommand{\eup}[1]{\mathbf{e}^{#1}}%vector with superscript
+\def\sig#1{\boldsymbol{\sigma}_{#1}} %single numbered Clifford basis vectors. $\e3$ or $\e{12}$
+\def\Isig#1{I\!\boldsymbol{\sigma}_{#1}}
+\def\g#1{\gamma_{#1}} %single numbered relativistic basis vectors. Input: $\g3$ or $\g{12}$
+\def\gu#1{\gamma^{#1}} %single numbered Clifford up basis vectors. Input: $\gu3$ or $\eu{12}$
+\def\Ig#1{I\!\gamma_{#1}}%Dual gamma
+\def\Ie#1{I\!\mathbf{e}_{#1}}%Dual
+\newcommand{\ii}{\mathrm{i}} % kvaternion base vectors
+\newcommand{\jj}{\mathrm{j}}
+\newcommand{\kk}{\mathrm{k}}
+\def\m#1{\mathsf{#1}}%general multivector Input: $\m{a}$
+
+
+%Alternatives ?
+%\def\e#1{\bm{e}_{#1}} %single numbered Clifford down basis vectors. Input: $\e3$ or $\e{12}$
+%\def\f#1{\bm{f}_{#1}} %single numbered Clifford down basis vectors. Input: $\e3$ or $\e{12}$
+%\def\en#1{{e}_{#1}} %single numbered Clifford nonorthogonal down basis  vectors. Input: $\e3$ or $\e{12}$
+%\def\eu#1{\bm{e}^{#1}} %single numbered Clifford up basis vectors. Input: $\eu3$ or $\eu{12}$
+%\def\eun#1{{e}^{#1}} %single numbered Clifford nonorthogonal up basis vectors. Input: $\eu3$ or $\eu{12}$
+%\def\ed#1{\bm{e}_{#1}} %single numbered Clifford basis vectors. Input: $\e3$ or $\e{12}$
+%\def\sig#1{\bm{\sigma}_{#1}} %single numbered Clifford basis vectors. $\e3$ or $\e{12}$
+%\def\Isig#1{I\!\bm{\sigma}_{#1}}
+
+
+%bra and ket vektors, blades
+\def\bra#1{\langle #1|}
+\def\ket#1{|#1\rangle}
+\def\braket#1|#2{\langle #1|#2\rangle}
+\def\ave#1{\langle #1\rangle}
+
+\newcommand{\blade}[1]{%
+\langle\mspace{-6.8mu}%
+\langle\mspace{-6.8mu}%
+\langle\mspace{-6.8mu}%
+\langle\mspace{-6.8mu}%
+\langle{#1}%
+\rangle%
+\mspace{-6.8mu}\rangle%
+\mspace{-6.8mu}\rangle%
+\mspace{-6.8mu}\rangle%
+\mspace{-6.8mu}\rangle
+}
+
+\newcommand{\mvh}[1]{%
+\langle{#1}%
+\rangle%
+}
+
+
+
+%%%%%%%%%%%%%%%%%% Notations without specific GA context %%%%%%%%%%%%%
+% in sections \ba command produces error.
+% workarround is to use \vect{a} instead \bm{a} command here
+\DeclareRobustCommand{\vect}[1]{\bm{#1}}
+\pdfstringdefDisableCommands{%
+  \renewcommand{\vect}[1]{#1}%
+}
+
+% bold lowercase and capitals letters
+%\newcommand{\ba}{\ensuremath{\bm{a}}}
+%\newcommand{\bb}{\ensuremath{\bm{b}}}
+%\newcommand{\bc}{\ensuremath{\bm{c}}}
+%\newcommand{\bd}{\ensuremath{\bm{d}}}
+%\newcommand{\be}{\ensuremath{\bm{e}}}
+\newcommand{\bi}{\ensuremath{\bm{i}}}
+\newcommand{\bj}{\ensuremath{\bm{j}}}
+\newcommand{\bh}{\ensuremath{\bm{h}}}
+\newcommand{\bff}{\ensuremath{\bm{f}}} % Latex has \bf command
+\newcommand{\bg}{\ensuremath{\bm{g}}}
+\newcommand{\bk}{\ensuremath{\bm{k}}}
+\newcommand{\bl}{\ensuremath{\bm{l}}}
+\newcommand{\bn}{\ensuremath{\bm{n}}}
+\newcommand{\bmm}{\ensuremath{\bm{m}}} % Latex has \bm command
+\newcommand{\bs}{\ensuremath{\bm{s}}}
+\newcommand{\bt}{\ensuremath{\bm{t}}}
+%\newcommand{\bv}{\ensuremath{\bm{v}}}
+\newcommand{\bu}{\ensuremath{\bm{u}}}
+\newcommand{\bq}{\ensuremath{\bm{q}}}
+\newcommand{\bp}{\ensuremath{\bm{p}}}
+\newcommand{\br}{\ensuremath{\bm{r}}}
+\newcommand{\bx}{\ensuremath{\bm{x}}}
+\newcommand{\by}{\ensuremath{\bm{y}}}
+
+\newcommand{\bA}{\ensuremath{\bm{A}}} % capitals
+\newcommand{\bB}{\ensuremath{\bm{B}}}
+\newcommand{\bD}{\ensuremath{\bm{D}}}
+\newcommand{\bE}{\ensuremath{\bm{E}}}
+\newcommand{\bH}{\ensuremath{\bm{H}}}
+\newcommand{\bF}{\ensuremath{\bm{F}}}
+\newcommand{\bM}{\ensuremath{\bm{M}}}
+\newcommand{\bX}{\ensuremath{\bm{X}}}
+\newcommand{\bZ}{\ensuremath{\bm{Z}}}
+\newcommand{\bS}{\ensuremath{\bm{S}}}
+\newcommand{\bP}{\ensuremath{\bm{P}}}
+\newcommand{\bG}{\ensuremath{\bm{G}}}
+\newcommand{\bJ}{\ensuremath{\bm{J}}}
+% vectors = bold lower case
+\newcommand{\ba}{\ensuremath{\mathbf{a}}}
+\newcommand{\bb}{\ensuremath{\mathbf{b}}}
+\newcommand{\bc}{\ensuremath{\mathbf{c}}}
+\newcommand{\bd}{\ensuremath{\mathbf{d}}}
+\newcommand{\be}{\ensuremath{\mathbf{e}}}
+\newcommand{\bv}{\ensuremath{\mathbf{v}}}
+\newcommand{\bV}{\ensuremath{\mathbf{V}}}
+
+
+
+% bold greek
+\newcommand{\bomega}{\ensuremath{\boldsymbol{\omega}}}%bold omega vector in Cl(3,0)
+\newcommand{\bgamma}{\ensuremath{\boldsymbol{\gamma}}}
+\newcommand{\bsigma}{\ensuremath{\boldsymbol{\sigma}}}
+\newcommand{\beps}{\ensuremath{\boldsymbol{\varepsilon}}}
+\newcommand{\bOmega}{\ensuremath{\boldsymbol{\Omega}}}
+\newcommand{\bphi}{\ensuremath{\boldsymbol{\phi}}}
+\newcommand{\btheta}{\ensuremath{\boldsymbol{\theta}}}
+\newcommand{\bvarphi}{\ensuremath{\boldsymbol{\varphi}}}
+\newcommand{\bmu}{\ensuremath{\boldsymbol{\mu}}}
+\newcommand{\bchi}{\ensuremath{\boldsymbol{\chi}}}
+\newcommand{\balpha}{\ensuremath{\boldsymbol{\alpha}}}
+\newcommand{\bell}{\ensuremath{\boldsymbol{\ell}}}
+
+\newcommand{\bPhi}{\ensuremath{\boldsymbol{\Phi}}} %capitals
+\newcommand{\bPsi}{\ensuremath{\boldsymbol{\Psi}}}
+\newcommand{\bSigma}{\ensuremath{\boldsymbol{\Sigma}}}
+\newcommand{\bDelta}{\ensuremath{\boldsymbol{\Delta}}}
+
+
+% bold indexed shortcuts
+\newcommand{\x}[1]{\bm{x}_{#1}}%bold-indexed x and y
+\newcommand{\y}[1]{\bm{y}_{#1}}
+
+%Calligraphics letters
+\newcommand{\cA}{\ensuremath{\mathcal{A}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cC}{\ensuremath{\mathcal{C}}}
+\newcommand{\cD}{\ensuremath{\mathcal{D}}}
+\newcommand{\cE}{\ensuremath{\mathcal{E}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\cG}{\ensuremath{\mathcal{G}}}
+\newcommand{\cH}{\ensuremath{\mathcal{H}}}
+\newcommand{\cJ}{\ensuremath{\mathcal{J}}}
+\newcommand{\cL}{\ensuremath{\mathcal{L}}}
+\newcommand{\cK}{\ensuremath{\mathcal{K}}}
+\newcommand{\cM}{\ensuremath{\mathcal{M}}}
+\newcommand{\cN}{\ensuremath{\mathcal{N}}}
+\newcommand{\cP}{\ensuremath{\mathcal{P}}}
+\newcommand{\cS}{\ensuremath{\mathcal{S}}}
+\newcommand{\cT}{\ensuremath{\mathcal{T}}}
+\newcommand{\cV}{\ensuremath{\mathcal{V}}}
+\newcommand{\cX}{\ensuremath{\mathcal{X}}}
+
+
+
+% sans serif letters 
+\newcommand{\sH}{\ensuremath{\mathsf{H}}}
+\newcommand{\sF}{\ensuremath{\mathsf{F}}}
+\newcommand{\sG}{\ensuremath{\mathsf{G}}}
+
+
+% roman letters
+\newcommand{\rS}{\ensuremath{\mathrm{S}}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+% General multivectors
+\def\A{\mathsf{A}}
+\def\B{\mathsf{B}}
+\def\C{\mathsf{C}}
+\def\D{\mathsf{D}}
+\def\X{\mathsf{X}}
+\def\m#1{\mathsf{#1}}%general multivector Input: $\m{a}$
+
+\newcommand{\cl}[2]{\ensuremath{\mathit{Cl}_{#1,#2}}}
+
+
+
+
+%amsbok stiliaus pakeitimai lietuviðkai numeracijai
+%\usepackage{mydefs}
+%sutrumpinimai
+%\input mydef.tex
+
+
+
+
+
+
+% Nustatymai konspektø stiliui
+%\mode<article>
+%{
+% \usepackage{fullpage}
+% \usepackage{pgf}
+%\usepackage{url}
+%}
+
+
+
+
+% Nustatymai projektoriaus stiliui
+
+
+%\setbeamerfont{title}{size=\tiny, parent=structure}
+%\beamertemplatenavigationsymbolsempty
+%\setbeamerfont{title}{family=\rmfamily}
+
+
+
+%\mode<presentation>
+%{
+%  \setbeamertemplate{background canvas}[vertical shading][bottom=red!10,top=blue!10]
+%  \usetheme{Marburg}
+%   \usetheme{Warsaw}
+%  \usefonttheme[onlysmall]{structurebold}
+%  \usecolortheme[named=Teal]{structure}
+%}
+
+
+
+
+%{\usebeamercolor{palette primary}}
+% Setup appearance:
+\mode<presentation>
+{
+\usetheme{Darmstadt}
+%%\usefonttheme[onlylarge]{structurebold}
+%\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}[default]
+\beamertemplatenavigationsymbolsempty
+%\setbeamertemplate{frametitle}
+%{
+%    \insertframetitle
+%}
+\setbeamertemplate{headline}{}
+%
+%%\useoutertheme[footline=institutetitle, subsection=true]{miniframes}
+\setbeamercovered{transparent}
+\usecolortheme[rgb={0,0.5,0}]{structure}
+\setbeamerfont{block title}{size={}}
+%\setbeamertemplate{headline}{}
+}
+
+%\mode<presentation>
+%
+%\usepackage{pgf}
+%\pgfdeclareimage[height=1cm]{image}{file}
+%\setbeamercolor{title}{fg=red!80!black, bg=red!20!white}
+%\setbeamertemplate{background canvas}[vertical shading][bottom=red!10,top=blue!10]
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{shadow}
+%\usecolortheme{orchid}
+%
+%\setbeamerfont{block title}{size={}}
+%\mode<presentation>
+
+
+
+
+
+
+
+%\setbeamercovered{transparent}
+%\setbeamercovered{dynamic}
+
+
+%Titulinis puslapis
+\title{Kvadratinë ðaknis ið 3D Clifford'o multivektoriø}
+\author{\underline{Artûras Acus$^{*}$}, Adolfas Dargys$^{**}$\\
+\normalsize $^{*}$Teorinës fizikos ir astronomijos institutas,
+Vilniaus universitetas, Saulëtekio 3, 10222 Vilnius,\\
+\normalsize  Saulëtekio 3, 10222 Vilnius\\
+\normalsize  $^{**}$Fiziniø ir technologijos mokslø centras,\\
+\normalsize  Saulëtekio 3, 10222 Vilnius}
+
+
+
+
+\title[]{Kvadratinë ðaknis ið 3D Clifford'o multivektoriø}
+
+\author[]{\underline{Artûras Acus$^{*}$}, Adolfas Dargys$^{**}$}
+
+\institute{${}^{*}$Teorinës fizikos ir astronomijos institutas,
+Vilniaus universitetas, Saulëtekio 3, 10222 Vilnius\newline\noindent
+$^{**}$Fiziniø ir technologijos mokslø centras, Saulëtekio 3, 10222 Vilnius
+}
+
+%\rightaddress{arturas.acus@tfai.vu.lt}
+
+\date{Spalio 3--5, 2019, Kaunas}
+
+
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+\colorlet{redshaded}{red!25!bg}
+\colorlet{shaded}{black!25!bg}
+\colorlet{shadedshaded}{black!10!bg}
+\colorlet{blackshaded}{black!40!bg}
+
+\colorlet{darkred}{red!80!black}
+\colorlet{darkblue}{blue!80!black}
+\colorlet{darkgreen}{green!80!black}
+
+\def\radius{0.96cm}
+\def\innerradius{0.85cm}
+
+\def\softness{0.4}
+\definecolor{softred}{rgb}{1,\softness,\softness}
+\definecolor{softgreen}{rgb}{\softness,1,\softness}
+\definecolor{softblue}{rgb}{\softness,\softness,1}
+
+\definecolor{softrg}{rgb}{1,1,\softness}
+\definecolor{softrb}{rgb}{1,\softness,1}
+\definecolor{softgb}{rgb}{\softness,1,1}
+
+
+%\setbeamertemplate{headline}{%
+%\leavevmode%
+%  \hbox{%
+%    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+%    \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+%    \end{beamercolorbox}%
+%  }
+%}
+
+%\useoutertheme[footline=authortitle]{miniframes}
+
+
+%-----------
+%\addtobeamertemplate{navigation symbols}{}{%
+%    \usebeamerfont{footline}%
+%    \usebeamercolor[fg]{footline}%
+%    \hspace{1em}%
+%    \insertframenumber/\inserttotalframenumber
+%}
+
+\begin{document}
+%--1-------------
+{
+\setbeamertemplate{headline}{}
+\begin{frame}
+  \titlepage
+\end{frame}
+}
+%----------------------------------------------------------------------------------------------
+
+%\lecture{Introduction to geometric algebra}{Introduction to geometric algebra}
+%\author[Seminar, 2016]{A.~Dargys and A.~Acus}
+%---------------------------------------------------------------------
+%\section[Introduction to geometric algebra;]{Introduction to geometric algebra}
+
+
+%
+
+
+
+
+%--2----------------
+\begin{frame}
+%\frametitle<presentation>{Introduction to geometric algebra}
+
+"...for I cannot believe that anything so ugly as the
+multiplication of matrices is an essential part of the scheme of
+nature``."
+\begin{flushright}sir Arthur Eddington
+\end{flushright}
+%\end{column}\newline
+\begin{columns}[t]
+\begin{column}{0.45\textwidth}
+  \begin{block}{Vektorinë algebra}
+\begin{itemize}
+  \item{\color{green}Bekoordinatinis metodas}
+  \item{\color{green}Objektai turi geometrinæ prasmæ}
+  \item{\color{red}Tinka tik 3D Euklidinei erdvei}
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.45\textwidth}
+  \begin{block}{Tenzorinis skaièiavimas}
+\begin{itemize}
+  \item{\color{red}Bûtinos koordinatës}
+  \item{\color{red}Objektai neturi geometrinës prasmës}
+  \item{\color{green}Tinka visoms erdvëms}
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\begin{columns}
+\begin{column}{0.99\textwidth}
+  \begin{block}{Geometrinë algebra (asociatyvi, bet nekomutatyvi)}
+\begin{itemize}
+   \item{\color{green}Bekoordinatinis metodas}
+  \item{\color{green}Objektai turi geometrinæ prasmæ}
+  \item{\color{green}Tinka visoms erdvëms}
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+ \end{frame}
+
+%--3----------
+ %--53----------------------
+\begin{frame}
+\vspace{-3pt}
+%\frametitle<presentation>{General matrix algebras}
+\begin{block}{\textit{Cl}$_{p,q}$ algebrø taikymai}
+\begin{table}[t]
+\setlength{\extrarowheight}{-0.05cm}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lll}
+\hline Geometrinë &  Vektoriø $n$  & Taikymo sritis \\
+algebra &skaièius &\\
+\hline\hline
+  \textit{Cl}$_{0,1}$ & 1D & Kompleksiniai skaièiai\\
+  \textit{Cl}$_{2,0}$ & 2D &Euklido plokðtuma (planimetrija) \\
+  \textit{Cl}$_{0,2}$ & 2D &Kvaternionai\\
+  \textit{Cl}$_{3,0}$ & 3D &Euklido 3D erdvë\\
+                      & 3D &Projektyvinë geometrija, animacija\\
+                      & 3D &Kvantinë mechanika, electrodinamika\\
+  \textit{Cl}$_{3,1}$ & 4D &Reliatyvumo teorija, Dirako lygtis\\
+                      & 4D &relativistinë electrodinamika, gravitacija\\
+  \textit{Cl}$_{4,1}$ & 5D &Grafika, animacija \\
+                      & 5D & Konforminë geometrija
+\end{tabular}}
+%\vskip 3pt
+%\begin{minipage}[c][2.cm][t]{0.9\textwidth}
+%\flushleft \vskip 1pt {\small Paprasèiausios Clifford'o algebros \textit{Cl}$_{p,q}$ ir jø 
+%taikymo sritys.}
+%\end{minipage}\vskip -35pt
+\end{table}
+\end{block}
+\end{frame}
+
+
+
+
+%--4----------------
+
+\begin{frame}
+%\frametitle<presentation>{Introduction to geometric algebra}
+  \vspace{-5mm}
+\begin{columns}[t]
+\begin{column}{0.99\textwidth}
+\begin{block}{Geometrinës algebros objektai: vektoriai, bivektoriai, trivektoriai,\ldots }
+Be orientacijos erdvëje ir dar turi vidinæ orientacijà: skaliarai, vektoriai, bivektoriai, trivektoriai, ir t.t., ið viso $2^n$ 
+  elementø.
+
+a)\includegraphics[width=0.25\textwidth,height=0.2\textwidth]{figures//vekt1.jpg}\quad
+b)\includegraphics[width=0.25\textwidth,height=0.2\textwidth]{figures//bivec1.jpg}\quad
+c)\includegraphics[width=0.25\textwidth,height=0.2\textwidth]{figures//greta3.jpg}\\
+  \tiny a)~Vektorius $\ba$ yra kryptingas (orientuotas) tiesës segmentas, kurio ilgis (magnitude) 
+$|\ba|=OA$. \\
+  b)~Bivektorius $\cB=\ba\w\bb$ yra orientuota plokðtumos dalis. Jo dydá nusako tos dalies plotas (forma nëra svarbi).\\
+  c)~Trivektorius (pseudoskaliaras) $\cT=\ba\w\bb\w\bc$ yra orientuotas tûris. Orientacijà nusako kairinë/deðininë vektoriø $\ba,\bb$
+  ir~$\bc$ sistema. Tûrio forma nëra svarbi.
+\end{block}
+\end{column}
+\end{columns}
+\begin{columns}
+\begin{column}{0.99\textwidth}
+  \begin{block}{Baziniai $Cl_{p,q}$ vektoriai $\e{i}$ (tarpusavyje nekomutuoja!)}
+Vektoriai $\e{i}$ yra \red{ypaè} svarbûs. Sudauginti jie tenkina sàvybæ
+\abovedisplayskip=7pt
+\belowdisplayskip=7pt
+\begin{equation*}
+  \e{i}\e{j}+\e{j}\e{i}=\pm 2\delta_{ij},\qquad i,j=1,2,\ldots p+q.
+\end{equation*}
+Þenklà $+$ tenkina vektoriai  $i\le p$, o $-$ vektoriai $p<i\le p+q=n$.
+\\ Euklidinë erdvë 
+\textit{Cl}$_{3,0}$ 
+$\e{1}^2=\e{2}^2=\e{3}^2=1$, signatûra  $(+++)$.\\ Minkowskio erdvë \textit{Cl}$_{1,3}$, $\e{1}^2=1, \e{2}^2=\e{3}^2=\e{4}^2=-1$. 
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}    
+
+%--5---------- 
+\begin{frame}
+\begin{columns}
+\begin{column}{0.99\textwidth}
+  \begin{block}{Baziniai $Cl_{p,q}$ vektoriai $\e{i}$ (tæsinys)}
+Baziniai vektoriai yra ortonormuoti, $\e{i}\d\e{j}=0$, jei $i\ne j$, todël jø iðorinë sandauga
+    sutampa su geometrine (Clifford'o) sandauga $\e{i} \e{j} =
+\e{i}\w\e{j}=-\e{j}\w\e{i} = - \e{j} \e{i}$. 
+ \textit{Cl}$_{3,0}$ algebroje galime sudaryti tik 3 nepriklausomas poras:
+    $\e{1}\w\e{2}$, $\e{2}\w\e{3}$ ir  $\e{3}\w\e{1}$. Jø kvadratas yra kaip kompleksinio skaièiaus
+\belowdisplayskip=7pt
+    \begin{equation*}
+(\e{1}\w\e{2})^2=(\e{2}\w\e{3})^2=(\e{3}\w\e{1})^2=-1\, .
+\end{equation*}
+Pilna  \textit{Cl}$_{3,0}$ bazë
+\abovedisplayskip=7pt
+\begin{equation*}
+\{1,\e{1},\e{2},\e{3},\e{12},\e{13},\e{23},\e{123}\equiv I\},
+\end{equation*}
+Bet koks \textit{Cl}$_{3,0}$ multivektorius (MV) gali bûti joje iðskleistas:
+\begin{equation*}\begin{split}
+\A=&a_0+a_1\e{1}+a_2\e{2}+a_3\e{3}+a_{12}\e{12}+a_{23}\e{23}+a_{31}\e{31}+a_{123}I\\
+\equiv&a_0+\ba+\cA+a_{123}I,
+\end{split}\end{equation*} kur $a_i$, $a_{ij}$, $a_{123}$ yra realûs
+koeficientai, o $\ba=a_1\e{1}+a_2\e{2}+a_3\e{3}$ ir
+$\cA=a_{12}\e{12}+a_{23}\e{23}+a_{31}\e{31}$ þymi vektoriø ir bivektoriø.
+\end{block}
+\end{column}
+\end{columns}
+ \end{frame}
+
+%--6------------------
+
+\begin{frame}
+\vspace{-2pt}
+%\frametitle<presentation>{General matrix algebras}
+\begin{block}{\textit{Cl}$_{p,q}$ vaizdavimas matricomis}
+\begin{table}[t]
+\setlength{\extrarowheight}{0.1cm}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ x{0.2cm}| >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} }
+%\begin{array}{cc|cccccccc} $\backslashbox[-20pt][l]{$\scriptstyle p$}{$\scriptstyle q$}
+%\multicolumn{1}{l|}{0}
+\diag{.1em}{.2cm}{$p$}{$q$}&0&1&2&3&4&5&6&7&\dotso\\ \cline{2-10}
+0&\mathbb{R}&\mathbb{C}&\mathbb{H}&^2\mathbb{H}&\mathbb{H}(2)&\mathbb{C}(4)&\mathbb{R}(8)&^2\mathbb{R}(8)&\dotso\\
+ 1 &^2\mathbb{R}&\mathbb{R}(2)&\mathbb{C}(2)&\mathbb{H}(2)&^2\mathbb{H}(2)&\mathbb{H}(4)&\mathbb{C}(8)&\mathbb{R}(16)&\dotso\\
+ 2 &\mathbb{R}(2)&^2\mathbb{R}(2)&\mathbb{R}(4)&\mathbb{C}(4)&\mathbb{H}(4)&^2\mathbb{H}(4)&\mathbb{H}(8)&\mathbb{C}(16)&\dotso\\
+ 3 &\mathbb{C}(2)&\mathbb{R}(4)&^2\mathbb{R}(4)&\mathbb{R}(8)&\mathbb{C}(8)&\mathbb{H}(8)&^2\mathbb{H}(8)&\mathbb{H}(16)&\dotso\\
+ 4 &\mathbb{H}(2)&\mathbb{C}(4)&\mathbb{R}(8)&^2\mathbb{R}(8)&\mathbb{R}(16)&\mathbb{C}(16)&\mathbb{H}(16)&^2\mathbb{H}(16)&\dotso\\
+ 5 &^2\mathbb{H}(2)&\mathbb{H}(4)&\mathbb{C}(8)&\mathbb{R}(16)&^2\mathbb{R}(16)&\mathbb{R}(32)&\mathbb{C}(32)&\mathbb{H}(32)&\dotso\\
+ 6 &\mathbb{H}(4)&^2\mathbb{H}(4)&\mathbb{H}(8)&\mathbb{C}(16)&\mathbb{R}(32)&^2\mathbb{R}(32)&\mathbb{R}(64)&\mathbb{C}(64)&\dotso\\
+ 7 &\mathbb{C}(8)&\mathbb{H}(8)&^2\mathbb{H}(8)&\mathbb{H}(16)&\mathbb{C}(32)&\mathbb{R}(64)&^2\mathbb{R}(64)&\mathbb{R}(128)&\dotso\\
+$\vdots$&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\vdots&\ddots
+\end{tabular}}
+\begin{minipage}[c][2.cm][t]{0.9\textwidth}
+\flushleft \vskip 5pt {Garsioji 8-periodiðkumo \textit{Cl}$_{p,q}$ Cliffordo algebrø lentelë. $\mathbb{R}(n)$, $\mathbb{C}(n)$
+ir $\mathbb{H}(n)$ þymi $n\times n$ realias, kompleksines ir kvaternionø matricas.  ${}^2\mathbb{F}$ yra tiesioginës matricø sumos $\mathbb{F}\bigoplus\mathbb{F}$ simbolis.}
+\end{minipage}\vskip -10pt
+\end{table}
+\end{block}
+\end{frame}
+
+%--7--------
+
+\begin{frame}
+%\frametitle<presentation>{Introduction to geometric algebra}
+\begin{columns}
+\begin{column}{0.99\textwidth}
+  \begin{block}{Problemos formulavimas}
+Trimatës erdvës multivektoriui $\B$ (nebûtinai Euklido)
+\belowdisplayskip=7pt
+\abovedisplayskip=7pt
+\begin{equation*}\label{AA}
+  \B=\A\A\equiv\A^2=b_0+\mathbf{b}+\cB+b_{123}I,
+\end{equation*}
+surasti visus multivektorius $\A$, kuriø geometrinë sandauga duotø MV $\B$,  t.y., $\A \A=\B$.
+Èia $b_0, \mathbf{b}, \cB, I$ þymi, atitinkamai, skaliarà, vektoriø, bivektoriø ir pseudoskaliarà. Multivektorius $\A=\sqrt{\B}$ vadinamas kvadratine ðaknimi ið MV $\B$. 
+\end{block}
+\begin{block}{Sprendimas} 
+Ávedame patogesnæ $\A$ parametrizacijà:
+\belowdisplayskip=7pt
+\abovedisplayskip=7pt
+\begin{equation*}
+\A=s+\bv+(S+\bV)I.\label{mvA30}
+\end{equation*}
+Sudauginæ ir sulyginæ koeficientus prie tø paèiø baziniø elementø gauname 8~sukabintas lygtis $\A$ koeficientams. Ðiø lygèiø sprendinius pavyksta elegantiðkai uþraðyti per radikalus pirmiausia iðsprendus lygtis vektoriams $\bv$ ir $\bV$, o po to likusias dvi lygtis iðspræsti pritaikius lygties laipsná sumaþinantá kintamøjø pakeitimà. 
+\end{block}
+\end{column}
+\end{columns}
+ \end{frame}
+
+%---8-----------------
+ \begin{frame}
+%\frametitle<presentation>{Introduction to geometric algebra}
+\begin{columns}
+\begin{column}{1.05\textwidth}
+\begin{block}{Atsakymas (\cl{3}{0} algebra), kai $s^2 \neq S^2$}
+
+\belowdisplayskip=7pt
+\abovedisplayskip=7pt
+\begin{align*}
+v_1&=\frac{b_1s+b_{23}S}{2(s^2+S^2)},
+ &v_2&=\frac{b_{2}s-b_{13}S}{2(s^2+S^2)},
+  &v_3&=\frac{b_3s+b_{12}S}{2(s^2+S^2)},  \\
+V_1&=\frac{b_{23}s-b_{1}S}{2(s^2+S^2)},
+&V_2&=-\frac{b_{13}s+b_{2}S}{2(s^2+S^2)},
+&V_3&=\frac{b_{12}s-b_{3}S}{2(s^2+S^2)}.
+\end{align*}
+
+\begin{equation*}
+\begin{split}
+  &s_{1,2} =\pm\sqrt{-T+\sqrt{T^2+ t^2}},\qquad S_{1,2}
+=\pm\frac{t}{\sqrt{-T+\sqrt{T^2+ t^2}}}\,.
+\end{split}\end{equation*}
+  Èia porose $(s_i,S_i)$ ir $(t_i,T_i)$ þemiau reikia imti tuos paèius þenklus
+\begin{equation*}
+\begin{split}
+  &t_{1,2}=\frac{1}{4} \Bigl(b_{123} \pm \frac{1}{\sqrt{2}}\sqrt{-b_{S}+\sqrt{D}}\Bigr),\
+  T_{1,2}=\frac{1}{4}\Bigl(\frac{\pm b_{I}}{\sqrt{2}\sqrt{-b_{S}+\sqrt{D}}}-
+  b_{0}\Bigr),
+\end{split}
+\end{equation*}
+kur
+  $b_{S}= \langle \B \cliffordconjugate{\B}\rangle_0 =
+b_{0}^2-b_{1}^2-b_{2}^2-b_{3}^2+b_{12}^2+b_{13}^2+b_{23}^2-b_{123}^2$, $b_{I}= \langle \B \cliffordconjugate{\B} I \rangle_0 = 2 b_{3}
+b_{12}-2 b_{2} b_{13}+2 b_{1} b_{23}-2 b_{0} b_{123}$,\newline
+  $D=b_{S}^2+b_{I}^2$. Daugiausia keturios (kai $b_{S}\neq\sqrt{D}$) izoliuotos ðaknys
+\end{block}
+\end{column}
+\end{columns}
+ \end{frame}
+
+%---9-----------------
+\begin{frame}
+\begin{columns}
+\begin{column}{1.05\textwidth}
+\begin{block}{Atsakymas (\cl{3}{0} algebra), kai $s^2 = S^2$ ir $b_{I}^2+4 b_0^2(b_S- b_0^2)=0$}
+  Galimi trys variantai: {\color{blue}1)} $s = S\neq 0$
+\belowdisplayskip=3pt
+\abovedisplayskip=5pt
+\begin{equation*}\begin{split}
+s_{1,2} =&\begin{cases}
+\pm\tfrac12\sqrt{b_{123}+\dfrac{b_I}{2 b_0}} & \textrm{kai}\quad b_0\neq  0,\\
+\pm\tfrac12\sqrt{b_{123}\pm\sqrt{-b_S}} & \textrm{kai}\quad b_0 =  0,
+  \end{cases}
+\end{split}\end{equation*}
+kur visi paðakniai imami tik teigiami. Panaðiai\newline
+{\color{blue}2)} $s =
+-S\neq 0$\abovedisplayskip=1pt
+\begin{equation*}\begin{split}
+s_{1,2} =&\begin{cases}
+\pm\tfrac12\sqrt{-b_{123}-\dfrac{b_I}{2 b_0}} & \textrm{kai}\quad b_0\neq  0,\\
+\pm\tfrac12\sqrt{-b_{123}\pm\sqrt{-b_S}} & \textrm{kai}\quad b_0 =  0,
+  \end{cases}
+\end{split}\end{equation*}
+{\color{blue}3)}~$s=S=0$\newline 
+Atvejis ádomus, nes jei vektoriø $b_1, b_2, b_3$ ir bivektoriø
+$b_{12}, b_{13}, b_{23}$  koeficientai  visi lygûs nuliui, gauname
+ begaliná ðaknø $\sqrt{\B}$ skaièiø. Jas randame ið lygèiø
+$b_0=\bv^2-\bV^2$ ir $ b_{123}=2(\bv\cdot\bV)$.
+Kadangi turime $3+3=6$ neþinomuosius ir tik dvi lygtis, galime parinkinëti 4 realius parametrus. 
+Koeficientas $b_0$ geometriðkai nusako vektoriø ilgiø $|\bv|^2$ ir  $|\bV|^2$ skirtumà, o koeficientas $b_{123}$ kampà tarp $\bv$ ir $\bV$.
+\end{block}
+\end{column}
+\end{columns}
+ \end{frame}
+
+
+%---10-----------------
+ \begin{frame}
+%\frametitle<presentation>{Introduction to geometric algebra}
+\begin{columns}
+\begin{column}{1.05\textwidth}
+\begin{block}{Pavyzdys: ðaknis ið $\B=\e{1}-2 \e{23}$}
+Nenuliniai koeficientai $b_1=1$ and $b_{23}=-2$. Tuomet $b_I=-4$ ir 
+$b_S=3$. Apskaièiuojame 
+$t_{1,2}=(\tfrac{1}{4},-\tfrac{1}{4})$ ir 
+$T_{1,2}=(-\tfrac{1}{2},\tfrac{1}{2})$. Juos þinodami randame
+\belowdisplayskip=3pt
+\abovedisplayskip=5pt
+\begin{equation*}\begin{split}
+  &\bigl(s_{1,2}=\mp\tfrac{1}{2}c_1,\ S_{1,2}=\pm\tfrac{1}{2}c_2\bigr)\quad \text{ir}\quad
+  \Bigl(s_{3,4}=\pm\tfrac{1}{2}c_2,\ S_{3,4}=\pm\tfrac{1}{2}c_1\Bigr),
+\end{split}\end{equation*}
+  kur $c_1=\sqrt{-2+\sqrt{5}}$ ir  $c_2=\sqrt{2+\sqrt{5}}$. Todël {\color{red}$s^2 \neq S^2$}.
+Ástaèius:
+\begin{equation*}\begin{array}{llll}
+\bigl(s_1=-\tfrac{1}{2}c_1,& S_1=\tfrac{1}{2}c_2,& v_1=-\tfrac{1}{2}c_2,& V_1=-\tfrac{1}{2}c_1\bigr),\\
+\bigl(s_2=\tfrac{1}{2}c_1,& S_2=-\tfrac{1}{2}c_2,& v_1=\tfrac{1}{2}c_2,& V_1=\tfrac{1}{2}c_1\bigr),\\
+\bigl(s_3=\tfrac{1}{2}c_2,& S_3=\frac{1}{2}c_1,& v_1=\tfrac{1}{2}c_2,& V_1=-\tfrac{1}{2}c_1\bigr),\\
+\bigl(s_4=-\tfrac{1}{2}c_2,& S_4=-\tfrac{1}{2}c_1,&
+v_1=-\tfrac{1}{2}c_1,& V_1=\tfrac{1}{2}c_2\bigr).
+\end{array}\end{equation*}
+Likæ koeficientai yra nuliai, $v_2=v_3=V_2=V_3=0$.
+Suradæ koeficientus uþraðome multivektorius
+\begin{equation*}\begin{split}
+  &\sqrt{\B_{1,2}}=\A_{1,2} = \mp\frac12 c_2 \bigl(-2+\sqrt{5}+\e{1}+(-2+\sqrt{5}) \e{2 3}-\e{1 2 3}\bigr),\\
+  &\sqrt{\B_{3,4}}=\A_{3,4}= \pm \frac12 c_1 \bigl(2+\sqrt{5}+\e{1}-(2+\sqrt{5}) \e{2 3}+\e{1 2
+  3}\bigr),
+\end{split}\end{equation*}
+Nesunku patikrinti, kad multivektoriø kvadratas yra $\B=\e{1}-2 \e{23}$.
+\end{block}
+\end{column}
+\end{columns}
+ \end{frame}
+
+%---11-----------------
+ \begin{frame}
+%\frametitle<presentation>{Introduction to geometric algebra}
+\begin{columns}
+\begin{column}{1.05\textwidth}
+  \begin{block}{Pavyzdys: ðaknis ið $\B=-1+\e{3}-\e{12}+\frac12\e{123}$}
+    Turime: $b_0=-1$, $b_{123}=\tfrac12$, $b_I=-1$, $b_S=\tfrac34$. Tuomet 
+\belowdisplayskip=3pt
+\abovedisplayskip=5pt
+\begin{equation*}
+\bigl(s_{1,2}=\pm\tfrac{1}{2},\quad S_{1,2}=\pm\tfrac{1}{2}\bigr).
+\end{equation*}
+Kadangi {\color{red}$s^2 = S^2$} ir sàlyga $b_{I}^2+4 b_0^2(b_S- b_0^2)=0$ tenkinama, apskaièiuojame likusius koeficientus
+\belowdisplayskip=3pt
+\abovedisplayskip=5pt
+\begin{equation*}\begin{array}{llll}
+\bigl(s_1=-\tfrac{1}{2},&\ v_1=v_2=v_3=0,&\ V_1=V_2=0,&\ V_3=1\bigr),\\
+\bigl(s_2=\tfrac{1}{2},&\ v_1=v_2=v_3=0,&\ V_1=V_2=0,&\ V_3=-1\bigr).\\
+\end{array}\end{equation*}
+Todël atsakymas
+\belowdisplayskip=3pt
+\abovedisplayskip=5pt
+\begin{equation*}\begin{split}
+  &\sqrt{\B_{1,2}} =\A_{1,2}= \pm \bigl( \tfrac12 \e{3} + \tfrac12 \e{12}-\e{1 2 3}\bigr),\\
+  &\sqrt{\B_{3,4}}= \A_{3,4}= \pm \bigl(-\tfrac12 +\e{12}-\tfrac12 \e{1 2 3}\bigr).\\
+\end{split}\end{equation*}
+\end{block}
+  \begin{block}{Pavyzdys: ðaknis ið $\B=\e{1}+\e{12}$ (tiesiðkai poliarizuota ðviesa)}
+Patikrinæ randame 
+    {\color{red}$s_1=S_1=0$} ir $b_0=b_{123}=b_I=b_S=0$,
+todël, nors suderinamumo sàlyga $b_{I}^2+4 b_0^2(b_S-
+b_0^2)=0$ patenkinama, taèiau vektoriø ir bivektoriø koeficientai nëra nuliai, todël sprendinio nëra.
+\end{block}
+\end{column}
+\end{columns}
+ \end{frame}
+
+
+%--12----------
+\begin{frame}
+\vspace{-20pt}
+%\frametitle<presentation>{Conclusions}
+\begin{columns}[t]
+\begin{column}{0.99\textwidth}
+\begin{block}{Rezultatai}
+\begin{itemize}
+
+  \item  Kvadratinæ ðakná ið MV Clifford algebrose \cl{3}{0}, \cl{0}{3}, \cl{1}{2} ir \cl{2}{1} galima iðreikðtai uþraðyti {\bf per radikalus}
+
+\item  Ðaknø skaièius ávairiose algebrose skiriasi, be to, jei $\B$ tenkina tam tikras sàlygas, jis gali bûti ir begalinis.
+  
+\item Bûtent, $\cl{3}{0}$ ir $\cl{1}{2}$ algebrose ðaknø aibë bendru atveju yra sàjunga trijø aibiø: {\color{red}1)}~{\bf izoliuotø ðaknø} aibës (kai $s^2\neq S^2$), kurià sudaro daugiausia keturios skirtingos ðaknys,  {\color{red}2)}~izoliuotø ðaknø aibës, kurià sudaro daugiausia dvi ðaknys (kai $s^2 =S^2\neq 0$) ir  {\color{red}3)}~{\bf begalinës ðaknø} aibës (kai $s=S=0$), kuri gali bûti parametrizuota daugiausia keturiais nepriklausomais parametrais.  
+
+\item  $\cl{0}{3}$ algebroje skirtumas tik toks, kad {\color{red}2)} atveju vietoje dviejø izoliuotø ðaknø atsiranda begalinë ðaknø aibë, parametrizuojama daugiausia dviem parametrais. 
+
+\item  Ðaknø aibë $\cl{2}{1}$ algebroje yra panaði á $\cl{0}{3}$ algebros atvejá, tik ypatinga tuo, kad jos izoliuotø ðaknø aibæ gali sudaryti net {\bf 16 ðaknø}.
+\end{itemize}
+\end{block}
+
+\end{column}
+\end{columns}
+\end{frame}
+\end{document}
+
+
+\begin{frame}
+\vspace{-20pt}
+\frametitle<presentation>{Bibliography}
+\begin{thebibliography}{}
+
+\bibitem[Dargys, 2014a]{Dargys13bI}
+Dargys, A. (2014a).
+\newblock Spin and pseudospin in monolayer graphene: {I} {R}epresentation by
+  \textit{Cl}$_{3,1}$ algebra and simple examples.
+\newblock {\em Phys. Scr. Accepted}.
+
+\bibitem[Dargys, 2014b]{Dargys13bII}
+Dargys, A. (2014b).
+\newblock Spin and pseudospin in monolayer graphene: {II} {C}ompetition between
+  exchange and {SO} interactions.
+\newblock {\em Phys. Scr. Accepted}.
+
+\bibitem[Doran and Lasenby, 2003]{Doran03}
+Doran, C. and Lasenby, A. (2003).
+\newblock {\em Geometric Algebra for Physicists}.
+\newblock Cambridge University Press, Cambridge.
+
+\end{thebibliography}
+\end{frame}
+
+%\bibliography{Cliffart,Cliffbooks,Cliffrev,graphene}
+\end{document}

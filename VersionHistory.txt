@@ -76,4 +76,6 @@ non-diagonalizable MVs was improved.
 
 (2025.06.20) Half year update. New commutative geometric product introduced but not yet integrated. Starting documentation for well established commands.  
 
-(2025-12-23) Half year update. Serious updates for main functions that now can work with products of two Clifford algebras. All example notebooks were tested. 
+(2025-12-23) Half year update. Serious updates for main functions that now can work with products of two Clifford algebras. All example notebooks were tested.
+
+(2026-06-15) Half year update. Some small corrections and bug fixes. 

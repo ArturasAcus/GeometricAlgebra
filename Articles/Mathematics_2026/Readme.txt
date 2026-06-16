@@ -1,0 +1,1 @@
+The functionality was included into the package (link to the relevant notebook is provided)

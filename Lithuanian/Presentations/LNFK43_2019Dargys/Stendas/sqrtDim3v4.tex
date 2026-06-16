@@ -1,0 +1,1541 @@
+\documentclass{birkjour}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage[dvipsnames]{color}
+
+% extended math fonts
+\usepackage{yhmath}
+
+\usepackage{srctex} % MikTex,Inverse Search in tex files from Yap screen
+
+
+\newcommand{\e}[1]{\mathbf{e}_{#1}} % Clifford basis vectors in Cl(3,1)
+\newcommand{\Ie}[1]{I\negthinspace\mathbf{e}_{#1}}%bivector in Cl(3,1)
+\newcommand{\inv}[1]{\overline{#1}} %space inversion
+%\newcommand{\ba}{\mathbf{a}} %bold a
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bbf}{\mathbf{f}} %bold f
+
+
+\def\m#1{\mathsf{#1}} % general multivector
+
+\def\sR{\mathsf{R}} %sans serif Rotation
+\def\sH{\mathsf{H}} %sans serif Hamiltonian
+\def\sF{\mathsf{F}} %sans serif F
+\def\sG{\mathsf{G}} %sans serif G
+
+
+\newcommand{\cl}[2]{\ensuremath{\mathit{Cl}_{#1,#2}}}
+
+% Real, complex and quaternion fields
+\newcommand{\bbR}{\ensuremath{\mathbb{R}}}
+\newcommand{\bbC}{\ensuremath{\mathbb{C}}}
+\newcommand{\bbH}{\ensuremath{\mathbb{H}}}
+
+%involutions
+\newcommand{\reverse}[1]{\widetilde{#1}}
+\newcommand{\gradeinverse}[1]{\wideparen{#1}}
+\newcommand{\cliffordconjugate}[1]{\widetilde{\wideparen{#1}}}
+
+% Quaternion base vectors
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\jj}{\mathrm{j}}
+\newcommand{\kk}{\mathrm{k}}
+%\newcommand{\ii}{\mathrm{i}} %imaginary unit
+\newcommand{\ee}{\mathrm{e}} %exponent
+\newcommand{\dd}{\mathrm{d}} %differential
+
+
+
+% General multivectors
+\def\A{\mathsf{A}}
+\def\B{\mathsf{B}}
+\def\C{\mathsf{C}}
+\def\D{\mathsf{D}}
+\def\X{\mathsf{X}}
+\def\m#1{\mathsf{#1}}%general multivector Input: $\m{a}$
+
+% base vectors and related
+\def\e#1{\mathbf{e}_{#1}} %single numbered Clifford basis vectors. Input: $\e3$ or $\e{12}$
+\def\g#1{\gamma_{#1}} %single numbered relativistic basis vectors. Input: $\g3$ or $\g{12}$
+
+% vectors = bold lower case
+\newcommand{\ba}{\ensuremath{\mathbf{a}}}
+\newcommand{\bb}{\ensuremath{\mathbf{b}}}
+\newcommand{\bc}{\ensuremath{\mathbf{c}}}
+\newcommand{\bd}{\ensuremath{\mathbf{d}}}
+\newcommand{\be}{\ensuremath{\mathbf{e}}}
+\newcommand{\bv}{\ensuremath{\mathbf{v}}}
+\newcommand{\bV}{\ensuremath{\mathbf{V}}}
+
+
+% bivectors = calligraphic
+\newcommand{\cA}{\ensuremath{\mathcal{A}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cC}{\ensuremath{\mathcal{C}}}
+
+\newcommand{\magnitude}[1]{\lvert #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+
+%text coloring
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}} % text coloring
+
+\begin{document}
+
+%Insert here the title, affiliations and abstract:
+
+\title[Square root of a multivector of Clifford algebras in~3D]
+ {Square root of a multivector of Clifford algebras in~3D: A game with signs}
+
+%----------Author 1
+\author{A.~Acus}
+\address{Institute of Theoretical Physics and Astronomy,\br
+Vilnius University,\br Saul{\.e}tekio 3, LT-10257 Vilnius,
+Lithuania} \email{arturas.acus@tfai.vu.lt}
+
+%\thanks{This work was completed with the support of our \TeX-pert.}
+%----------Author 2
+\author{A.~Dargys}
+
+\address{%
+Center for Physical Sciences and Technology,\br Semiconductor
+Physics Institute,\br Saul{\.e}tekio 3, LT-10257 Vilnius,
+Lithuania}
+
+\email{adolfas.dargys@ftmc.lt}
+%----------classification, keywords, date
+%----------classification, keywords, date
+\subjclass{Primary 15A18; Secondary 15A66}
+
+\keywords{{C}lifford algebra, geometric algebra, square root of multivector, computer-aided theory}
+
+\date{June, 2019}
+%----------additions
+%\dedicatory{To my boss}
+
+
+\begin{abstract}
+Explicit formulas of the square root of a multivector of real
+Clifford algebras \cl{3}{0}, \cl{2}{1}, \cl{1}{2} and \cl{0}{3}
+are obtained in radicals. We show that there are four isolated
+roots in a case of the most general (generic) multivector (MV) in
+the algebras \cl{3}{0},  \cl{1}{2} and \cl{0}{3}. The algebra
+\cl{2}{1} makes up an exception and the MV here can have up to 16
+isolated roots. In special cases, when the MV is shorter or
+restrictions (conditions) between  MV coefficients exist, a
+continuum of roots (infinity of roots) on parameter hypersurfaces
+can appear in addition to the isolated roots. A number of examples
+are presented to illustrate properties of various roots that may
+appear in $n=3$ Clifford algebras. Noncommutative Riccati
+quadratic equation is solved as an illustration of the application
+of the described root algorithm.
+\end{abstract}
+
+\maketitle
+
+
+
+%\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+The square root has a long history. Solution by radicals of the
+cubic equation was first published  in 1545 by G.~Cardano.
+Simultaneously, a concept of square root of a negative number  has
+been developed~\cite{Grant2015}. In 1872 A.~Cayley was the first
+to carry over the notion of square root to
+matrices~\cite{Cayley1872}. In the recent book by  N.~J.
+Higham~\cite{Higham08}, where an extensive literature is presented
+on nonlinear functions of matrices, two sections are devoted to
+the analysis of square root. The existence of the square root of
+matrix is related to it's positive eigenvalues. In the context of
+Clifford algebra (CA) the main attempts up till now were
+concentrated on the square roots of
+quaternions~\cite{Niven1942,Opfer2017}, or their derivatives such
+as coquaternions (also called split quaternions), or
+nectarines~\cite{Falcao2018,Opfer2017,Ozdemir2009}. The square
+root of biquaternion (complex quaternion) was considered
+in~\cite{Sangwine2006}. The quaternions and related objects are
+isomorphic to one of $n=2$ algebras \cl{0}{2}, \cl{1}{1},
+\cl{2}{0} and, therefore, the quaternionic square root analysis
+can be easily rewritten in  terms of CA. In this paper we shall be
+interested in higher, namely, $n=3$ CAs where the main object is
+the 8-component MV.
+
+
+For the algebras of vector space dimension $n=3$, to say nothing
+of higher dimensions, the understanding and investigation of
+square root is still in infancy. Some formulas are not complete or
+even erroneous for the case of a general MV~\cite{Chapell2015}.
+The most akin to the present paper are the investigation of
+conditions for existence of square root of
+$-1$~\cite{Hitzer2011,Hitzer2013,Sangwine2006}. The existence of
+such roots allows to extend the notion of Fourier transform to
+multivectors, where they are used in formulating Clifford-Fourier
+transform and CA based wavelet theories~\cite{Hitzer13B}.
+
+Our preliminary investigation~\cite{Dargys2019} on this subject
+were concerned with square roots of individual MV grades such as
+scalar, vector, bivector, pseudoscalar, or their simple
+combinations. For this purpose we have applied the Gr{\"o}bner
+basis algorithm to analyze the  system of nonlinear polynomial
+equations that ensue from the MV equation $\A^2=\B$, where $\A$
+and $\B$ are the MVs. The Gr{\"o}bner basis is accessible in
+symbolic mathematical packages such as \textit{Mathematica} and
+\textit{Maple}. Specifically, the \textit{Mathematica} commands
+such as \textbf{Reduce[~]}, \textbf{Solve[~]},
+\textbf{Eliminate[~]} and others also employ the Gr{\"o}bner basis
+to solve nonlinear problems. With the help of them we were able to
+find the characteristic properties of roots for $n=3$ case,
+namely, that the MV may have no roots, a single or multiple
+isolated roots, or even an infinite number of roots in parameter
+spaces of 4D or smaller dimensions.
+
+In this paper we elaborate our investigation~\cite{Dargys2019} of
+the problem of the square root of general MV in CA for $n=3$ case.
+For this purpose a symbolic experimental
+package~\cite{AcusDargys2017} based on {\it Mathematica} system
+was used which appeared to be invaluable both for detecting
+possible solutions of the nonlinear CA equation $\A^2=\B$ and for
+extensive numerical check. In Sec.~\ref{sec:notations}, we
+introduce the notation.  The procedure to calculate the square
+root of generic MV as well as the special cases that follow is
+given in Secs.~\ref{sec:Cl30}-\ref{sec:Cl21} for \cl{3}{0},
+\cl{0}{3}, \cl{1}{2}, and \cl{2}{1} algebras, respectively. The
+algorithm  is illustrated by examples. Finally,
+in~Sec.~\ref{sec:application} the application of a square root of
+MV to solve Riccati equation in CA form is demonstrated and
+Conclusions are drawn in~Sec.~\ref{sec:conclusions}.
+
+
+\section{Notations}\label{sec:notations}
+A general MV in CA for $n=3$ can be expanded in the orthonormal
+basis that consists of $2^{n}=8$ elements listed in inverse degree
+lexicographic ordering\footnote{\label{note1}Note an increasing
+order of indices in the basis elements, i.e., we employ $\e{13}$
+instead of $\e{31}=-\e{13}$. This convention is reflected in
+opposite signs of some terms in formulas.}
+\begin{equation}\label{basisDim3}
+\{1,\e{1},\e{2},\e{3},\e{12},\e{13},\e{23},\e{123}\equiv I\},
+\end{equation}
+where $\e{i}$ are basis vectors and $\e{ij}$ are the bivectors
+(oriented planes). The last term is called the pseudoscalar. The
+number of subscripts indicates the grade of basis element. The
+scalar is a grade-0 element, the vectors $\e{i}$ are the grade-1
+elements etc. In the orthonormalized basis the geometric (Clifford) products of basis vectors satisfy the anticommutation relation,
+ \begin{equation}\label{anticom}
+ \e{i}\e{j}+\e{j}\e{i}=\pm 2\delta_{ij}.
+ \end{equation}
+ For \cl{3}{0}
+and \cl{0}{3} algebras, correspondingly, the squares of basis
+vectors are $\e{i}^2=+1$ and $\e{i}^2=-1$, where $i=1,2,3$. For
+mixed signature algebras such as  \cl{2}{1} and \cl{1}{2} we have
+$\e{1}^2=\e{2}^2=1$, $\e{3}^2=-1$ and $\e{1}^2=1$,
+$\e{2}^2=\e{3}^2=-1$, respectively. The sign of squares of higher
+grade elements is determined by squares of vectors and the
+property~\eqref{anticom}. For example, in \cl{3}{0} we have
+$\e{12}^2=\e{12}\e{12}=-\e{1}\e{2}\e{2}\e{1}=-\e{1}(+1)\e{1}=-\e{1}\e{1}=-1$.
+However, in \cl{1}{2} the same computation gives
+$\e{12}^2=-\e{1}\e{2}\e{2}\e{1}=-\e{1}(-1)\e{1}=\e{1}\e{1}=+1$.
+
+Any MV $\A$ of real CA of $n=3$ can be expanded in the
+basis~\eqref{basisDim3},
+\begin{equation}\begin{split}\label{mvAA}
+\A=&a_0+a_1\e{1}+a_2\e{2}+a_3\e{3}+a_{12}\e{12}+a_{23}\e{23}+a_{31}\e{31}+a_{123}I\\
+\equiv&a_0+\ba+\cA+a_{123}I,
+\end{split}\end{equation} where $a_i$, $a_{ij}$ and $a_{123}$ are the real
+coefficients, and $\ba=a_1\e{1}+a_2\e{2}+a_3\e{3}$ and
+$\cA=a_{12}\e{12}+a_{23}\e{23}+a_{31}\e{31}$ is, respectively, the
+vector and the bivector. We will seek for a MV $\A$ the square of
+which $\A^2$ will match a given MV $\B$,
+\begin{equation}\label{AA}
+  \B=\A\A\equiv\A^2=b_0+\mathbf{b}+\cB+b_{123}I.
+\end{equation}
+In this case we will call the MV $\A$ a square root of $\B$, i.e.,
+$\A=\sqrt{\B}$.
+
+In Eq.~\eqref{AA} the MV $\A^2$ has been expanded in the
+orthonormal basis where $b_0,\mathbf{b},\cB$ and $I\equiv I_3 $
+denote, respectively, a scalar, a vector
+($\bb=b_1\e{1}+b_2\e{2}+b_3\e{3}$), a bivector
+($\cB=b_{12}\e{12}+b_{23}\e{23}+b_{31}\e{31}$) and a pseudoscalar.
+However, the commonly assumed representation~\eqref{mvAA}
+of MV $\A$ is not convenient for our problem. Therefore, for
+algebras \cl{3}{0}, \cl{0}{3}, \cl{1}{2}, and \cl{2}{1} we
+introduce a more symmetric representation of MV,
+\begin{equation}
+\A=s+\bv+(S+\bV)I,\label{mvA30}
+\end{equation}
+where now both $s$ and $S$ are the real scalars and both
+$\bv=v_1\e{1}+v_2\e{2}+v_3\e{3}$ and
+$\bV=V_1\e{1}+V_2\e{2}+V_3\e{3}$ are the vectors with real
+coefficients $v_i$ and $V_i$. As we shall see, the MV
+representation~\eqref{mvA30} allows to disentangle the coupled
+nonlinear equations in a regular manner using similar formulas for
+all listed algebras. To select the scalar $s$ in~\eqref{mvA30},
+the grade selector
+$\langle\m{A}\rangle\equiv\langle\m{A}\rangle_0=s$ is used. The
+pseudoscalar part  can be extracted by
+$\langle\m{A}\rangle\equiv\langle-\m{A}I\rangle_0=S$, and
+similarly for other grades. More about CAs and MV properties can
+be found, for example, in books~\cite{Doran03,Lounesto97}.
+
+
+
+\section{\cl{3}{0} algebra\label{sec:Cl30}}
+The section describes the method of
+variable substitution which allows to obtain explicit formulas of
+square root of a general MV for all CAs of vector space dimension $n=3$. We
+start from Euclidean \cl{3}{0} algebra which presents the most
+simple case. Computations with algebras having different signature
+will take a similar route and will be presented in
+Sections~\ref{sec:Cl03}--\ref{sec:Cl21}.
+
+Our goal is to solve the MV equation $\A^2=\B$, where $\B$ is
+known and has the general MV form~\eqref{AA}, or in the
+expanded form $\B= b_0+b_1 \e{2}+b_2\e{2}+b_3\e{3}+
+b_{12}\e{23}+b_{13}\e{13}+b_{23} \e{23}+b_{123} I$,  and where
+$\A$ is represented in the form~\eqref{mvA30}. Expanding $\A^2$
+and equating coefficients at all basis elements to $\B$ one
+obtains  a system of eight nonlinear equations:
+\begin{align}
+b_0&=s^2-S^2+\bv^2-\bV^2, &b_{123}&=2(sS+\bv\cdot\bV)\label{MVM1Cl30}, \\
+b_1&=2(s v_1-S V_1), &b_{23}&=2(s V_1+S v_1)\label{MVM2Cl30}, \\
+b_2&=2(s v_2-S V_2), &b_{13}&=2(s V_2+S v_2)\label{MVM3Cl30}, \\
+b_3&=2(s v_3-S V_3), &b_{12}&=2(s V_3+S v_3)\label{MVM4Cl30}.
+\end{align}
+In the progress of analysis it will be shown that for all CAs in
+the consideration the square root algorithm splits into two cases:
+the generic case when $s^2 \ne S^2$ and the special case when
+$s^2=S^2$. The special case in turn is a union of three subcases:
+1) $s = S\neq 0$,  2) $s = -S\neq 0$ and 3) $s=S=0$. We will start
+from the generic case.
+
+\subsection{The generic case, $s^2 \neq S^2$}
+The system of six Eqs. \eqref{MVM2Cl30}-\eqref{MVM4Cl30} is linear
+in $v_i$ and $V_i$. It has  very simple solution which is a key to
+analysis that follows\footnote{Note, that the symmetry of the
+expression with respect to the coefficients  ($v_2,V_2$) and the
+($v_1,V_1$) and ($v_3,V_3$) differ as explained in the
+Footnote~\ref{note1}. The symmetry can be restored if $b_{13}$ in
+\eqref{vV1Cl30}-\eqref{sysACl30} is replaced by $-b_{31}$.},
+\begin{align}
+v_1&=\frac{b_1s+b_{23}S}{2(s^2+S^2)},
+ &v_2&=\frac{b_{2}s-b_{13}S}{2(s^2+S^2)},
+  &v_3&=\frac{b_3s+b_{12}S}{2(s^2+S^2)}, \label{vV1Cl30} \\
+V_1&=\frac{b_{23}s-b_{1}S}{2(s^2+S^2)},
+&V_2&=-\frac{b_{13}s+b_{2}S}{2(s^2+S^2)},
+&V_3&=\frac{b_{12}s-b_{3}S}{2(s^2+S^2)}.\label{vV2Cl30}
+\end{align}
+The Eqs. \eqref{vV1Cl30}-\eqref{vV2Cl30} express the vectors $\bv$
+and $\bV$ in terms of scalars $s$ and $S$, which are to be
+determined from a pair of equations~\eqref{MVM1Cl30}. The
+solution is valid when $s^2+S^2\neq 0$, i.e., when either $s\neq 0$
+or $S\neq 0$, or both $s$ and $S$ are nonzero scalars. If these
+conditions are not satisfied we have the case 3).  After
+substitution of \eqref{vV1Cl30}--\eqref{vV2Cl30}, i.e.,
+$(v_1,v_2,v_3)$ and $(V_1,V_2,V_3)$, into~\eqref{MVM1Cl30} we get
+a system of two coupled algebraic equations for two unknowns $s$
+and $S$,
+\begin{equation}\begin{split}\label{sysACl30}
+4(b_0-s^2+S^2)(s^2+S^2)^2=&+(b_1s+b_{23}S)^2+(b_2s-b_{13}S)^2+(b_3s+b_{12}S)^2\\
+  &-(b_{23}s-b_1S)^2-(b_{13}s+b_2S)^2-(b_{12}s-b_3S)^2,\\
+  2(b_{123}-2sS)(s^2+S^2)^2=&+(b_1s+b_{23}S)(b_{23}s-b_{1}S)-(b_{2}s-b_{13}S)\\
+&\times(b_{13}s+b_{2}S)+(b_3s+b_{12}S)(b_{12}s-b_3S).
+ \end{split}\end{equation}
+If $s^2=S^2$ the solution of \eqref{sysACl30} requires some
+compatibility condition to be satisfied since in this case we have
+two equations and only one unknown. This situation will be
+considered in the case 2) (see subsection~\ref{subsec:Cl30spec}). If $s$
+and $S$ are independent, the case 1), it appears that
+the system~\eqref{sysACl30} has exactly four solutions that can be
+expressed in radicals. To this end we introduce new variables $t$
+and $T$ and make the substitution
+\begin{equation}\label{sysASCl30}
+  s\,S = t,\qquad  \tfrac{1}{2}(-s^2 + S^2) = T,
+\end{equation}
+which reduces the system~\eqref{sysACl30} to
+\begin{equation}\label{sysARCl30}
+\begin{split}
+&(b_{0}+4 T) (4 t-b_{123})-b_{I}=0,\\
+&b_{S}-(b_{0}-b_{123}+4 T+4 t) (b_{0}+b_{123}+4 T-4 t)=0,
+\end{split}\end{equation}
+and where we have introduced a coordinate-free abbreviations
+$b_{S}$ and $b_{I}$,
+\begin{equation}\label{bSbICl30}
+\begin{split}
+&b_{S}= \langle \B \cliffordconjugate{\B}\rangle_0 =
+b_{0}^2-b_{1}^2-b_{2}^2-b_{3}^2+b_{12}^2+b_{13}^2+b_{23}^2-b_{123}^2,\\
+&b_{I}= \langle \B \cliffordconjugate{\B} I \rangle_0 = 2 b_{3}
+b_{12}-2 b_{2} b_{13}+2 b_{1} b_{23}-2 b_{0} b_{123}.
+\end{split}
+\end{equation}
+In \eqref{bSbICl30} the MV $\cliffordconjugate{\B}$ denotes the
+Clifford conjugate of $\B$ and $\langle..\rangle_0$ is the scalar
+filter. Note, that for remaining  algebras \cl{0}{3},
+\cl{2}{1}, and \cl{2}{1} the signs of individual terms inside
+$b_S$ and $b_I $ all are different. As we shall see below the
+square  roots, in fact, are predetermined by four real
+coefficients only, namely, the  scalar $b_0$ and
+pseudoscalar~$b_{123}$ of MV $\B$, and signs in combination
+of remaining coefficients in $b_{S}$ and~$b_{I}$
+in~\eqref{bSbICl30}.
+
+
+The substitution~\eqref{sysASCl30} and the resulting system of
+equations~\eqref{sysARCl30} are of degree $\le 4$. The initial
+system \eqref{sysACl30}, thus, can be explicitly solved in
+radicals for CAs of  dimensions $n\le 3$. In particular, two real
+solutions of \eqref{sysASCl30} have the form
+\begin{equation}\label{solACl30}
+\begin{split}
+  &s_{1,2} =\pm\sqrt{-T+\sqrt{T^2+ t^2}},\qquad S_{1,2}
+=\pm\frac{t}{\sqrt{-T+\sqrt{T^2+ t^2}}}\,.
+\end{split}\end{equation}
+  In~\eqref{solACl30}, the signs in pairs $(s_i,S_i)$ must be the
+same (plus or minus). The denominator in $S_{1,2}$ becomes zero if
+  $s=S=0$, i.e., in the case 3). The remaining two solutions of
+\eqref{sysASCl30}, which can be obtained from \eqref{solACl30} by
+the substitution $\sqrt{T^2+ t^2}\to -\sqrt{T^2+ t^2}$, are
+complex valued, due to the inequality $\sqrt{T^2+ t^2}\ge T$, and
+  therefore were rejected.
+
+The two real valued solutions of Eq.~\eqref{sysARCl30} are
+\begin{equation}\label{solBCl30}
+\begin{split}
+  &t_{1,2}=\frac{1}{4} \Bigl(b_{123} \pm \frac{1}{\sqrt{2}}\sqrt{-b_{S}+\sqrt{D}}\Bigr),\
+  T_{1,2}=\frac{1}{4}\Bigl(\frac{\pm b_{I}}{\sqrt{2}\sqrt{-b_{S}+\sqrt{D}}}-
+  b_{0}\Bigr),
+\end{split}
+\end{equation}
+since for \cl{3}{0} algebra the determinant norm
+$D=b_{S}^2+b_{I}^2$ of $\B$ is always positively definite and
+$D\ge b_{S}$~\cite{Acus2018}. Again, we should take the same sign
+for both $t_i$ and $T_i$. The two complex valued solutions of
+\eqref{sysARCl30}, which can be obtained from \eqref{solBCl30} by
+substitution $\sqrt{D}\to -\sqrt{D}$, must be rejected. The
+  denominator of $T_{1,2}$ in \eqref{solBCl30} turns into zero when
+$b_{S}=\sqrt{D}$, i.e., when $b_{I}=0$. In this case the solutions
+of  \eqref{sysARCl30} are
+\begin{equation}\label{solBd01Cl30}
+\begin{split}
+ t_{1,2}&=\begin{cases}
+   \frac{1}{4} \bigl(\pm\sqrt{-b_{S}}+b_{123}\bigr),& b_{S}<0,\\
+  b_{123}/{4} , &b_{S}>0.
+ \end{cases}\quad
+  T_{1,2}= \begin{cases}  -b_{0}/{4}, &b_{S}<0,\\
+    \frac{1}{4} \bigl(\pm\sqrt{b_{S}}-b_{0}\bigr),& b_{S}>0.
+  \end{cases}
+\end{split}
+\end{equation}
+To summarize, beginning from \eqref{solBCl30} or
+\eqref{solBd01Cl30} and then going to \eqref{solACl30}, and
+finally to formulas \eqref{vV1Cl30}-\eqref{vV2Cl30}, one obtains
+four explicit real solutions which completely determine the square
+root $\sqrt{\B}=\A=s+\bv+(S+\bV)I$ of the generic MV $\B$ of real
+$\cl{3}{0}$ algebra in terms of radicals.
+
+\subsection{The special case $s^2 = S^2$\label{subsec:Cl30spec}}
+The special case includes the subcases 1) $s = S\neq 0$, 2) $s =
+-S\neq 0$ and 3)~$s=S=0$.
+\subsubsection{The subcase $s=S\neq 0$}
+  In this case the Eq.~\eqref{sysACl30} reduces to system
+\begin{equation}\begin{split}\label{sysAspec1Cl30}
+  (4 s^2 b_0-b_3 b_{12}+b_2 b_{13}-b_1 b_{23})/s=0,\\
+  (16 s^4-b_1^2-b_2^2-b_3^2+b_{12}^2+b_{13}^2+b_{23}^2-8 s^2 b_{123})/s=0,
+ \end{split}\end{equation}
+where division by $s$ implies that the case $s=0$ should be
+investigated separately. If the shortcuts $b_I$ and $b_S$ are
+introduced and the requirement $s\neq 0$  is taken into account
+the Eqs.~\eqref{sysAspec1Cl30} become
+\begin{equation}\label{sysAspec30}
+  b_I=-2b_0 (-4 s^2+ b_{123}),\qquad
+  b_S=b_0^2-(-4 s^2+b_{123})^2.
+\end{equation}
+These equations are mutually compatible when the coefficients of
+MV~$\B$ satisfy the condition $b_{I}^2+4 b_0^2(b_S- b_0^2)=0$. In
+this case the solution is
+\begin{equation}\begin{split}\label{solSspec1Cl30}
+s_{1,2} =&\begin{cases}
+\pm\tfrac12\sqrt{b_{123}+\dfrac{b_I}{2 b_0}} & \textrm{if}\quad b_0\neq  0,\\
+\pm\tfrac12\sqrt{b_{123}\pm\sqrt{-b_S}} & \textrm{if}\quad b_0 =  0,
+  \end{cases}
+\end{split}\end{equation}
+where all expressions inside square roots are assumed to be
+positive. The expressions  \eqref{solSspec1Cl30} and
+\eqref{vV1Cl30}-\eqref{vV2Cl30} yield the final answer for this
+subcase.
+
+\subsubsection{The subcase $s = -S\neq 0$}
+When $s=-S$ we proceed in the same way.  Now we have to solve
+the equations
+\begin{equation}\label{sysAspec}
+ b_I=-2b_0 (4 s^2+ b_{123}),\qquad
+ b_S=b_0^2-(4 s^2+b_{123})^2.
+\end{equation}
+The equations have a solution if coefficients of $\B$ satisfy the
+same condition $b_{I}^2+4 b_0^2(b_S- b_0^2)=0$. The solution then
+is
+\begin{equation}\begin{split}\label{solSspec2}
+s_{1,2} =&\begin{cases}
+\pm\tfrac12\sqrt{-b_{123}-\dfrac{b_I}{2 b_0}} & \textrm{if}\quad b_0\neq  0,\\
+\pm\tfrac12\sqrt{-b_{123}\pm\sqrt{-b_S}} & \textrm{if}\quad b_0 =  0,
+  \end{cases}
+\end{split}\end{equation}
+where again all expressions inside square roots must  be positive.
+The Eqs.~\eqref{solSspec2} and \eqref{vV1Cl30}-\eqref{vV2Cl30}
+yield the square root of $\B$ in this special case. The
+expressions \eqref{solSspec2} and \eqref{solSspec1Cl30} are
+complementary, i.e., for a given $\B$ they cannot
+ occur simultaneously.
+
+\subsubsection{The subcase $s = S = 0$}
+This special case is interesting because the condition $s = S = 0$
+implies that the number of square roots $\sqrt{\B}$ may be
+infinite. Indeed, when $s = S = 0$ the Eqs.
+\eqref{MVM2Cl30}-\eqref{MVM4Cl30} are compatible only if the
+vector coefficients $b_1, b_2, b_3$ and bivector coefficients
+$b_{12}, b_{13}, b_{23}$ all are equal to zero. Then, the
+Eq.~\eqref{MVM1Cl30} reduces to
+\begin{equation}\label{solSspec3Cl30}
+b_0=\bv^2-\bV^2,\quad b_{123}=2(\bv\cdot\bV).
+\end{equation}
+Since, in general, we have $3+3=6$ unknowns which have to satisfy
+only two equations we are left with four real parameters which can
+be chosen at will (see Example~1). The solution set, therefore,
+makes a four dimensional (or smaller) manifold as long as manifold
+can ensure real-valued MV coefficients. Here we do not investigate
+the range of values of the free parameters. It should be noticed
+that  $\B = b_0+b_{123}\e{123}$ belongs to a center of \cl{3}{0}
+algebra. Two Eqs.~\eqref{solSspec3Cl30} have a clear geometric
+interpretation. Indeed, imagine two concentric spheres determined
+by end points of vectors $\bv$ and $\bV$.  The coefficient $b_0$
+then determines difference of lengths of $|\bv|^2$ and $|\bV|^2$,
+while the coefficient at pseudoscalar $b_{123}$ controls an angle
+between the vectors $\bv$ and~$\bV$. Before considering
+non-Euclidean algebras we provide some examples.
+%
+\subsection{Examples for $\cl{3}{0}$}
+\subsubsection*{Example~1. The case $s\ne S$.}\label{exmp1}
+The square root of $\B=\e{1}-2 \e{23}$. The coefficients in this
+case are $b_1=1$ and $b_{23}=-2$, and all remaining are equal to
+zero. Then from \eqref {bSbICl30} we have that  $b_I=-4$ and
+$b_S=3$. The expression \eqref{solBCl30} gives
+$t_{1,2}=(\tfrac{1}{4},-\tfrac{1}{4})$ and
+$T_{1,2}=(-\tfrac{1}{2},\tfrac{1}{2})$.  Finally using
+\eqref{solACl30} we find the real solutions for $s$ and $S$,
+\begin{equation}\begin{split}\label{ex1}
+  &\bigl(s_{1,2}=\mp\tfrac{1}{2}c_1,\ S_{1,2}=\pm\tfrac{1}{2}c_2\bigr)\quad \text{and}\quad
+  \Bigl(s_{3,4}=\pm\tfrac{1}{2}c_2,\ S_{3,4}=\pm\tfrac{1}{2}c_1\Bigr),
+\end{split}\end{equation}
+where $c_1=\sqrt{-2+\sqrt{5}}$ and  $c_2=\sqrt{2+\sqrt{5}}$. The
+MV, therefore, is regular and we can omit the test of special
+cases $s^2=S^2$. Using \eqref{vV1Cl30}-\eqref{vV2Cl30} then we
+have the following four sets of non-zero coefficients:
+\begin{equation}\label{ex1aCl30}\begin{array}{llll}
+\bigl(s_1=-\tfrac{1}{2}c_1,& S_1=\tfrac{1}{2}c_2,& v_1=-\tfrac{1}{2}c_2,& V_1=-\tfrac{1}{2}c_1\bigr),\\
+\bigl(s_2=\tfrac{1}{2}c_1,& S_2=-\tfrac{1}{2}c_2,& v_1=\tfrac{1}{2}c_2,& V_1=\tfrac{1}{2}c_1\bigr),\\
+\bigl(s_3=\tfrac{1}{2}c_2,& S_3=\frac{1}{2}c_1,& v_1=\tfrac{1}{2}c_2,& V_1=-\tfrac{1}{2}c_1\bigr),\\
+\bigl(s_4=-\tfrac{1}{2}c_2,& S_4=-\tfrac{1}{2}c_1,&
+v_1=-\tfrac{1}{2}c_1,& V_1=\tfrac{1}{2}c_2\bigr).
+\end{array}\end{equation}
+The remaining coefficients are equal to zero, $v_2=v_3=V_2=V_3=0$.
+Finally, inserting the coefficients~\eqref{ex1aCl30} into
+\eqref{mvA30} we find all four roots,
+\begin{equation}\begin{split}\label{ex1fa}
+  &\sqrt{\B_{1,2}}=\A_{1,2} = \mp\frac12 c_2 \bigl(-2+\sqrt{5}+\e{1}+(-2+\sqrt{5}) \e{2 3}-\e{1 2 3}\bigr),\\
+  &\sqrt{\B_{3,4}}=\A_{3,4}= \pm \frac12 c_1 \bigl(2+\sqrt{5}+\e{1}-(2+\sqrt{5}) \e{2 3}+\e{1 2
+  3}\bigr),
+\end{split}\end{equation}
+the squares of which  give the initial MV $\B=\e{1}-2 \e{23}$.
+
+\subsubsection*{Example~2. The case $s=S$.\label{exmp2}}
+The square root of $\B=-1+\e{3}-\e{12}+\frac12\e{123}$. We have
+$b_0=-1$, $b_{123}=\tfrac12$, $b_I=-1$, $b_S=\tfrac34$. From
+\eqref{solACl30} and \eqref{solBCl30} then we find
+\begin{equation}\label{ex2}
+\bigl(s_{1,2}=\pm\tfrac{1}{2},\quad S_{1,2}=\pm\tfrac{1}{2}\bigr).
+\end{equation}
+Since $s=S$ and the condition $b_{I}^2+4 b_0^2(b_S- b_0^2)=0$ is
+satisfied, from~\eqref{solSspec1Cl30} we recover once again
+$s_{1,2}=\pm\frac12$, whereas the Eq.~\eqref{solSspec2} has no
+real solution. Then equations \eqref{vV1Cl30}-\eqref{vV2Cl30}
+yield
+\begin{equation}\begin{array}{llll}\label{ex2a}
+\bigl(s_1=-\tfrac{1}{2},&\ v_1=v_2=v_3=0,&\ V_1=V_2=0,&\ V_3=1\bigr),\\
+\bigl(s_2=\tfrac{1}{2},&\ v_1=v_2=v_3=0,&\ V_1=V_2=0,&\ V_3=-1\bigr).\\
+\end{array}\end{equation}
+The answer, therefore, is
+\begin{equation}\begin{split}\label{ex2fa}
+  &\sqrt{\B_{1,2}} =\A_{1,2}= \pm \bigl( \tfrac12 \e{3} + \tfrac12 \e{12}-\e{1 2 3}\bigr),\\
+  &\sqrt{\B_{3,4}}= \A_{3,4}= \pm \bigl(-\tfrac12 +\e{12}-\tfrac12 \e{1 2 3}\bigr).\\
+\end{split}\end{equation}
+
+
+\subsubsection*{Example~3. The case $s=S=0$ and $s\ne S\ne 0$.}\label{ex3Cl30}
+The square root of MV $\B=-1+\e{123}$ that represents the
+algebra center.
+ We have $b_0=-1$, $b_{123}=1$ and $b_I=2$, $b_S=0$. Then
+from expressions  \eqref{solBCl30} and \eqref{solACl30} we obtain
+\begin{equation}\label{ex3}\begin{split}
+&\bigl(s_{1,2}=\pm c_1,\ S_{1,2}=\pm c_2\bigr)\quad
+\text{and}\quad  \bigl(s_{3}=0,\ S_{3}=0\bigr),
+\end{split}\end{equation}
+where  $c_1=\sqrt{-1/2+1/\sqrt{2}}$ and
+$c_2=\sqrt{1/2+1/\sqrt{2}}$. The cases $s_{1,2}\neq S_{1,2}$ in
+\eqref{ex3} can be computed as in the Example~1 above.
+The square roots are $\sqrt{\B_{1,2}} = \pm (c_1+c_2 \e{123})$.
+
+The case $(s_{3}=0,\ S_{3}=0)$ in \eqref{ex3} is special. Since
+all coefficients ($b_1, b_2, b_3$) and ($b_{12}, b_{13}, b_{23}$)
+are zeroes the solution set is not empty. Indeed, as seen  from
+\eqref{solSspec3Cl30} the system can  be solved for an arbitrary
+pair of coefficients ($v_1,v_2,v_3,V_1,V_2,V_3$), for example, for
+($v_1,V_1$). After substitution of ($v_1,V_1$) into~\eqref{mvA30}
+we obtain MV with four free parameters
+$\sqrt{\B_{3}}=f_1(v_2,v_3,V_2,V_3)\e{1}+v_2\e{2}+v_3\e{3}+f_2(v_2,v_3,V_2,V_3)\e{23}-V_2\e{13}+V_3\e{12}$,
+where $v_1=f_1(v_2,v_3,V_2,V_3)$ and $V_1=f_2(v_2,v_3,V_2,V_3)$
+denote explicit solutions of system~\eqref{solSspec3Cl30},
+\begin{equation}\label{exampleCl30free}
+\begin{split}
+&v_{1}=\mp \frac{c_1}{\sqrt{2}},\qquad
+  V_{1}=\pm \frac{1}{c_1} \frac{-b_{123}+2 (v_{2} V_{2}+v_{3} V_{3})}{\sqrt{2}},\qquad \textrm{with}\quad \\[3pt]
+&c_1=\Bigl(\pm\sqrt{\left(b_{0}-v_{2}^2-v_{3}^2+V_{2}^2+V_{3}^2\right)^2+
+   (b_{123}-2 (v_{2} V_{2}+v_{3} V_{3}))^2}\\
+&\phantom{\frac{1}{\sqrt{2}}b_{0}-v_{2}^2-v_{3}^2  (b_{123}-2
+(v_{2} V_{2}+v_{3} V_{3}))x}
+ +b_{0}-v_{2}^2-v_{3}^2+V_{2}^2+V_{3}^2\Bigr)^{\frac{1}{2}}
+.
+\end{split}
+\end{equation}
+If instead of $\B=-1+\e{123}$ we would attempt to find the square
+root of MV that does not belong to the center, for example
+$\B=\e{1}+\e{12}$ (which represents physically important case of
+linearly polarized electromagnetic wave in $\cl{3}{0}$), we would
+end with an empty solution set. Indeed, in this case we have
+$\bigl(s_1=0,\ S_1=0\bigr)$ and $b_0=b_{123}=b_I=b_S=0$,
+therefore, the compatibility condition $b_{I}^2+4 b_0^2(b_S-
+b_0^2)=0$ is satisfied. The Eqs.~\eqref{vV1Cl30}-\eqref{vV2Cl30},
+however, yields contradiction $1=0$. This is not surprising, since
+for this particular MV we have $(\e{1}+\e{12})^2=0$.
+
+
+\subsubsection*{Example~4. The case of quaternion.}
+Since quaternions are isomorphic to even subalgebra
+$\cl{3}{0}^{+}$ with  elements $\{1,\e{12},\e{23}, \e{13}\}$, the
+provided formulas allow to find the square root of a quaternion as
+well. For example, taking into account that $\mathbf{i} =\e{12}$,
+$\mathbf{j}=-\e{13}$, $\mathbf{k}=\e{23}$ let us compute the
+square root of
+$\B=1+\e{12}-\e{13}+\e{23}=1+\mathbf{i}+\mathbf{j}+\mathbf{k}$. In
+this case we have  $b_0=1$, $b_{123}=0$ and $b_I=0$, $b_S=4$.
+Beginning  from \eqref{solBd01Cl30} and using Eq.~\eqref{solACl30}
+we find that this is a regular case with four different
+coefficients
+\begin{equation}\begin{split}\label{ex4}
+  &\bigl(s_{1,2}=0,\quad S_{1,2}=\pm 1/\sqrt{2}\bigr)\quad \text{and}\quad
+  \Bigl(s_{3,4}=\pm \sqrt{3/2},\quad S_{3,4}=0\Bigr).
+\end{split}\end{equation}
+Using \eqref{vV1Cl30}-\eqref{vV2Cl30} and \eqref{mvA30} we can write the answer:
+\begin{equation}\begin{split}\label{ex4fa}
+  &\sqrt{\B_{1,2}} =\A_{1,2}= \pm (\e{1} +\e{2}+\e{3}+\e{1 2 3})/\sqrt{2},\\
+  &\sqrt{\B_{3,4}}= \A_{3,4}= \pm(3 +\e{12}-\e{13}+\e{23})/\sqrt{6}=\pm(3 +\mathbf{i}+\mathbf{j}+\mathbf{k})/\sqrt{6}.
+\end{split}\end{equation}
+The squares  of all four roots gives the initial MV. It should be
+noticed that the roots $\sqrt{\B_{3,4}}$ have remained in the even
+algebra, whereas  the roots $\sqrt{\B_{1,2}}$ have not. The source
+of this difference is related with the initial assumption that the
+roots belong to  \cl{3}{0} algebra rather than to quaternionic or
+isomorphic \cl{0}{2} algebra.
+
+
+\section{\cl{0}{3} algebra}\label{sec:Cl03}
+A similar calculation route allows to write down explicit square
+root formulas for \cl{0}{3} algebra as well. Using the same
+notation~\eqref{mvA30} for $\A$ and $\B$ and equating coefficients
+at the same basis elements in $\A^2=\B$ we obtain the
+equations,\footnote{The reader has noticed that formulas
+ have similar structure and only differ in signs of
+some constituent terms. For easier reading and application, all
+formulas below -- including that for mixed algebras -- are written
+explicitly without introducing a large number of sign epsilons
+such as $\varepsilon_{\pm}=\pm 1$. The appearance of different
+signs in structurally similar expressions, in fact, brings in
+different conditions for existence of real roots in distinct
+algebras.}
+\begin{align}
+b_0&=s^2+S^2+\bv^2+\bV^2, &b_{123}&=2(sS+\bv\cdot\bV)\label{MVM10Cl03}, \\
+b_1&=2(s v_1+S V_1), &b_{23}&=-2(s V_1+S v_1)\label{MVM20Cl03}, \\
+b_2&=2(s v_2+S V_2), &b_{13}&=2(s V_2+S v_2)\label{MVM30Cl03}, \\
+b_3&=2(s v_3+S V_3), &b_{12}&=-2(s V_3+S v_3)\label{MVM40Cl03},
+\end{align}
+where now $\bv^2=-v_1^2-v_2^2-v_3^2$ and $\bv\cdot\bV=-v_1 V_1- v_2 V_2- v_3 V_3$.
+
+
+\subsection{The generic case, $s^2\neq S^2$}
+The solution of  Eqs.~\eqref{MVM20Cl03}-\eqref{MVM40Cl03} is
+\begin{align}
+v_1&=\frac{b_1s+b_{23}S}{2(s^2-S^2)}, & v_2&=-\frac{b_{2}s- b_{13}S}{2(s^2-S^2)},&  v_3&=\frac{b_3s+b_{12}S}{2(s^2-S^2)},\label{v123Cl03}\\
+V_1&=-\frac{b_{23}s+b_{1}S}{2(s^2-S^2)},
+&V_2&=\frac{b_{13}s-b_{2}S}{2(s^2-S^2)},
+&V_3&=-\frac{b_{12}s+b_{3}S}{2(s^2-S^2)}.\label{V123Cl03}
+\end{align}
+The solution is valid when $s^2-S^2\neq 0$ and corresponds to
+generic case considered in this subsection. We substitute
+\eqref{v123Cl03} and \eqref{V123Cl03} into \eqref{MVM10Cl03} and
+obtain two coupled algebraic equations for two unknowns $s$ and
+$S$,
+\begin{equation}\label{sysA0Cl03}
+\begin{split}
+& b_{S}+4 s^2 (-6 S^2+b_0)+8 s S b_{123}=4 s^4+(-2 S^2+b_0)^2+b_{123}^2,\\
+  & b_{I}=2 (2 (s^2+S^2)-b_0) (4 s S-b_{123}),
+\end{split}\end{equation}
+where we again have introduced the coordinate-free notation for
+\begin{equation}\label{bSbICl03}
+\begin{split}
+&b_{S}= \langle \B \cliffordconjugate{\B}\rangle_0 =
+b_{0}^2+b_{1}^2+b_{2}^2+b_{3}^2+ b_{12}^2+b_{13}^2+b_{23}^2+b_{123}^2,\\
+&b_{I}= \langle \B
+\cliffordconjugate{\B} I \rangle_0 = -2 b_{3} b_{12}+2 b_{2} b_{13}-2 b_{1} b_{23}+2 b_{0} b_{123}.
+\end{split}
+\end{equation}
+(Note change of signs compared to \cl{3}{0} case). The determinant norm in \cl{0}{3} is expressed as a difference,
+$D=b_S^2-b_I^2$, and is always positive $D>0$.
+
+To reduce the degree of the above equations we make the
+substitution
+\begin{equation}\label{sysAS0Cl03}
+  s\,S = t;\qquad  \tfrac{1}{2}(s^2 + S^2) = T,
+\end{equation}
+which transforms\footnote{To eliminate $s$ and $S$ {\it
+Mathematica} commands \textbf{Eliminate[~]} and
+  \textbf{GroebnerBasis[~]} can be used. These commands allow to rewrite the
+initial system of equations in a number of equivalent forms.} the
+  system~\eqref{sysA0Cl03} to simpler one,
+\begin{equation}\label{sysAR0Cl03}
+ b_{S}=(4 T-b_0)^2+(4 t-b_{123})^2,\qquad
+  b_{I}=2 (4 T-b_0) (4 t-b_{123}).
+\end{equation}
+The solution of~\eqref{sysAR0Cl03} when $(b_{S}\pm\sqrt{D})
+> 0$ is
+\begin{equation}\label{solB0Cl03}
+\begin{split}
+  &t_{1,2}=\frac{1}{4} \Bigl(b_{123} \pm \frac{1}{\sqrt{2}}\sqrt{b_{S}-\sqrt{D}}\Bigr),\quad
+  T_{1,2}=\frac{1}{4}\Bigl(b_{0}\pm\frac{ b_{I}}{\sqrt{2}\sqrt{b_{S}-\sqrt{D}}}\Bigr).
+\end{split}
+\end{equation}
+We have to take either plus or minus signs in $t_i$ and
+$T_i$ (two possibilities). The remaining two solutions of
+\eqref{sysAR0Cl03}, which were obtained
+from \eqref{solB0Cl03} by the replacement $-\sqrt{D}\to +\sqrt{D}$
+yielded a complex valued expression for $T\pm\sqrt{T^2-
+t^2}$ (see Eq.~\eqref{solA0Cl03} below) and were dismissed
+in advance.
+
+When  $b_{I}=0$ or, equivalently, $b_{S}\pm\sqrt{D} = 0$ the
+solution of \eqref{sysAR0Cl03} is
+\begin{equation}\label{solB0d01aCl03}
+  (t_{1,2},\ T_{1,2})= \bigl(\frac{1}{4}b_{123},\ \frac{1}{4} (\pm\sqrt{b_{S}}+b_{0})\bigr),
+\end{equation}
+which, alternatively, can be also written in a form
+\begin{equation}\label{solB0d01bCl03}
+  (t_{1,2},\ T_{1,2})= \bigl(\frac{1}{4}b_0,\ \frac{1}{4} (\pm\sqrt{b_{S}}+b_{123})\bigr).
+\end{equation}
+Once equations in~\eqref{solB0Cl03} are computed they can be
+substituted back into solutions of~\eqref{sysAS0Cl03}
+\begin{equation}\label{solA0Cl03}
+s_{1,2,3,4} =\pm\sqrt{T\pm\sqrt{T^2- t^2}},\;\, S_{1,2,3,4}
+  =\pm\frac{t}{\sqrt{T\pm\sqrt{T^2- t^2}}}, \textrm{ for }T\ge 0.
+\end{equation}
+We have to choose the same signs in the same positions for $s_{1,2,3,4}$
+and $S_{1,2,4,5}$ (four possibilities). In the case when
+$T\pm\sqrt{T^2- t^2}=0$ (i.e., for $t=0$) the solutions of
+equations in~\eqref{sysAS0Cl03} are the sets
+\begin{equation}\label{solA0d01Cl03}
+\begin{split}
+& (s_{1,2}= S_{3,4} = \pm\sqrt{2T}, \qquad S_{1,2}= s_{3,4}  = 0).
+\end{split}\end{equation}
+Thus, starting  from pairs $(t_1,T_1)$ and $(t_2,T_2)$ in
+Eq.~\eqref{solB0Cl03} (or \eqref{solB0d01aCl03}, equivalently
+\eqref{solB0d01bCl03}) and then passing to \eqref{solA0Cl03} (or
+\eqref{solA0d01Cl03}), and finally to formulas \eqref{v123Cl03},
+\eqref{V123Cl03} and \eqref{mvA30} one obtains explicit real
+solutions which completely determine the square root
+$\sqrt{\B}=\A=s+\bv+(S+\bV)I$ of the generic MV $\B$ of real
+$\cl{0}{3}$ algebra in terms of radicals. It appears that only
+four\footnote{The condition $T\ge 0$ in \eqref{solA0Cl03} selects
+only one sign from \eqref{solB0Cl03}.} real solutions at most are
+possible in this algebra too, since other choices of signs in
+\eqref{solB0Cl03} and \eqref{solA0Cl03} yield negative expressions
+inside square roots. Now we consider special case.
+
+\subsection{The special case $s^2 = S^2$}
+
+We have the subcases  1) $s = S\neq 0$,  2)  $s = -S\neq 0$ and 3) $s=S=0$.
+\subsubsection{The subcase $s=S\neq 0$}
+The system of  Eqs.~\eqref{MVM20Cl03}--\eqref{MVM40Cl03} has a
+special solution,
+\begin{equation}\begin{split}\label{vVSpecialCl03}
+v_{1}= \frac{b_{1}}{2 s}-V_{1},\quad v_{2}= \frac{b_{2}}{2 s}-V_{2},\quad v_{3}= \frac{b_{3}}{2 s}-V_{3},
+\end{split}\end{equation}
+iff the MV $\B$ coefficients satisfy $b_1 =-b_{23}$, $b_2 =
+b_{13}$,  $b_3= - b_{12}$. In \eqref{vVSpecialCl03} we have
+expressed $v_i$ in terms of $V_i$. Appearance of $s$ in the
+dominators of \eqref{vVSpecialCl03} implies that the case $s=S=0$
+should again be investigated separately. After substituting the
+solution \eqref{vVSpecialCl03} into \eqref{MVM10Cl03} and taking
+into account the mentioned conditions $b_1 =- b_{23}, b_2 =
+b_{13}, b_3= - b_{12}$ we get two equations,
+\begin{equation}\begin{split}\label{sysAspecCl03}
+  &-\frac{b_{1}^2+b_{2}^2+b_{3}^2}{4 s^2}+\frac{b_{1} V_{1}+b_{2}
+  V_{2}+b_{3} V_{3}}{s}-b_{0}+2 s^2+2 (\bV\cdot \bV)=0,\\
+&-\frac{b_{1} V_{1}+b_{2}  V_{2}+b_{3} V_{3}}{s}-b_{123}+2 s^2-2 (\bV\cdot \bV)=0,
+\end{split}\end{equation}
+which should be  kept mutually compatible. To this end we subtract
+and add the above equations,
+\begin{equation}\begin{split}\label{sysAspecSubsAddCl03}
+  &-\frac{4 s^2 \left(b_{0}-b_{123}-4 (\bV\cdot \bV)\right)-8 s (b_{1} V_{1}+b_{2} V_{2}+b_{3} V_{3})+b_{1}^2+b_{2}^2+b_{3}^2}{4 s^2}=0,\\
+  &  -\frac{4 s^2 \left(b_{0}+b_{123}-4 s^2\right)+b_{1}^2+b_{2}^2+b_{3}^2}{4 s^2}=0.
+\end{split}\end{equation}
+Then using the explicit form of the relation $b_0^2 + 2 (b_1^2 + b_2^2
++ b_3^2) + b_{123}^2 = b_S=\langle \B
+  \cliffordconjugate{\B}\rangle_0$, where we have taken into account the
+conditions $b_1 =- b_{23},  b_2 = b_{13},  b_3= - b_{12}$, we
+express $b_{1}^2+b_{2}^2+b_{3}^2$ from the second equation of
+\eqref{sysAspecSubsAddCl03}, $b_{1}^2+b_{2}^2+b_{3}^2 =\frac12
+(b_S-b_{0}^2-b_{123}^2)$, and substitute it into the first of
+equations in~\eqref{sysAspecSubsAddCl03}. The result is a
+quadratic equation for $V_i$. After solving it, for example, with
+respect to $V_1$ we express it in terms of now arbitrary free
+parameters $V_2$ and $V_3$,
+\begin{equation}\begin{split}\label{AspecCl03}
+  V_{1}=& \frac{\sqrt{2}}{8 s}\Bigl(\sqrt{2} b_{1}\pm \bigl(-8 s^2 \left(b_{0}-b_{123}+4 \left(V_{2}^2+V_{3}^2\right)\right)+\\
+  &\phantom{\bigl(-8 s^2 }
+  16 s (b_{2} V_{2}+b_{3} V_{3})+b_{0}^2+2 b_{1}^2+b_{123}^2-b_{S}\bigr)^{1/2}\Bigr),
+\end{split}\end{equation}
+which ensures the compatibility of the system
+\eqref{sysAspecCl03}. Therefore we can restrict further analysis
+to a single simplest equation, which we choose to be the second
+equation of \eqref{sysAspecSubsAddCl03}. Using the shortcut $b_S$
+it can be cast in the form,
+  \begin{equation}\begin{split}\label{sysAspec2Cl03}
+b_{S}=-8 b_{0} s^2-8 b_{123} s^2+b_{0}^2+b_{123}^2+32 s^4 .
+ \end{split}\end{equation}
+After solving it with respect to $s$ we have
+\begin{equation}\begin{split}\label{solSspec1Cl03}
+s_{1,2} =& \pm\tfrac{1}{2 \sqrt{2}}\sqrt{\sqrt{2
+b_{S}-(b_{0}-b_{123})^2}+b_{0}+b_{123}}\,,
+\end{split}\end{equation}
+where all expressions inside square roots are assumed to be
+positive (we again have removed complex valued solution). The
+expressions \eqref{solSspec1Cl03}, \eqref{AspecCl03} and
+\eqref{vVSpecialCl03} substituted into \eqref{mvA30} yield the
+final answer for this special case provided that the conditions
+$b_1 =- b_{23},  b_2 = b_{13},  b_3= - b_{12}$, which can be
+shortly written also as $b_S-(b_0-b_{123})^2=b_I$, are satisfied. The
+solution set contains two free parameters (here $V_2$ and $V_3$)
+and, therefore, makes two (or smaller) dimensional manifold in
+the parameter space.
+
+\subsubsection{The subcase $s=-S\neq 0$}
+Performing exactly the same analysis we obtain that solution in
+this case exists when the conditions $b_1 = b_{23}$, $b_2 =
+-b_{13}$ and $b_3= b_{12}$, which can be shortly written as
+$-b_S+(b_0+b_{123})^2=b_I$, are satisfied. Then we can express
+$v_i$ in terms of $V_i$
+\begin{equation}\begin{split}\label{vVSpecial2Cl03}
+v_{1}= \frac{b_{1}}{2 s}+V_{1},\quad v_{2}= \frac{b_{2}}{2 s}+V_{2},\quad v_{3}= \frac{b_{3}}{2 s}+V_{3}.
+\end{split}\end{equation}
+In a similar way $V_1$ can  be expressed in terms of $V_2$ and
+$V_3$
+\begin{equation}\begin{split}\label{Aspec2Cl03}
+  V_{1}=& \frac{\sqrt{2}}{8 s}\Bigl(-\sqrt{2} b_{1}\pm \big(-8 s^2 \big(b_{0}+b_{123}+4(V_{2}^2+V_{3}^2)\big)\\
+  &\phantom{\big(-8 s^2 }
+  -16 s (b_{2} V_{2}+b_{3} V_{3})+b_{0}^2+2 b_{1}^2+b_{123}^2-b_{S}\big)^{1/2}\Bigr),
+\end{split}\end{equation}
+whereas for $s$ we have two real solutions
+\begin{equation}\begin{split}\label{solSspec1NegCl03}
+s_{1,2} =& \pm\tfrac{1}{2 \sqrt{2}}\sqrt{\sqrt{2
+b_{S}-(b_{0}+b_{123})^2}+b_{0}-b_{123}}\,,
+\end{split}\end{equation}
+The above expressions substituted into \eqref{mvA30} again yield
+the final MV provided the conditions $b_1 = b_{23},  b_2 =
+-b_{13}, b_3= b_{12}$ are satisfied.
+
+\subsubsection{The subcase $s = S = 0$}
+The analysis of this special subcase is very similar to that in
+$\cl{3}{0}$. The Eqs.~\eqref{MVM20Cl03}-\eqref{MVM40Cl03} are
+compatible if  the  coefficients at vector  $b_1, b_2, b_3$ and
+bivector $b_{12}, b_{13}, b_{23}$  are equated to zero. Then we
+are left with Eqs.~\eqref{MVM10Cl03} which assume the following
+form:
+\begin{equation}\label{solSspec3Cl03}
+b_0=\bv^2+\bV^2,\quad b_{123}=2(\bv\cdot\bV).
+\end{equation}
+From these equations follows that  four parameters are left
+unspecified. For example, we can again solve
+Eq.~\eqref{solSspec3Cl03} with respect to pair $(v_1,V_1)$,
+\begin{equation}\begin{split}
+&v_{1}=\mp \frac{c_1}{\sqrt{2}},\qquad
+  V_{1}=\pm \frac{1}{c_1} \frac{b_{123}+2 (v_{2} V_{2}+v_{3} V_{3})}{\sqrt{2}},\qquad \textrm{where}\quad \\[3pt]
+&c_1=\Bigl(\pm\sqrt{\left(b_{0}+v_{2}^2+v_{3}^2+V_{2}^2+V_{3}^2\right)^2-
+   (b_{123}+2 (v_{2} V_{2}+v_{3} V_{3}))^2}\\
+&\phantom{\frac{1}{\sqrt{2}}b_{0}-v_{2}^2-v_{3}^2  (b_{123}-2
+(v_{2} V_{2}+v_{3} V_{3}))x}
+-b_{0}-v_{2}^2-v_{3}^2-V_{2}^2-V_{3}^2\Bigr)^{\frac{1}{2}}.
+\end{split}
+\end{equation}
+The pairs  $(v_2,V_2)$ and $(v_3,V_3)$ can be interpreted as
+free parameters that generate a continuum of roots in a four
+parameter space.
+
+\subsection{Examples for $\cl{0}{3}$}
+\subsubsection*{Example~5. The case $s\ne S$.}
+Square root of the same MV $\B=\e{1}-2 \e{23}$ as in Example~1.
+The nonzero coefficients are $b_1=1$, $b_{12}=-2$ and the
+shortcuts in~\eqref{bSbICl03} acquire values $b_I=4$ and $b_S=5$.
+The expression \eqref{solB0Cl03} gives $(T_{1},t_{1})=
+(\tfrac{1}{2},\tfrac{1}{4})$ and $(T_{2},t_{2})=
+(-\tfrac{1}{2},-\tfrac{1}{4})$. Because $T_1>0$ we take
+$(T_{1},t_{1})$. Then from \eqref{solA0Cl03} we find four values
+of $(s_i,S_i)$ and then from \eqref{v123Cl03}, \eqref{V123Cl03}
+the coefficients $v_i$ and $V_i$,
+\begin{equation}\label{ex1aCl03}
+\begin{array}{lll}
+\big(s_1=V_1=\tfrac{1}{4}d_3,&S_1=v_1=-\tfrac{1}{2}d_2,&v_2=v_3=V_2=V_3=0\big),\\
+\big(s_2=V_1=\tfrac{1}{2}d_1,&S_2= v_1=\tfrac{1}{2}d_2,&v_2=v_3=V_2=V_3=0\big),\\
+\big(s_3=V_1=-\tfrac{1}{2}  d_2,&S_3=-\tfrac{1}{2 d_2},\ v_1=\tfrac{1}{4}d_3,&v_2=v_3=V_2=V_3=0\big),\\
+\big(s_4= V_1=\tfrac{1}{2}d_2,&S_4=\tfrac{1}{2d_2},\ v_1=\tfrac{1}{2}d_1,& v_2=v_3=V_2=V_3=0\big).\\
+\end{array}
+\end{equation}
+where $d_1=\sqrt{2-\sqrt{3}}$,  $d_2=\sqrt{2+\sqrt{3}}$ and
+$d_3=\sqrt{2}-\sqrt{6}$. Finally, we find four square roots as in
+Example~1.
+\begin{equation}\begin{split}\label{ex1AnsCl03}
+ &\A_{1}=\sqrt{\B_{1}}=\tfrac{1}{2}\big(d_1+d_2 \e{1}-d_1 \e{23}+ d_2\e{1 2 3}\big),\\
+ &\A_{2}=\sqrt{\B_{2}}=\tfrac{1}{2}\big(-d_2+ \tfrac{1}{2}d_3\e{1}+d_2\e{2 3} -\frac{\e{1 2 3}}{d_2}\big),\\
+ &\A_{3}=\sqrt{\B_{3}}=\tfrac{1}{2}\big(d_2+ d_1\e{1}-d_2\e{2 3}+\frac{\e{123}}{d_2}\big),\\
+ &\A_{4}=\sqrt{\B_{4}}=\tfrac{1}{2}\big(\tfrac{1}{2}d_3-d_2\e{1}-\tfrac{1}{2}d_3 \e{23} -d_2\e{1 2 3}\big).\\
+\end{split}\end{equation}
+Though symbolical forms look different, in fact $\A_{1}=-\A_{4}$
+and $\A_{2}=-\A_{3}$. By this reason there are four
+different roots with either plus or minus signs rather then eight
+roots with plus/minus signs.
+
+
+\subsubsection*{Example~6. The case $s= S\neq 0$.}
+The square root of  $\B=-\e{3}+\e{12}+4\e{123}$. The shortcuts
+have the values $b_I=4$ and $b_S=2$. The expression
+\eqref{solB0Cl03} gives $(T_{1},t_{1})=
+(\tfrac{c_1}{4},\tfrac{c_1}{4})$, where $c_1=(2+\sqrt{5})$. The
+negative $T$ solution was omitted. For $(s_i, S_i)$ then we have
+$(s_1,S_1)=(-\tfrac{\sqrt{c_1}}{2},-\tfrac{\sqrt{c_1}}{2})$ and
+$(s_2,S_2)=(\tfrac{\sqrt{c_1}}{2},\tfrac{\sqrt{c_1}}{2})$. The
+coefficients satisfy the relation $b_1 =- b_{23}$,  $b_2 =
+b_{13}$,  $b_3= -b_{12}$, therefore, a special solution exists.
+Then for $s=-\tfrac{\sqrt{c_1}}{2}$ we find $v_1=-V_1=\frac{1}{2}
+\sqrt{\frac{1}{2} c_2} d_1$, $v_2=-V_2$, $v_3=\sqrt{c_2}-V_3$,
+with $c_2=(-2+\sqrt{5})$, where $d_1=\sqrt{-8 c_1
+\left(V_2^2+V_3^2-1\right)+8 \sqrt{c_1} V_3-2}$. For
+$s=\tfrac{\sqrt{c_1}}{2}$ we have $V_1=-v_1=\frac{1}{2}
+\sqrt{\frac{1}{2} c_2} d_2$, where $d_2=\sqrt{-8 c_1
+\left(V_2^2+V_3^2-1\right)-8 \sqrt{c_1} V_3-2}$ and $v_2=-V_2$,
+$v_3=-V_3-\sqrt{c_2}$. The coefficients $V_2$ and $V_3$ represent
+free parameters. Finally, we have the roots 
+\begin{equation}\begin{split}\label{ex2AnsCl03}
+\A_{1,2}=&\sqrt{\B_{1,2}}=\mp\frac{\sqrt{c_1}}{2}\pm\frac{d_{1,2}}{2\sqrt{2 c_1}}\e{1}-V_2\e{2} + \big(\pm\frac{1}{\sqrt{c_1}}-V_3\big)\e{3} -V_3 \e{12}\\
+ &\phantom{-\frac{\sqrt{c_1}}{2}+\frac{d_{1,2}}{2\sqrt{2 c_1}}\e{1}-V_2\e{2}}
++V_2\e{13}\pm\frac{d_{1,2}}{2\sqrt{2
+c_1}}\e{23}\mp\frac{\sqrt{c_1}}{2}\e{123}
+\end{split}\end{equation}
+Taking, for example, $V_2=\frac12$ and $V_3=0$ we have
+$d_1=d_2=\sqrt{6c_1-2}$, and one can ascertain that we indeed
+obtain real solutions for the specified parameter values, namely,
+$\A_{1}=-\A_{2}=
+-\frac{\sqrt{c_1}}{2}+\frac{\sqrt{c_3}}{2}\e{1}-\frac12\e{2} +
+\sqrt{c_2}\e{3} +\frac12\e{13}+
+\frac{\sqrt{c_3}}{2}\e{23}-\frac{\sqrt{c_1}}{2}\e{123}$ with
+$c_3=5-\sqrt{5}$.
+
+It should be noted, however, that the derived symbolical
+expressions do not guarantee that we can always find {\it real}
+parameters $V_2$ and $V_3$ which are required to ensure real
+square root of MV. For example, if instead of the above MV we
+would try to find square root of $\B=-\e{3}+\e{12}$, which was
+used in the Example~2 of \cl{3}{0} algebra, we would find
+$s_1=\tfrac{1}{2}$ and $s_2=-\tfrac{1}{2}$. The first value then
+yields  $v_1=-V_1=\tfrac{1}{2} \sqrt{-4 V_2^2-(1+2 V_3)^2}$,
+$v_2=-V_2$, $v_3=-1-V_3$ and for the second we obtain
+$V_1=-v_1=\tfrac{1}{2} \sqrt{-4 V_2^2-(1-2 V_3)^2}$, $v_2=-V_2$,
+and $v_3=1-V_3$. Taking the square of symbolical expressions one
+can easily check that we indeed have the MV $-\e{3}+\e{12}$. It is
+obvious, however, that in both cases the expression under square
+root always is negative. Therefore, in fact, there are no real
+square root of $-\e{3}+\e{12}$. We do not explore this question in
+detail, since for explicitly given symbolic expressions the
+analysis is straightforward although the answer is lengthy.
+
+
+
+\section{\cl{1}{2} algebra}\label{sec:Cl12}
+
+\subsection{The generic case, $s^2 \neq S^2$}
+
+The analysis in this algebra is similar to \cl{3}{0}. The
+coefficients $v_i$ and $V_i$ are
+\begin{align}
+v_1&=\frac{b_1s+b_{23}S}{2(s^2+S^2)},
+   &v_2&=\frac{b_{2}s+b_{13}S}{2(s^2+S^2)},
+    &v_3&=\frac{b_3 s -b_{12}S}{2(s^2+S^2)}, \label{vV1Cl12} \\
+V_1&=\frac{b_{23}s-b_{1}S}{2(s^2+S^2)},
+&V_2&=\frac{b_{13}S-b_{2}S}{2(s^2+S^2)},
+&V_3&=-\frac{b_{12}s+b_{3}S}{2(s^2+S^2)}.\label{vV2Cl12}
+\end{align}
+Using the same replacement \eqref{sysASCl30} as  for \cl{3}{0}
+case and introducing new  $b_{S}$ and $b_{I}$ (with
+$D=b_{S}^2+b_{I}^2$),
+\begin{equation}\label{bSbICl12}
+\begin{split}
+&b_{S}= \langle \B \cliffordconjugate{\B}\rangle_0 =
+b_{0}^2-b_{1}^2+b_{2}^2+b_{3}^2-b_{12}^2-b_{13}^2+b_{23}^2-b_{123}^2,\\
+&b_{I}= \langle \B \cliffordconjugate{\B} I \rangle_0 = 2 b_{3}
+b_{12}-2 b_{2} b_{13}+2 b_{1} b_{23}-2 b_{0} b_{123}.
+\end{split}
+\end{equation}
+we can write down the equations for scalar and pseudoscalar parts
+in the form
+\begin{equation}\label{sysARCl12}
+\begin{split}
+&2(4 T + b_{0}) (4 t -b_{123}) - b_{I}=0,\\
+  &(b_0-b_{123}+4 T+4 t) (b_{0}+b_{123}+4 T-4 t)-b_{S}=0,
+\end{split}\end{equation}
+which reproduces the Eq.~\eqref{sysARCl30} for \cl{3}{0} case,
+except that explicit form of $b_S$ and $b_I$ now is different. The
+solutions for scalars $s$ and $S$ are given by \eqref{solACl30}
+and \eqref{solBCl30}.  In the case $b_I=0$, the solution
+\eqref{solBCl30} should be replaced by \eqref{solBd01Cl30}. After
+insertion of  $s$ and $S$  into Eq.~\eqref{vV1Cl12},
+\eqref{vV2Cl12} and  the result into \eqref{mvA30} yields four
+real square roots of $\B$.
+
+
+\subsection{The special case $s^2 = S^2$}
+
+\subsubsection{The subcase $s=S\neq 0$}
+When $s=S$ instead of \eqref{sysAspec1Cl30} we have very similar
+compatibility conditions
+\begin{equation}\begin{split}\label{sysAspec1Cl12}
+  (4 s^2 b_0-b_3 b_{12}+b_2 b_{13}-b_1 b_{23})=0,\\
+  (16 s^4-b_1^2+b_2^2+b_3^2-b_{12}^2-b_{13}^2+b_{23}^2-8 s^2 b_{123})=0,
+ \end{split}\end{equation}
+as in the case of \cl{3}{0}. When the shortcuts $b_I$ and $b_S$
+are introduced the conditions again exactly coincide with
+\eqref{sysAspec30}. Therefore, the solutions expressed in terms of
+$b_I$ and $b_S$ are given by \eqref{solSspec1Cl30} and formulas
+\eqref{vV1Cl12}, \eqref{vV2Cl12} and \eqref{mvA30}.
+
+\subsubsection{The subcase $s=-S\neq 0$}
+When $s$ is rewritten in terms of $b_I$ and $b_S$, we again can
+use the same formulas as in the case of \cl{3}{0}.
+
+\subsubsection{The subcase $s=S= 0$}
+\cl{3}{0} formula \eqref{solSspec3Cl30} remains valid. Of course,
+explicitly solved expressions for $v_1$ and $V_1$ now differ from
+\cl{3}{0} case, because for \cl{1}{2} algebra we have  $v^2=v_1^2
+- v_2^2 - v_3^2$ instead of $v^2=v_1^2 + v_2^2 + v_3^2$. In
+particular,  the solution of \eqref{solSspec3Cl30} in this algebra
+is
+\begin{equation}
+\begin{split}
+&v_{1}=\pm \frac{c_1}{\sqrt{2}},\qquad
+  V_{1}=\pm \frac{1}{c_1} \frac{b_{123}+2 (v_{2} V_{2}+v_{3} V_{3})}{\sqrt{2}},\qquad \textrm{with}\quad \\[3pt]
+&c_1=\Bigl(\pm\sqrt{\left(b_{0}+v_{2}^2+v_{3}^2-V_{2}^2-V_{3}^2\right)^2+
+   (b_{123}+2 (v_{2} V_{2}+v_{3} V_{3}))^2}\\
+&\phantom{\frac{1}{\sqrt{2}}b_{0}-v_{2}^2-v_{3}^2  \big(b_{123}-2
+(v_{2} V_{2}+v_{3} V_{3})\big)x}
+ +b_{0}+v_{2}^2+v_{3}^2-V_{2}^2-V_{3}^2\Bigr)^{\frac{1}{2}},
+\end{split}
+\end{equation}
+and can be compared to the similar expression
+\eqref{exampleCl30free} for \cl{3}{0}. The remaining coefficients
+$v_2,v_3,V_2,V_3$  may have arbitrary values and can be
+treated as free parameters.
+
+\subsection{Examples for $\cl{1}{2}$}
+\subsubsection*{Example~7. The case $s^2\neq S^2$.}
+Using the same initial MV  $\B=\e{1}-2 \e{23}$ as in
+Example~1 we obtain the same values for $b_I,
+b_S$ and $s, S, v_i, V_i$. After substituting them into
+\eqref{mvA30} the square roots are found to be
+\begin{equation}
+\begin{split}
+  &\sqrt{\B_{1,2}}=\A_{1,2}=\pm\frac12 (c_2 (-\e{1}+\e{1 2 3})-c_1 (1+\e{2 3})),\\
+  &\sqrt{\B_{3,4}}=\A_{3,4}=\pm \frac12 (-c_1 (\e{1}+\e{1 2 3})+c_2 (-1+\e{2 3})),
+\end{split}\end{equation}
+where $c_1=\sqrt{-2+\sqrt{5}}$ and  $c_2=\sqrt{2+\sqrt{5}}$\,.
+
+
+\section{\cl{2}{1} algebra}\label{sec:Cl21} In~\cite{Marchuk2015}, considering the
+CA representation as a tensor product it is shown that ``for odd
+$n \ge 3$, there are three classes of isomorphic Clifford
+algebras... [what] is consistent with Cartan's classification of
+real Clifford algebras.'' Namely, \cl{3}{0} and \cl{1}{2}  are
+represented by $2\times 2$ complex matrices $\bbC(2)$. The
+similitude of expressions  for square roots in \cl{3}{0} and
+\cl{1}{2} algebras confirms that these two algebras fall into the
+same class. Algebras \cl{0}{3} and \cl{2}{1} are represented by
+blocked $2\times 2$ and $1\times 1$ matrices ${^2}\bbR(2)$ and
+${^2}\bbH(1)$, respectively.  Therefore, they belong to different
+classes. Indeed, as we shall show below, the analysis for
+\cl{2}{1} is more similar to \cl{0}{3}. However, in this case
+there appear significant and interesting differences since
+\cl{0}{3} and \cl{2}{1} belong to different classes.
+
+
+\subsection{The generic case, $s^2 \neq S^2$}
+The system of nonlinear equations is
+\begin{align}
+b_0&=s^2+S^2+\bv^2+\bV^2, &b_{123}&=2(sS+\bv\cdot\bV)\label{MVM10Cl21}, \\
+b_1&=2(s v_1+S V_1), &b_{23}&=2(s V_1+S v_1)\label{MVM20Cl21}, \\
+b_2&=2(s v_2+S V_2), &b_{13}&=-2(s V_2+S v_2)\label{MVM30Cl21}, \\
+b_3&=2(s v_3+S V_3), &b_{12}&=-2(s V_3+S v_3)\label{MVM40Cl21},
+\end{align}
+where now $\bv^2=v_1^2+v_2^2-v_3^2$ and $\bv\cdot\bV=v_1 V_1 + v_2 V_2- v_3 V_3$. When $s^2-S^2\neq
+0$ the solution of Eqs.~\eqref{MVM20Cl21}-\eqref{MVM40Cl21} is
+\begin{align}
+v_1&=\frac{b_1s-b_{23}S}{2(s^2-S^2)}, & v_2&=\frac{b_{2}s+ b_{13}S}{2(s^2-S^2)},&  v_3&=\frac{b_3s+b_{12}S}{2(s^2-S^2)},\label{v123Cl21}\\
+V_1&=\frac{b_{23}s-b_{1}S}{2(s^2-S^2)},
+&V_2&=-\frac{b_{13}s+b_{2}S}{2(s^2-S^2)},
+&V_3&=-\frac{b_{12}s+b_{3}S}{2(s^2-S^2)}.\label{V123Cl21}
+\end{align}
+Insertion  of $v_i$ and $V_i$ into \eqref{MVM10Cl21} gives two
+coupled equations for unknowns $s, S$
+\begin{equation}\label{sysA0Cl21}
+\begin{split}
+& b_{S}+4 s^2 (-6 S^2+b_0)+8 s S b_{123}=4 s^4+(-2 S^2+b_0)^2+b_{123}^2,\\
+  & b_{I}=2 (2 (s^2+S^2)-b_0) (4 s S-b_{123}),
+\end{split}\end{equation}
+  where $b_{S}$ and $b_{I}$ are functions of coefficients of MV $\B$,
+\begin{equation}\label{bSbICl03A}
+\begin{split}
+&b_{S}= \langle \B \cliffordconjugate{\B}\rangle_0 =
+b_{0}^2-b_{1}^2-b_{2}^2+b_{3}^2+ b_{12}^2-b_{13}^2-b_{23}^2+b_{123}^2,\\
+&b_{I}= \langle \B
+\cliffordconjugate{\B} I \rangle_0 = -2 b_{3} b_{12}+2 b_{2} b_{13}-2 b_{1} b_{23}+2 b_{0} b_{123}.
+\end{split}
+\end{equation}
+Since the Eqs.~\eqref{sysA0Cl21} and \eqref{V123Cl03} have
+  the same shape (the definitions of $b_{S}$ and $b_{I}$ in these
+  equations, of course, differ) we can make use of \eqref{sysAS0Cl03} to
+  lower the order of the system. However, there comes one
+important difference: in \cl{2}{1} the determinant norm,
+$D=b_S^2-b_I^2$, is not always positive. It can happen that for a
+some $\B$ the norm becomes negative, $D<0$. In this case the
+solution set must be considered empty. The other particularity is
+that in the solution \eqref{solB0Cl03} instead of single
+($-\sqrt{D}$) we have to take into account both signs, i.e.,
+$\pm\sqrt{D}$, what doubles the number of possible solutions in the
+case $D>0$,
+\begin{equation}\label{solB0Cl21}
+\begin{split}
+&t_{1,2,3,4}=\frac{1}{4} \Bigl(b_{123} \pm
+\frac{1}{\sqrt{2}}\sqrt{b_{S}\pm\sqrt{D}}\Bigr),\quad
+T_{1,2,3,4}=\frac{1}{4}\Bigl(\frac{\pm
+b_{I}}{\sqrt{2}\sqrt{b_{S}\pm\sqrt{D}}}+ b_{0}\Bigr).
+\end{split}
+\end{equation}
+Here again we can take signs for $t$ in all possible combinations,
+but then the signs for $T$ must follow the same upper-lower
+positions as in  $t$. When  $b_{I}=0$, or equivalently
+$b_{S}\pm\sqrt{D} = 0$, the solution set is
+\begin{equation}\label{solB0d01aCl21}
+\begin{split}
+(t_{1,2},\ T_{1,2})= \bigl(\tfrac{1}{4}b_{123},\ \tfrac{1}{4}
+(\pm\sqrt{b_{S}}+b_{0})\bigr).
+\end{split}
+\end{equation}
+Since we also have four sign combinations in the solution for
+$s,S$ (as in \eqref{solA0Cl03}), we end up with 16~different
+square roots of MV in a generic case of \cl{2}{1}.
+
+\subsection{The special case $s^2 = S^2$}
+
+The analysis again closely follows \cl{0}{3} case, except that we
+have different signs in the expressions.
+\subsubsection{The subcase $s=S\neq 0$}
+Now the coefficients satisfy the conditions $b_1 =b_{23}$, $b_2 =
+-b_{13}$,  $b_3= - b_{12}$.  This  allows to eliminate the
+singularity at $s=S$, and as a result the system of
+Eqs.~\eqref{MVM20Cl21}-\eqref{MVM40Cl21} has a special solution,
+\begin{equation}\begin{split}\label{vVSpecialCl21}
+v_{1}= \frac{b_{1}}{2 s}-V_{1},\quad v_{2}= \frac{b_{2}}{2 s}-V_{2},\quad v_{3}= \frac{b_{3}}{2 s}-V_{3},
+\end{split}\end{equation}
+which exactly coincides with the same solution for \cl{0}{3} (see
+Eq.~\eqref{vVSpecialCl03}). Thus, after doing similar computations
+we find that Eq.~\eqref{AspecCl03} is to be replaced by
+\begin{equation}\begin{split}\label{AspecCl21}
+  V_{1}=& \frac{\sqrt{2}}{8 s}\Bigl(\sqrt{2} b_{1}\pm \bigl(8 s^2 \left(b_{0}-b_{123}+4 (-V_{2}^2+V_{3}^2)\right)+16 s (b_{2} V_{2}-b_{3} V_{3})\\
+  &\phantom{\bigl(-8 s^2 \left(b_{0}-b_{123}+4 (V_{2}^2+V_{3}^2)\right)}
+  -b_{0}^2+2 b_{1}^2-b_{123}^2+b_{S}\bigr)^{1/2}\Bigr).
+\end{split}\end{equation}
+The coefficients $s_{1}$ and   $s_{2}$ are very similar to
+\eqref{solSspec1Cl03}, except that now we need to take into
+account all passible sign combinations,
+\begin{equation}\begin{split}\label{solSspec1Cl21}
+s_{1,2} =& \pm\tfrac{1}{2\sqrt{2}}\sqrt{\pm\sqrt{2
+b_{S}-(b_{0}-b_{123})^2}+b_{0}+b_{123}}.
+\end{split}\end{equation}
+The listed formulas  solve the square root problem in the case
+$s=S\neq 0$.
+
+\subsubsection{The subcase $s=-S\neq 0$}
+The only formulas which differ from those in \cl{0}{3} algebra are
+related with the coefficient compatibility condition  $b_1 =
+-b_{23}$, $b_2 = b_{13}$, $ b_3= b_{12}$. Now, they should
+be replaced by
+\begin{equation}\begin{split}\label{Aspec2Cl21}
+  V_{1}=& \frac{\sqrt{2}}{8 s}\Bigl(-\sqrt{2} b_{1}\pm \bigl(8 s^2 \left(b_{0}+b_{123}+4(-V_{2}^2+V_{3}^2)\right)\\
+  &\phantom{\bigl(-8 s^2}-16 s (b_{2} V_{2}-b_{3} V_{3})-b_{0}^2+2 b_{1}^2-b_{123}^2+b_{S}\bigr)^{1/2}\Bigr),
+\end{split}\end{equation}
+%
+\begin{equation}\begin{split}\label{solSspec1NegCl21}
+s_{1,2} =& \pm\tfrac{1}{2\sqrt{2}}\sqrt{\pm\sqrt{2
+b_{S}-(b_{0}+b_{123})^2}+b_{0}-b_{123}}\,.
+\end{split}\end{equation}
+The remaining formulas that are required to write down the
+answer exactly match the formulas in the corresponding subsection
+of \cl{0}{3} algebra.
+
+
+\subsubsection{The subcase $s=S= 0$}
+The only distinct formulas from \cl{0}{3} case are listed below,
+\begin{equation}\begin{split}
+&v_{1}=\pm \frac{c_1}{\sqrt{2}},\qquad
+  V_{1}=\pm \frac{1}{c_1} \frac{b_{123}+2 (-v_{2} V_{2}+v_{3} V_{3})}{\sqrt{2}},\qquad \textrm{where}\quad \\[3pt]
+&c_1=\Bigl(\pm\sqrt{\left(b_{0}-v_{2}^2+v_{3}^2-V_{2}^2+V_{3}^2\right)^2-
+   (b_{123}+2 (-v_{2} V_{2}+v_{3} V_{3}))^2}\\
+&\phantom{\frac{1}{\sqrt{2}}b_{0}-v_{2}^2-v_{3}^2  (b_{123}-2
+(v_{2} V_{2}+v_{3} V_{3}))}
++b_{0}-v_{2}^2+v_{3}^2-V_{2}^2+V_{3}^2\Bigr)^{\frac{1}{2}} .
+\end{split}\end{equation}
+This ends the investigation of the square root formulas for all
+real Clifford algebras in 3D.
+
+\subsection{Examples for $\cl{2}{1}$}
+\subsubsection*{Example~8. The case $s^2\neq S^2$.}
+First we shall show  that MV  $\B=\e{1}-2 \e{23}$  has no real
+square roots. Indeed, we have  $b_S=-5$,  $b_I=4$ and
+$D=b_S^2-b_I^2=(3)^2$. As a result  the expression under square
+root in \eqref{solB0Cl21}, namely $b_S\pm\sqrt{D}=-5\pm3$, is
+always negative and there are no real valued solutions.
+
+Next we shall calculate the roots of $\B=2+\e{1}+\e{13}$. The
+values of $b_I, b_S$ are $0$ and $2$, respectively. The
+determinant norm of the MV is positive, $D=4>0$. Using
+\eqref{solB0Cl21} we find four real values for pairs $(T_i,t_i)$.
+In particular we obtain
+ $ (T_1,t_1)=\bigl(\frac{1}{4} (2-\sqrt{2}) , 0\bigr)$, $(T_2,t_2)=\bigl(\frac{1}{4} (2+\sqrt{2}) , 0\bigr)$, $(T_3,t_3)=\bigl(\frac{1}{2} , -\frac{1}{2 \sqrt{2}}\bigr)$ and $(T_4,t_4)=  \bigl(\frac{1}{2} , \frac{1}{2 \sqrt{2}}\bigr)$.
+Inserting them into \eqref{solA0Cl03} we obtain 16 pairs
+$(s_i,S_i)$ of scalars:
+\[ \begin{array}{lll}
+ (s_1= 0,S_1=-\frac{c_2}{\sqrt{2}}),
+  &\mspace{-15mu}(s_2= 0,S_2=\frac{c_2}{\sqrt{2}}),
+  &\mspace{-15mu}(s_3= -\frac{c_2}{\sqrt{2}},S_3= 0),\\
+  (s_4= \frac{c_2}{\sqrt{2}},S_4= 0),
+  &\mspace{-15mu}(s_5= 0,S_5= -\frac{c_1}{\sqrt{2}}),
+  &\mspace{-15mu}(s_6= 0,S_6= \frac{c_1}{\sqrt{2}}),\\
+  (s_7= -\frac{c_1}{\sqrt{2}},S_7= 0),
+  &\mspace{-15mu}(s_8= \frac{c_1}{\sqrt{2}},S_8= 0),
+  &\mspace{-15mu}(s_9= -\frac{c_2}{2},S_9= \frac{c_1}{2}),\\
+  (s_{10}= \frac{c_2}{2},S_{10}= -\frac{c_1}{2}),
+  &\mspace{-15mu}(s_{11}= -\frac{c_1}{2},S_{11}= \frac{1}{\sqrt{2} c_1}),
+  &\mspace{-15mu}(s_{12}= \frac{c_1}{2},S_{12}= -\frac{1}{\sqrt{2} c_1}),\\
+  (s_{13}= -\frac{c_2}{2},S_{13}= -\frac{c_1}{2}),
+  &\mspace{-15mu}(s_{14}= \frac{c_2}{2},S_{14}= \frac{c_1}{2}),
+  &\mspace{-15mu}(s_{15}= -\frac{c_1}{2},S_{15}= -\frac{1}{\sqrt{2} c_1}),\\
+  (s_{16}= \frac{c_1}{2},S_{16}=\frac{1}{\sqrt{2} c_1}), & &
+  \end{array}\]
+where $c_1=\sqrt{2+\sqrt{2}}$ and $c_2=\sqrt{2-\sqrt{2}}$. After
+substitution of pairs $(s_i,S_i)$ into Eq.~\eqref{v123Cl21} and
+then into Eq.~\eqref{mvA30} we obtain 16  roots
+$\sqrt{\B_{i,j}}=\A_{i,j}$ the squares of which give the initial
+MV $\B=2+\e{1}+\e{13}$,
+\begin{equation}
+\begin{split}
+  &\A_{1,2}=\pm\tfrac{1}{2}\big(c_1 \e{2}-c_1 \e{2 3}-\sqrt{2}c_2\e{123}\big),\\
+ &\A_{3,4}=\pm\tfrac{1}{\sqrt{2}}\big(-c_1^{-1}\e{2}+c_1^{-1}\e{2 3}+c_1 \e{1 2 3}\big),\\
+&\A_{5,6}=\pm\tfrac{1}{2}\big(\sqrt{2}c_2+c_1\e{1}+c_1\e{13}\big),\\
+&\A_{7,8}=\pm\tfrac{1}{\sqrt{2}}\big(c_1+ c_1^{-1}\e{1}+c_1^{-1}\e{1 3}\big),\\
+&\A_{9,10}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_2-c_2\e{1}-c_1\e{2}-c_2\e{13}+c_1\e{2 3}+\sqrt{2}c_1 \e{1 2 3}\big),\\
+  &A_{11,12}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_ 1+c_1 \e{1}-c_ 2 \e{2}+c_1 \e{1 3}+c_2 \e{2 3}-2c_1^{-1}\e{1 2 3}\big),\\
+&\A_{13,14}=\pm\tfrac{1}{2\sqrt{2}}\big(\sqrt{2}c_1+c_1 \e{1}+c_2 \e{2}+c_1 \e{1 3}-c_2 \e{2 3}+2c_1^{-1}\e{1 2 3}\big),\\
+&\A_{15,16}=\pm\tfrac{1}{2\sqrt{2}}\big(-\sqrt{2}c_2+c_2 \e{1}-c_1
+\e{2}+c_2 \e{13}+c_1 \e{2 3}+\sqrt{2}c_1 \e{1 2 3}\big) .
+\end{split}\end{equation}
+
+
+\section{Application: Riccati equation in Clifford algebra\label{sec:application}}
+Solution of quaternionic Riccati equation, which is quadratic with
+respect to unknown variable, has been presented
+in~\cite{Janovska13}. The simplest quadratic equations of this
+type in CA for unknown MV $\X$ are
+\begin{equation}\label{RiccA}
+\X^2=\B\quad\text{and}\quad\X\A\X=\B,
+\end{equation}
+where $\A$ and $\B$ are constant MVs. The solution of
+Eq.~\eqref{RiccA} are expressed through the square root and
+inversion of MV,
+\begin{equation}\label{RiccB}
+\X=\pm\sqrt{\B}\quad\text{and}\quad\X=\pm\sqrt{\B\A}\;\A^{-1}=\pm\A^{-1}\sqrt{\A\B}\,.
+\end{equation}
+More general Riccati-Clifford equation contains linear term,
+\begin{equation}\label{RiccC}
+\X\A\X+\C\X+\X\C=\B.
+\end{equation}
+The equation can be easily solved if $\C$ belongs to CA center,
+i.e., $\C=\alpha+\beta I$, where $\alpha,\beta\in\bbR$. The
+solution is~\cite{Dargys2019}
+\begin{equation}\label{RiccD}
+\X_{1,2}=(-\C\pm\sqrt{\B\A+\C^2}\,)\A^{-1}.
+\end{equation}
+If MVs are replaced by scalars ($\A\to a$, $\B\to c$, $\C\to b/2$)
+and the geometric product is treated as standard scalar product
+then Eq.~\eqref{RiccD} reduces to the well-known scalar quadratic
+equation for roots $x_{1,2}=(-b\pm\sqrt{b^2+4ac})/2a$. The
+principle difference between solutions of Riccati-Clifford and
+standard quadratic equation lies in a number of roots. In the latter
+case there may be at maximum two different roots whereas in the case
+of MV the number of roots depends on algebra and structure of the
+MV itself.
+
+Our work is a step forward in a solution of  more general
+quadratic equations in Clifford algebras. Indeed, if a quadratic
+equation for a MV can be factorized into quite a general form $(\A
+\X +\X\B +\C)^2=\D$ then using the presented algorithm to find
+$\sqrt{\D}$ and the explicit solution of Sylvester equation in
+CA~\cite{Dargys2018} for $n\le 3$ one can immediately find all
+solutions of the quadratic MV equation.
+
+
+\section{Conclusions\label{sec:conclusions}}
+First, we have  shown that the  square root of general MV in
+\cl{3}{0}, \cl{0}{3}, \cl{1}{2} and \cl{2}{1} algebras can be
+expressed in radicals.  A detailed algorithm for all four algebras
+is described which can be used to find the roots of MVs in a
+closed form. In our first paper on the subject~\cite{Dargys2019},
+we considered the roots of individual grades and provided explicit
+formulas in a coordinate free form. However, for a general MV the
+latter form, where many condition are controlled by plus/minus
+signs, appears rather complicated.
+
+Second, it is shown that apart from two standard (plus/minus)
+  roots there may appear more (up to 16 for \cl{2}{1}) isolated roots in CA, or
+the roots may not exist at all. The MV roots in the CA may
+accommodate a number free parameters that bring a continuum of
+square roots on respective parameter hypersurfaces and therefore
+become an important ingredient in the nonlinear CA problems.
+
+Third, the Gr{\"o}bner basis algorithm was applied in the
+algorithm analysis using \textit{Mathematica}
+commands~\cite{AcusDargys2017}. We also implemented purely
+numerical search of square roots using {\it Mathematica} universal
+root search algorithm realized in the system function
+\textbf{FindInstance[~]}. This was done in hope to find some
+isolated roots which our algorithm might miss. We didn't find any
+new numerical roots. On the contrary, the command
+\textbf{FindInstance[~]} often -- especially in the case $s^2
+=S^2\neq 0$ -- was unable to find any roots at all, whereas our
+algorithm worked flawlessly. The only complication which we
+encountered in the algorithm implementation was that {\it
+Mathematica} symbolic zero detection algorithm
+\textbf{PossibleZeroQ[~]} in more complicated cases often had to
+switch to numerical procedure to conclude that complicated
+symbolic expression indeed represents zero. This is quite
+understandable, since it is well known that two expression
+equivalence problem is, in general, undecidable.
+
+Fourth, we found that for algebras $\cl{3}{0}$ and $\cl{1}{2}$ the
+square root solution in general is a union of following sets: 1)
+when $s^2\neq S^2$, we have a set of (up to) four isolated roots,
+2) when $s^2 =S^2\neq 0$, we have a set of two roots  and 3) in
+addition, we may have a set of infinite number of roots that
+belong to at most a four dimensional parameter manifold. For case
+of $\cl{0}{3}$ algebra the square root is a union of  sets: 1) a
+set of (up to) four isolated roots in the case $s^2\neq S^2$, 2)
+an infinite number of roots that make at most two dimensional
+manifold in the case $s^2 =S^2\neq 0$, and 3) a set of infinite
+number of roots which make a at most four dimensional manifold.
+For $\cl{2}{1}$ algebra, the square root is a union of following
+sets: 1) in  the case $s^2\neq S^2$, a set of (up to) sixteen
+isolated roots, 2) in the case $s^2 =S^2\neq 0$, a infinite number
+of roots which belong at most to two dimensional manifold and 3) a
+set of infinite number of roots that belongs at most to 4D
+parameter manifold. Since the solutions of each of different
+(sub)sets have different values of scalars $s$ and $S$ in the
+parameter spaces that follow from Eq.~\eqref{mvA30}, the solution
+in one subset cannot be obtained from solution in a different
+subset (even from the infinite one). The algorithm should also
+work for the case of complex Clifford algebras with the only
+simplification that in this case there is no need to look
+for a positivity of expressions inside the square roots.
+
+The proposed algorithm is a step forward in a solution of general
+quadratic equations in Clifford algebras and may find application
+in control and systems theory~\cite{Abou2003}, since the CA
+solutions reflect totally new properties of MV roots, for example,
+the root multiplicity and appearance of free parameters.  Due to
+complexity of root algorithms in CA, it is preferred to do such
+calculations with in advance prepared numerical/symbolic
+subroutines. Nowadays,  nobody is worried how to calculate the
+square root of a number with a pocket calculator in hands.
+Probably, with a fast development of CA the history will repeat
+itself once more but now with a multivector square root.
+
+
+
+% ----------------------------------------------------------------
+%\paragraph{Acknowledgment.}
+% ----------------------------------------------------------------
+%We would like to thank ...
+
+%\begin{thebibliography}{10}
+
+
+%\end{thebibliography}
+
+
+%\bibliographystyle{REPORT}
+%\bibliography{SqrtRootMV}
+\begin{thebibliography}{10}
+
+\bibitem{Grant2015}
+H.~Grant and I.~Kleiner,
+\newblock {\em Turning Points in the History of Mathematics},
+\newblock Springer, New York, 2015.
+
+\bibitem{Cayley1872}
+A.~Cayley,
+\newblock On the extraction of square root of matrix of the third order,
+\newblock Proc. Roy. Soc. Edinburgh {\bf 7}, 675--682 (1872).
+
+\bibitem{Higham08}
+N.~J. Higham,
+\newblock {\em Functions of Matrices (Theory and Computation)},
+\newblock SIAM, Philadelphia, 2008.
+
+\bibitem{Niven1942}
+I.~Niven,
+\newblock The roots of quaternion,
+\newblock The American Mathematical Monthly {\bf 49}(6), 386--388 (1942).
+
+\bibitem{Opfer2017}
+G.~Opfer,
+\newblock {N}iven's algorithm applied to the roots of the companion polynomial
+  over $\mathbb{R}^4$ algebras,
+\newblock Adv. Appl. Clifford Algebras {\bf 27}, 2659--2675 (2017).
+
+\bibitem{Falcao2018}
+M.~I. Falc{\~a}o, F.~Miranda, R.~Severino, and M.~J. Soares,
+\newblock On the roots of coquaternions,
+\newblock Adv. Appl. Clifford Algebras {\bf 28}, 97 (2018).
+
+\bibitem{Ozdemir2009}
+M.~{\"O}zdemir,
+\newblock The roots of a split quaternion,
+\newblock Appl. Math. Lett. {\bf 22}, 258--263 (2009).
+
+\bibitem{Sangwine2006}
+S.~J. Sangwine,
+\newblock Biquaternion (complex quaternion) roots of $-1$,
+\newblock Adv. Appl. Clifford Algebras {\bf 16}(1), 63--68 (2006).
+
+\bibitem{Chapell2015}
+J.~M. Chappell, A.~Iqbal, L.~J. Gunn, and D.~Abbott,
+\newblock Functions of multivector variables,
+\newblock PLoS ONE {\bf 10}(3), 1--21 (2015),
+\newblock Doi:10.1371/journal.pone.0116943.
+
+\bibitem{Hitzer2011}
+E.~Hitzer and R.~Ab{\l}amowicz,
+\newblock Geometric roots of $-1$ in {C}lifford algebras \textit{Cl}$_{p,q}$
+  with $p+q\le 4$,
+\newblock Adv. Appl. Clifford Algebras {\bf 21}(1), 121--144 (2011).
+
+\bibitem{Hitzer2013}
+E.~Hitzer, J.~Helmstetter, and R.~Ab{\l}amowicz,
+\newblock Square roots of $-1$ in real {C}lifford algebras,
+\newblock in {\em Quaternion and Clifford-Fourier Transforms and Wavelets},
+  edited by E.~Hitzer and S.~J. Sangwine, pages 123--153, Springer, Basel,
+  2013.
+
+\bibitem{Hitzer13B}
+E.~Hitzer and {S.~J. Sangwine, (Eds.)},
+\newblock {\em Quaternion and Clifford-Fourier Transforms and Wavelets},
+\newblock Springer, Basel, 2013.
+
+\bibitem{Dargys2019}
+A.~Dargys and A.~Acus,
+\newblock Square root of a multivector in 3D {C}lifford algebras,
+\newblock Nonlinear Analysis: Modelling and Control , 1--20 (2019),
+\newblock In press.
+
+\bibitem{AcusDargys2017}
+A.~Acus and A.~Dargys,
+\newblock Geometric Algebra Mathematica package, 2017,
+\newblock \url{https://github.com/ArturasAcus/GeometricAlgebra} , 65,
+\newblock The full version is to be described elsewhere.
+
+\bibitem{Doran03}
+C.~Doran and A.~Lasenby,
+\newblock {\em Geometric Algebra for Physicists},
+\newblock Cambridge University Press, Cambridge, 2003.
+
+\bibitem{Lounesto97}
+P.~Lounesto,
+\newblock {\em Clifford Algebra and Spinors},
+\newblock Cambridge University Press, Cambridge, 1997.
+
+\bibitem{Acus2018}
+A.~Acus and A.~Dargys,
+\newblock The inverse of multivector: Beyond the threshold $p+q=5$,
+\newblock Adv. Appl. Clifford Algebras {\bf 28}, 65 (2018).
+
+\bibitem{Marchuk2015}
+N.~G. Marchuk,
+\newblock Demonstration representation and tensor products of {C}lifford
+  algebras,
+\newblock {T}rudy {M}atematicheskogo {I}nstituta {I}meni {V.A.} {S}teklova {\bf
+  290}, 154--165 (2015),
+\newblock English translation: Proc. Steklov Inst. Math., Pleiades Publishing,
+  Ltd., {\bf 290}, 143-154 (2015).
+
+\bibitem{Janovska13}
+D.~Janovsk{\'a} and G.~Opfer,
+\newblock The algebraic {R}iccati equations for quaternions,
+\newblock Adv. Appl. Clifford Algebras {\bf 23}, 907--918 (2013).
+
+\bibitem{Dargys2018}
+A.~Dargys and A.~Acus,
+\newblock A note on solution of ax+xb=c by Clifford algebras,
+\newblock arXiv (1902.09194 [math.RA]), 1--4 (2018).
+
+\bibitem{Abou2003}
+H.~Abou-Kandil, G.~Freiling, V.~Ionescu, and G.~Jank,
+\newblock {\em Matrix Riccati Equations (in Control and Systems Theory)},
+\newblock Birkh{\"a}user Verlag, Basel, 2003.
+
+\end{thebibliography}
+
+
+
+
+%\bibitem{Dargys2018}
+%A. Dargys and A. Acus,
+%\newblock A note on solution of $ax+xb=c$ by Clifford algebras, 2017,
+%\newblock arXiv:1902.09194  [math.RA] , 1--4 (2018).
+
+\end{document}
+
